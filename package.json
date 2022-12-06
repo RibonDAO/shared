@@ -5,6 +5,7 @@
   "main": "index.js",
   "devDependencies": {
     "@types/node": "^18.11.11",
+    "axios": "^1.2.1",
     "react": "^18.2.0"
   },
   "scripts": {
