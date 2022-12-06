@@ -1,0 +1,23 @@
+{
+  "name": "@ribon/shared",
+  "version": "1.0.0",
+  "description": "Library to store shared stuff from Ribon frontends",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/node": "^18.11.11",
+    "react": "^18.2.0"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RibonDAO/shared.git"
+  },
+  "author": "Henrique Barbosa (Leod)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RibonDAO/shared/issues"
+  },
+  "homepage": "https://github.com/RibonDAO/shared#readme"
+}
