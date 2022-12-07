@@ -1,14 +1,78 @@
-import glob from 'glob';
+/* TYPES > API RESPONSES */
 
-let modules;
+import {
+    CanDonate,
+    CardFees,
+    DonationsCount,
+    NonProfitImpact,
+    PoolBalance,
+    PromoterCardGiving,
+    PromoterDonation,
+} from './types/apiResponses';
 
-try {
-  const res = await glob(__dirname + '/**/*.ts');
-  modules = Promise.all(res.map((file) => (
-    import(file.replace(__dirname, '.').replace('.ts', ''))
-  )));
-} catch (err) {
-  // handle `err`
-}
+/* TYPES > ENTITIES */
 
-// use `modules`
+import {
+    Cause,
+    CreditCardPayment,
+    CurrentNetwork,
+    Donation,
+    Impact,
+    Integration,
+    IntegrationTask,
+    NonProfit,
+    Notification,
+    Offer,
+    Pool,
+    Story,
+    User,
+} from './types/entities';
+
+/* TYPES > ENUMS */
+
+import {
+    TransactionStatus,
+    Currencies,
+    Languages,
+} from './types/enums';
+
+
+/* STYLES */
+import {
+    normalize,
+    theme,
+    GlobalStyle,
+    typography,
+} from './styles';
+
+import {
+    defaultDisplayLarge,
+    defaultDisplayMedium,
+    defaultDisplaySmall,
+    defaultHeadingLarge,
+    defaultHeadingMedium,
+    defaultHeadingSmall,
+    defaultTitleLarge,
+    defaultTitleMedium,
+    defaultTitleSmall,
+    defaultSubtitleLarge,
+    defaultSubtitleMedium,
+    defaultSubtitleSmall,
+    defaultParagraphLarge,
+    defaultParagraphMedium,
+    defaultParagraphSmall,
+    defaultComponentTextLarge,  
+    defaultComponentTextMedium,
+    defaultComponentTextSmall,
+} from './styles/typography/default';
+
+import {
+    stylizedDisplayLarge,
+    stylizedDisplayMedium,
+    stylizedDisplaySmall,
+    stylizedHeadingLarge,
+    stylizedHeadingMedium,
+    stylizedHeadingSmall,
+    stylizedTitleLarge,
+    stylizedTitleMedium,
+} from './styles/typography/stylized';
