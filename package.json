@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "main": "dist/index.js",
-  "types": "fonts.d.ts",
   "dependencies": {
     "@types/styled-components": "^5.1.25",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
