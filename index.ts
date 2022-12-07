@@ -1,37 +1,14 @@
-/* TYPES > API RESPONSES */
+import glob from 'glob';
 
-import {
-    CanDonate,
-    CardFees,
-    DonationsCount,
-    NonProfitImpact,
-    PoolBalance,
-    PromoterCardGiving,
-    PromoterDonation,
-} from './types/apiResponses';
+let modules;
 
-/* TYPES > ENTITIES */
+try {
+  const res = await glob(__dirname + '/**/*.ts');
+  modules = Promise.all(res.map((file) => (
+    import(file.replace(__dirname, '.').replace('.ts', ''))
+  )));
+} catch (err) {
+  // handle `err`
+}
 
-import {
-    Cause,
-    CreditCardPayment,
-    CurrentNetwork,
-    Donation,
-    Impact,
-    Integration,
-    IntegrationTask,
-    NonProfit,
-    Notification,
-    Offer,
-    Pool,
-    Story,
-    User,
-} from './types/entities';
-
-/* TYPES > ENUMS */
-
-import {
-    TransactionStatus,
-    Currencies,
-    Languages,
-} from './types/enums';
+// use `modules`
