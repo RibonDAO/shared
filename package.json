@@ -77,12 +77,7 @@
   "files": [
     "dist"
   ],
-  "keywords": [
-    "react",
-    "react hooks",
-    "typescript",
-    "npm"
-  ],
+  "keywords": ["ribon", "web3", "charity", "dapp", "shared"],
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@types/base-64": "^1.0.0",
