@@ -1,6 +1,6 @@
 {
   "name": "@ribon.io/shared",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Shared library for Ribon",
   "author": "ribon",
   "license": "Apache-2.0",
@@ -15,7 +15,9 @@
   },
   "typesVersions": {
     "*": {
-      "*": ["./dist/*"]
+      "*": [
+        "./dist/*"
+      ]
     }
   },
   "scripts": {
@@ -85,7 +87,13 @@
   "files": [
     "dist"
   ],
-  "keywords": ["ribon", "web3", "charity", "dapp", "shared"],
+  "keywords": [
+    "ribon",
+    "web3",
+    "charity",
+    "dapp",
+    "shared"
+  ],
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@types/base-64": "^1.0.0",
