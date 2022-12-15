@@ -10,16 +10,7 @@
     "node": ">=8",
     "npm": ">=5"
   },
-  "exports": {
-    "./": "./dist/"
-  },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*"
-      ]
-    }
-  },
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
