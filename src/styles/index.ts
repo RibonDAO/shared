@@ -1,7 +1,5 @@
 import theme from "./theme";
 
-import {
-  ThemeProviderComponent,
-} from "./themeProviderComponent";
+import { ThemeProviderComponent } from "./themeProviderComponent";
 
 export { theme, ThemeProviderComponent };
