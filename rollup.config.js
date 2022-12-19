@@ -28,7 +28,6 @@ export default {
     'react-query',
     'react-router-dom',
     'styled-components',
-    'styled-components/native',
     'axios',
     'camelcase-keys',
     'snakecase-keys',
