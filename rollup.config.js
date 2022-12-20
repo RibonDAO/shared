@@ -7,7 +7,7 @@ import { terser } from "rollup-plugin-terser";
 import typescript from "rollup-plugin-typescript2";
 import json from "@rollup/plugin-json";
 import packageJson from "./package.json";
-import {getFolders} from "./scripts/buildUtils";
+import { getFolders } from "./scripts/buildUtils";
 
 const plugins = [
     peerDepsExternal(),
