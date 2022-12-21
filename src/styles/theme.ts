@@ -5,12 +5,7 @@ export interface Breakpoint {
   desktop: string;
 }
 
-interface ThemeType {
-  breakpoints: Breakpoint;
-  [key: string]: any;
-}
-
-const theme: ThemeType = {
+const theme = {
   grid: {},
   border: {},
   font: {
