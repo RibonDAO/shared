@@ -46,7 +46,18 @@ const folderBuilds = getFolders("./src").map((folder) => ({
     format: "esm",
   },
   plugins: subfolderPlugins(folder),
-  external: ["react", "react-dom"],
+  external: [
+    "react",
+    "react-dom",
+    "react-query",
+    "react-router-dom",
+    "styled-components",
+    "axios",
+    "camelcase-keys",
+    "snakecase-keys",
+    "@apollo/client",
+    "cross-fetch",
+  ],
 }));
 
 export default [
@@ -75,6 +86,17 @@ export default [
       },
     ],
     plugins,
-    external: ["react", "react-dom"],
+    external: [
+      "react",
+      "react-dom",
+      "react-query",
+      "react-router-dom",
+      "styled-components",
+      "axios",
+      "camelcase-keys",
+      "snakecase-keys",
+      "@apollo/client",
+      "cross-fetch",
+    ],
   },
 ];
