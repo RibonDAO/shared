@@ -73,6 +73,8 @@ const theme: ThemeType = {
     mobileMedium: "374px",
     pad: "600px",
     desktop: "1024px",
+    desktopLarge: "1200px",
+    desktopExtraLarge: "1400px"
   },
 };
 
