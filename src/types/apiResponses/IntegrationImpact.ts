@@ -3,8 +3,8 @@ import { NonProfit } from "../entities";
 export default interface IntegrationImpact {
   totalDonations: number;
   totalDonors: number;
-  impactPerNonProfit: {
+  impactPerNonProfit: [{
     nonProfit: NonProfit;
     impact: number;
-  };
+  }];
 }
