@@ -1,10 +1,9 @@
 import { screen } from "@testing-library/react";
-import {
-  mockLogErrorFunction,
-  mockLogEventFunction,
-  mockNavigateBackFunction,
-  mockNavigationFunction,
-} from "../../setupTests";
+
+export const mockLogErrorFunction = jest.fn();
+export const mockLogEventFunction = jest.fn();
+export const mockNavigateBackFunction = jest.fn();
+export const mockNavigationFunction = jest.fn();
 
 export function expectTextToBeInTheDocument(text: string) {
   return expect(screen.getByText(text)).toBeInTheDocument();
