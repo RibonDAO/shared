@@ -12,7 +12,7 @@ function useNonProfits() {
     fetchMethod: nonProfitsApi.getNonProfits,
   });
 
-  return { nonProfits, isLoading, refetch, cafe: "cafebabe", ola: "mundo", salve: "salve" };
+  return { nonProfits, isLoading, refetch };
 }
 
 export default useNonProfits;
