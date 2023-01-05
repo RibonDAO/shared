@@ -18,7 +18,7 @@
     "clean": "rimraf dist",
     "dev": " yarn watch & yarn start",
     "start": "rollup -c --bundleConfigAsCjs -w",
-    "watch": "onchange 'dist/**/*.js' -- cp -a ./dist/. ../ribon-native/node_modules/@ribon.io/shared/ && echo 'Copied to native'",
+    "watch": "onchange 'dist/**/*.js' -- cp -a ./dist/. $(grep RIBON_NATIVE_PATH .env | cut -d '=' -f2)/node_modules/@ribon.io/shared/",
     "test": "jest",
     "lint": "eslint src/**/*.ts src/**/*.tsx && prettier --check src/**/*.ts src/**/*.tsx"
   },
