@@ -16,7 +16,9 @@
     "build": "yarn clean && rollup -c --bundleConfigAsCjs && yarn post:build",
     "post:build": "node ./scripts/frankBuild.js",
     "clean": "rimraf dist",
-    "start": "rollup -c -w",
+    "dev": " yarn watch & yarn start",
+    "start": "rollup -c --bundleConfigAsCjs -w",
+    "watch": "onchange 'dist/**/*.js' -- cp -a ./dist/. $(grep RIBON_NATIVE_PATH .env | cut -d '=' -f2)/node_modules/@ribon.io/shared/",
     "test": "jest",
     "lint": "eslint src/**/*.ts src/**/*.tsx && prettier --check src/**/*.ts src/**/*.tsx"
   },
@@ -70,6 +72,7 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "jest": "^26.1.0",
+    "onchange": "^7.1.0",
     "prettier": "^2.8.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
