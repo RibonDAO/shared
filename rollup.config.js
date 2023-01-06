@@ -6,6 +6,7 @@ import generatePackageJson from "rollup-plugin-generate-package-json";
 import { terser } from "rollup-plugin-terser";
 import typescript from "rollup-plugin-typescript2";
 import json from "@rollup/plugin-json";
+import ttypescript from "ttypescript";
 import packageJson from "./package.json";
 import { getFolders } from "./scripts/buildUtils";
 
@@ -18,6 +19,7 @@ const plugins = [
   commonjs(),
   typescript({
     tsconfig: "./tsconfig.json",
+    typescript: ttypescript,
     useTsconfigDeclarationDir: true,
   }),
   json(),
