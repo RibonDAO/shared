@@ -1,4 +1,4 @@
-# @ribon/shared
+# @ribon.io/shared
 Small library used to share resources between our frontends
 <hr/>
 
@@ -7,13 +7,13 @@ Small library used to share resources between our frontends
 ### Usage:
 - Install via yarn
  ```console
-yarn add https://github.com/RibonDAO/shared
+yarn add @ribon.io/shared
 ```
 
 - Import and use whatever you want!
 ```js
-import { defaultDisplayLarge } from '@ribon/shared/styles/typography/default';
-import { theme } from '@ribon/shared/styles';
+import { defaultDisplayLarge } from '@ribon.io/shared/styles/typography/default';
+import { theme } from '@ribon.io/shared/styles';
 
 export const Title = styled.h1`
       ${defaultDisplayLarge}
