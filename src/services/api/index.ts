@@ -32,8 +32,8 @@ api.interceptors.response.use(
   (error) => Promise.reject(error),
 );
 
-api.interceptors.request.use((config) => {
-  const lang = getLocalStorageItem("LANGUAGE_KEY") || "en";
+api.interceptors.request.use(async (config) => {
+  const lang = (await getLocalStorageItem("LANGUAGE_KEY")) || "en";
   const authHeaders = { Language: lang };
   // eslint-disable-next-line no-param-reassign
   config.headers = { ...authHeaders, ...config.headers };

@@ -59,6 +59,7 @@ const folderBuilds = getFolders("./src").map((folder) => ({
     "snakecase-keys",
     "@apollo/client",
     "cross-fetch",
+    "@react-native-async-storage/async-storage",
   ],
 }));
 
