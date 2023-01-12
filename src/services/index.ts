@@ -1,4 +1,12 @@
-import api, { apiDelete, apiPut, API_SCOPE, apiPost, apiGet } from "./api";
+import api, {
+  apiDelete,
+  apiPut,
+  API_SCOPE,
+  apiPost,
+  apiGet,
+  initializeApi,
+  setApiLanguage,
+} from "./api";
 import { client } from "./apiTheGraph";
 import poolsApi from "./apiTheGraph/poolsApi";
 import promoterDonationsApi from "./apiTheGraph/promoterDonationsApi";
@@ -35,6 +43,8 @@ export {
   givingFeesApi,
   impactApi,
   integrationsApi,
+  initializeApi,
+  setApiLanguage,
   nonProfitImpactApi,
   offersApi,
   promoterCardGivingsApi,
