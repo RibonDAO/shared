@@ -1,6 +1,7 @@
 import Axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import camelCaseKeys from "camelcase-keys";
 import snakeCaseKeys from "snakecase-keys";
+import { getLocalStorageItem, setLocalStorageItem } from "lib/localStorage";
 
 const RIBON_API =
   process.env.REACT_APP_RIBON_API ||
@@ -30,6 +31,27 @@ api.interceptors.response.use(
   }),
   (error) => Promise.reject(error),
 );
+
+api.interceptors.request.use((config) => {
+  const lang = getLocalStorageItem("LANGUAGE_KEY") || "en";
+  const authHeaders = { Language: lang };
+  // eslint-disable-next-line no-param-reassign
+  config.headers = { ...authHeaders, ...config.headers };
+
+  return config;
+});
+
+type apiOptions = {
+  language?: string;
+};
+
+export function setApiLanguage(language: string) {
+  setLocalStorageItem("LANGUAGE_KEY", language);
+}
+
+export function initializeApi({ language = "en" }: apiOptions): void {
+  setApiLanguage(language);
+}
 
 export function apiGet(url: string, config?: AxiosRequestConfig) {
   if (config) return api.get(`${API_SCOPE}/${url}`, config);
