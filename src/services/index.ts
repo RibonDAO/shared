@@ -1,4 +1,11 @@
-import api, { apiDelete, apiPut, API_SCOPE, apiPost, apiGet } from "./api";
+import api, {
+  apiDelete,
+  apiPut,
+  API_SCOPE,
+  apiPost,
+  apiGet,
+  initializeApi,
+} from "./api";
 import { client } from "./apiTheGraph";
 import poolsApi from "./apiTheGraph/poolsApi";
 import promoterDonationsApi from "./apiTheGraph/promoterDonationsApi";
@@ -41,4 +48,5 @@ export {
   sourcesApi,
   storiesApi,
   usersApi,
+  initializeApi,
 };

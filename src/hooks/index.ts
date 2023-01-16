@@ -1,3 +1,4 @@
+import { initializeApi, InitializeApiProps } from "services/api";
 import { useApi } from "./useApi";
 import QueryClientComponent from "./useApi/queryClient";
 import useCanDonate from "./apiHooks/useCanDonate";
@@ -15,6 +16,13 @@ import usePromoterCardGivings from "./apiHooks/usePromoterCardGivings";
 import useSources from "./apiHooks/useSources";
 import useStories from "./apiHooks/useStories";
 import useUsers from "./apiHooks/useUsers";
+
+type InitializeHooksProps = {
+  initializeApiOptions: InitializeApiProps;
+};
+function initializeHooks({ initializeApiOptions }: InitializeHooksProps) {
+  initializeApi(initializeApiOptions);
+}
 
 export {
   useApi,
@@ -34,4 +42,5 @@ export {
   useSources,
   useStories,
   useUsers,
+  initializeHooks,
 };
