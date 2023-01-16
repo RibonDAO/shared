@@ -80,6 +80,7 @@ git push -u origin main --tags // this will push the new github tag that is corr
 ```
 
 To deploy the new version, you have to create a new release in the github UI.
+There is a github action to automatically deploy to npm after a new github release is created.
 
 ### Tips:
 - Normally, before creating a new hook, lib, api call or other resource, you can first create this on the project you are working with, and after if
