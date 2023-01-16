@@ -23,6 +23,21 @@ api.interceptors.request.use((request) =>
     : request,
 );
 
+export type InitializeApiProps = {
+  url: string;
+    headers: Record<any, any>;
+}
+export function initializeApi({url, headers}: InitializeApiProps) {
+  api.interceptors.request.use((config) => {
+    // eslint-disable-next-line
+    config.baseURL = url;
+    // eslint-disable-next-line
+    config.headers = { ...headers, ...config.headers };
+
+    return config;
+  })
+}
+
 api.interceptors.response.use(
   (response) => ({
     ...response,
