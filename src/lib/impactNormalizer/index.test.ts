@@ -11,6 +11,7 @@ const t = (key: string) => {
     days: "days",
     for: "for",
     and: "and",
+    of: "of",
   };
 
   return mockTranslationTable[key];
@@ -73,7 +74,7 @@ describe("#new Normalizer", () => {
           startDate: "2022-02-15 16:15:23 UTC",
           endDate: "2022-02-15 18:15:23 UTC",
           donorRecipient: "person, people",
-          impactDescription: "of health insurance",
+          impactDescription: "health insurance",
           measurementUnit: "days_months_and_years",
           usdCentsToOneImpactUnit: "200",
         },
