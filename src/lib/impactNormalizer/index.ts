@@ -49,8 +49,10 @@ export function impactNormalizer(
   const nonProfitImpact = last(nonProfit?.nonProfitImpacts || []);
   const { measurementUnit, donorRecipient, impactDescription } = nonProfitImpact;
 
+  const isBasedOnTime = measurementUnit === "days_months_and_years";
+
   const recipientsCount = () => {
-    if (measurementUnit === "days_months_and_years") {
+    if (isBasedOnTime) {
       return Math.ceil(roundedImpact / MAX_DAYS_PER_DONOR_RECIPIENT);
     }
 
@@ -74,8 +76,8 @@ export function impactNormalizer(
   const formattedImpactAmount = () => {
     const rawImpactPerRecipient = Math.round(roundedImpact / recipientsCount());
 
-    if (measurementUnit === "days_months_and_years") {
-      return periodInWords(rawImpactPerRecipient, t);
+    if (isBasedOnTime) {
+      return `${periodInWords(rawImpactPerRecipient, t)} ${t("of")}`;
     }
 
     return rawImpactPerRecipient || "";
