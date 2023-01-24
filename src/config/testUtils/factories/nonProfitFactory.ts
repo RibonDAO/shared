@@ -1,6 +1,6 @@
 import NonProfit from "types/entities/NonProfit";
 import Cause from "types/entities/Cause";
-import { NonProfitImpact } from "types/entities/NonProfitImpact";
+import NonProfitImpact from "types/entities/NonProfitImpact";
 
 function nonProfitFactory(params: Partial<NonProfit> = {}): NonProfit {
   const defaultValues: NonProfit = {

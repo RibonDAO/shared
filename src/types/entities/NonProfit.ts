@@ -1,5 +1,5 @@
 import Cause from "./Cause";
-import { NonProfitImpact } from "./NonProfitImpact";
+import NonProfitImpact from "./NonProfitImpact";
 
 export default interface NonProfit {
   id: number;
