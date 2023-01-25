@@ -28,7 +28,6 @@ function useOffers(currency: Currencies, subscription = false) {
     getOffer,
     isLoading,
     refetch,
-    test: "test",
   };
 }
 
