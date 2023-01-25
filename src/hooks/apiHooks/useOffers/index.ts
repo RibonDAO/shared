@@ -11,6 +11,10 @@ function useOffers(currency: Currencies, subscription = false) {
   } = useApi<Offer[]>({
     key: "offers",
     fetchMethod: () => offersApi.getOffers(currency, subscription),
+    criteria: [currency, subscription],
+    options: {
+      enabled: !!currency,
+    },
   });
 
   async function getOffer(offerId: number) {
@@ -24,6 +28,7 @@ function useOffers(currency: Currencies, subscription = false) {
     getOffer,
     isLoading,
     refetch,
+    test: "test",
   };
 }
 
