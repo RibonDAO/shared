@@ -35,33 +35,41 @@ describe("#new Normalizer", () => {
 
     describe("when the impact is an integer higher than 200", () => {
       it("formats by integer", () => {
-        expect(impactNormalizer(nonProfit, 1000, t)).toEqual(
-          "200 kgs of food for 5 people",
-        );
+        expect(impactNormalizer(nonProfit, 1000, t)).toEqual([
+          200,
+          "kgs of food for",
+          "5 people",
+        ]);
       });
     });
 
     describe("when the impact is an integer lower than 200", () => {
       it("formats by integer", () => {
-        expect(impactNormalizer(nonProfit, 100, t)).toEqual(
-          "100 kgs of food for 1 person",
-        );
+        expect(impactNormalizer(nonProfit, 100, t)).toEqual([
+          100,
+          "kgs of food for",
+          "1 person",
+        ]);
       });
     });
 
     describe("when the impact is an integer equal 1", () => {
       it("formats by integer", () => {
-        expect(impactNormalizer(nonProfit, 1, t)).toEqual(
-          "1 kg of food for 1 person",
-        );
+        expect(impactNormalizer(nonProfit, 1, t)).toEqual([
+          1,
+          "kg of food for",
+          "1 person",
+        ]);
       });
     });
 
     describe("when the impact is an integer not divisible by 200", () => {
       it("formats by integer", () => {
-        expect(impactNormalizer(nonProfit, 281, t)).toEqual(
-          "141 kgs of food for 2 people",
-        );
+        expect(impactNormalizer(nonProfit, 281, t)).toEqual([
+          141,
+          "kgs of food for",
+          "2 people",
+        ]);
       });
     });
   });
@@ -83,57 +91,71 @@ describe("#new Normalizer", () => {
 
     describe("when the period is exactly 1 year in days", () => {
       it("formats by period", () => {
-        expect(impactNormalizer(nonProfit, 365, t)).toEqual(
-          "1 year of health insurance for 1 person",
-        );
+        expect(impactNormalizer(nonProfit, 365, t)).toEqual([
+          "1 year",
+          "of health insurance for",
+          "1 person",
+        ]);
       });
     });
 
     describe("when the period exceeds 2 years in days", () => {
       it("formats by period", () => {
-        expect(impactNormalizer(nonProfit, 732, t)).toEqual(
-          "1 year and 1 day of health insurance for 2 people",
-        );
+        expect(impactNormalizer(nonProfit, 732, t)).toEqual([
+          "1 year and 1 day",
+          "of health insurance for",
+          "2 people",
+        ]);
       });
     });
 
     describe("when the period is less than 1 year in days", () => {
       it("formats by period", () => {
-        expect(impactNormalizer(nonProfit, 200, t)).toEqual(
-          "6 months and 20 days of health insurance for 1 person",
-        );
+        expect(impactNormalizer(nonProfit, 200, t)).toEqual([
+          "6 months and 20 days",
+          "of health insurance for",
+          "1 person",
+        ]);
       });
     });
 
     describe("when the period exceeds 1 year and less than 2 in days", () => {
       it("formats by period", () => {
-        expect(impactNormalizer(nonProfit, 400, t)).toEqual(
-          "1 year, 1 month and 5 days of health insurance for 1 person",
-        );
+        expect(impactNormalizer(nonProfit, 400, t)).toEqual([
+          "1 year, 1 month and 5 days",
+          "of health insurance for",
+          "1 person",
+        ]);
       });
     });
 
     describe("when the period is exactly 1 day", () => {
       it("formats by period", () => {
-        expect(impactNormalizer(nonProfit, 1, t)).toEqual(
-          "1 day of health insurance for 1 person",
-        );
+        expect(impactNormalizer(nonProfit, 1, t)).toEqual([
+          "1 day",
+          "of health insurance for",
+          "1 person",
+        ]);
       });
     });
 
     describe("when the period is exactly 10 years in days", () => {
       it("formats by period", () => {
-        expect(impactNormalizer(nonProfit, 3650, t)).toEqual(
-          "2 years of health insurance for 5 people",
-        );
+        expect(impactNormalizer(nonProfit, 3650, t)).toEqual([
+          "2 years",
+          "of health insurance for",
+          "5 people",
+        ]);
       });
     });
 
     describe("when the period exceeds 10 years in days", () => {
       it("formats by period", () => {
-        expect(impactNormalizer(nonProfit, 3700, t)).toEqual(
-          "1 year, 8 months and 12 days of health insurance for 6 people",
-        );
+        expect(impactNormalizer(nonProfit, 3700, t)).toEqual([
+          "1 year, 8 months and 12 days",
+          "of health insurance for",
+          "6 people",
+        ]);
       });
     });
   });
