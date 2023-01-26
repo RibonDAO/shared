@@ -60,30 +60,36 @@ export function impactNormalizer(
   };
 
   const formattedDonorRecipient = () => {
+    const count = recipientsCount();
     const recipients = splitByComma(donorRecipient || "");
-    if (recipientsCount() === 1) return first(recipients);
+    const recipient = count === 1 ? first(recipients) : last(recipients);
 
-    return last(recipients);
+    return `${count} ${recipient}`;
   };
 
   const formattedImpactDescription = () => {
     const descriptions = splitByComma(impactDescription || "");
-    if (roundedImpact === 1) return first(descriptions);
+    const description =
+      roundedImpact === 1 ? first(descriptions) : last(descriptions);
 
-    return last(descriptions);
+    const formattedByUnit = isBasedOnTime
+      ? `${t("of")} ${description}`
+      : description;
+
+    return `${formattedByUnit} ${t("for")}`;
   };
 
   const formattedImpactAmount = () => {
     const rawImpactPerRecipient = Math.round(roundedImpact / recipientsCount());
 
-    if (isBasedOnTime) {
-      return `${periodInWords(rawImpactPerRecipient, t)} ${t("of")}`;
-    }
+    if (isBasedOnTime) return periodInWords(rawImpactPerRecipient, t);
 
     return rawImpactPerRecipient || "";
   };
 
-  return `${formattedImpactAmount()} ${formattedImpactDescription()} ${t(
-    "for",
-  )} ${recipientsCount()} ${formattedDonorRecipient()}`;
+  return [
+    formattedImpactAmount(),
+    formattedImpactDescription(),
+    formattedDonorRecipient(),
+  ];
 }
