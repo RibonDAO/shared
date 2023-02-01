@@ -16,6 +16,7 @@ import usePromoterCardGivings from "./apiHooks/usePromoterCardGivings";
 import useSources from "./apiHooks/useSources";
 import useStories from "./apiHooks/useStories";
 import useUsers from "./apiHooks/useUsers";
+import useStatistics from "./apiHooks/useStatistics";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
@@ -42,5 +43,6 @@ export {
   useSources,
   useStories,
   useUsers,
+  useStatistics,
   initializeHooks,
 };

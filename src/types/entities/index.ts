@@ -11,6 +11,7 @@ import Offer from "./Offer";
 import Pool from "./Pool";
 import Story from "./Story";
 import User from "./User";
+import UserStatistics from "./UserStatistics";
 
 export {
     Cause,
@@ -26,4 +27,5 @@ export {
     Pool,
     Story,
     User,
+    UserStatistics
 };
