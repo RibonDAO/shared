@@ -4,6 +4,7 @@ import api, {
   API_SCOPE,
   apiPost,
   apiGet,
+  emptyRequest,
   initializeApi,
 } from "./api";
 import { client } from "./apiTheGraph";
@@ -31,6 +32,7 @@ export {
   API_SCOPE,
   apiPost,
   apiGet,
+  emptyRequest,
   client,
   poolsApi,
   promoterDonationsApi,
