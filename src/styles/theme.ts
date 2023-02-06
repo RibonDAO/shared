@@ -4,10 +4,9 @@ export interface Breakpoint {
   pad: string;
   desktop: string;
 }
+const spacings = [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 112];
 
 const getSpacing = (space: number): string => {
-  const spacings = [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 112];
-
   if (!spacings.includes(space)) {
     return "0px";
   }
@@ -78,6 +77,12 @@ const theme = {
       (typeof bottom === "number" ? ` ${getSpacing(bottom)}` : "") +
       (typeof left === "number" ? ` ${getSpacing(left)}` : "")
     }`,
+  spacingNative: (space: number): number => {
+    if (!spacings.includes(space)) {
+      return 0;
+    }
+    return space;
+  },
   breakpoints: {
     mobile: "0px",
     mobileMedium: "374px",
