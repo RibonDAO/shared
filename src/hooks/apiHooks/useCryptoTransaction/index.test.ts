@@ -10,8 +10,15 @@ describe("useCryptoTransaction", () => {
   const testAmount = "5.00";
   const testWallet = "0xBBBB";
   const testIntegrationId = 1;
+  const testCauseId = 1;
 
-  const transactionData = [testHash, testAmount, testWallet, testIntegrationId];
+  const transactionData = [
+    testHash,
+    testAmount,
+    testWallet,
+    testIntegrationId,
+    testCauseId,
+  ];
 
   beforeEach(() => {
     const { result } = renderHook(() => useCryptoTransaction());
@@ -31,6 +38,7 @@ describe("useCryptoTransaction", () => {
         testAmount,
         testWallet,
         testIntegrationId,
+        testCauseId,
       );
 
       expect(cryptoTransactionApi.postTransaction).toHaveBeenCalledWith(
