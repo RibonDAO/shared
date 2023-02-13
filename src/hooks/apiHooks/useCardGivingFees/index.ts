@@ -14,6 +14,7 @@ function useCardGivingFees(value: number, currency: Currencies) {
     options: {
       enabled: value > 0,
     },
+    criteria: [value, currency],
   });
 
   return { cardGivingFees, isLoading, refetch };

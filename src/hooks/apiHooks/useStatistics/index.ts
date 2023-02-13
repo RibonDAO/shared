@@ -5,7 +5,7 @@ import usersApi from "services/api/usersApi";
 
 type Props = {
   userId?: number;
-}
+};
 
 function useStatistics({ userId }: Props) {
   const { data: userStatistics } = useApi<UserStatistics>({
@@ -17,6 +17,7 @@ function useStatistics({ userId }: Props) {
     options: {
       enabled: !!userId,
     },
+    criteria: [userId],
   });
 
   return {

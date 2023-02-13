@@ -27,6 +27,7 @@ function useIntegrationImpact(
     options: {
       enabled: !!integrationId,
     },
+    criteria: [integrationId, startDate, endDate],
   });
 
   return { integrationImpact, isLoading, refetch, error };

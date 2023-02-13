@@ -28,6 +28,7 @@ function useNonProfitImpact(
     options: {
       enabled: !!nonProfitId && !!value && !!currency,
     },
+    criteria: [nonProfitId, value, currency],
   });
 
   return { nonProfitImpact, isLoading, refetch };
