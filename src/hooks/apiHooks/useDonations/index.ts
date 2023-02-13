@@ -13,6 +13,7 @@ function useDonations(userId: number | undefined) {
     options: {
       enabled: !!userId,
     },
+    criteria: [userId],
   });
 
   async function donate(

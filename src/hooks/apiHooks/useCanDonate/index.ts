@@ -18,6 +18,7 @@ function useCanDonate(integrationId: number | string | null) {
     options: {
       enabled: !!integrationId,
     },
+    criteria: [integrationId],
   });
 
   function formattedCanDonate() {

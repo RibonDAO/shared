@@ -12,6 +12,7 @@ function useImpact(userId: number | undefined) {
     options: {
       enabled: !!userId,
     },
+    criteria: [userId],
   });
 
   return {

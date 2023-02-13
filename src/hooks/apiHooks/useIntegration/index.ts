@@ -24,6 +24,7 @@ function useIntegration(integrationId: number | string | null | undefined) {
     options: {
       enabled: !!integrationId,
     },
+    criteria: [integrationId],
   });
 
   if (error) {
