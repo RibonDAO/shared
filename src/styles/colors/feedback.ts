@@ -1,8 +1,4 @@
-interface ThemeType {
-  [key: string]: any;
-}
-
-const feedbackColors: ThemeType = {
+const feedbackColors = {
   success: {
     25: "#F6FEF9",
     50: "#E5FBED",

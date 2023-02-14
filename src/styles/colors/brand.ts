@@ -1,8 +1,4 @@
-interface ThemeType {
-  [key: string]: any;
-}
-
-const brandColors: ThemeType = {
+const brandColors = {
   primary: {
     25: "#F6FEF9",
     50: "#E5FBED",

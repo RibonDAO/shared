@@ -1,8 +1,4 @@
-interface ThemeType {
-  [key: string]: any;
-}
-
-const neutralColors: ThemeType = {
+const neutralColors = {
   25: "#FAFAF9",
   50: "#F1F1EF",
   100: "#E5E2DC",
