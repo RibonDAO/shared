@@ -12,20 +12,22 @@ import Pool from "./Pool";
 import Story from "./Story";
 import User from "./User";
 import UserStatistics from "./UserStatistics";
+import PersonPayment from "./PersonPayment";
 
 export {
-    Cause,
-    CreditCardPayment,
-    CurrentNetwork,
-    Donation,
-    Impact,
-    Integration,
-    IntegrationTask,
-    NonProfit,
-    Notification,
-    Offer,
-    Pool,
-    Story,
-    User,
-    UserStatistics
+  Cause,
+  CreditCardPayment,
+  CurrentNetwork,
+  Donation,
+  Impact,
+  Integration,
+  IntegrationTask,
+  NonProfit,
+  Notification,
+  Offer,
+  Pool,
+  Story,
+  User,
+  UserStatistics,
+  PersonPayment,
 };
