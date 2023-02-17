@@ -8,7 +8,12 @@ type Props = {
 };
 
 function useStatistics({ userId }: Props) {
-  const { data: userStatistics } = useApi<UserStatistics>({
+  const {
+    data: userStatistics,
+    refetch,
+    error,
+    isLoading,
+  } = useApi<UserStatistics>({
     key: "statistics",
     fetchMethod: () => {
       if (!userId) return emptyRequest();
@@ -22,6 +27,9 @@ function useStatistics({ userId }: Props) {
 
   return {
     userStatistics,
+    refetch,
+    error,
+    isLoading,
   };
 }
 

@@ -3,7 +3,12 @@ import { useApi } from "hooks/useApi";
 import Impact from "types/entities/Impact";
 
 function useImpact(userId: number | undefined) {
-  const { data: userImpact } = useApi<Impact[]>({
+  const {
+    data: userImpact,
+    refetch,
+    error,
+    isLoading,
+  } = useApi<Impact[]>({
     key: "impacts",
     fetchMethod: () => {
       const id = userId || null;
@@ -17,6 +22,9 @@ function useImpact(userId: number | undefined) {
 
   return {
     userImpact,
+    refetch,
+    error,
+    isLoading,
   };
 }
 
