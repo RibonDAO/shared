@@ -24,6 +24,7 @@ import promoterCardGivingsApi from "./api/promoterCardGivingsApi";
 import sourcesApi from "./api/sourcesApi";
 import storiesApi from "./api/storiesApi";
 import usersApi from "./api/usersApi";
+import personPaymentsApi from "./api/personPaymentsApi";
 
 export {
   api,
@@ -50,5 +51,6 @@ export {
   sourcesApi,
   storiesApi,
   usersApi,
+  personPaymentsApi,
   initializeApi,
 };
