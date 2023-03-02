@@ -1,6 +1,11 @@
 import { initializeApi, InitializeApiProps } from "services/api";
 import { useApi } from "./useApi";
-import QueryClientComponent from "./useApi/queryClient";
+import QueryClientComponent, {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+  UseQueryOptions,
+} from "./useApi/queryClient";
 import useCanDonate from "./apiHooks/useCanDonate";
 import useCardGivingFees from "./apiHooks/useCardGivingFees";
 import useCauses from "./apiHooks/useCauses";
@@ -45,4 +50,8 @@ export {
   useUsers,
   useStatistics,
   initializeHooks,
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+  UseQueryOptions,
 };
