@@ -13,8 +13,12 @@ import Story from "./Story";
 import User from "./User";
 import UserStatistics from "./UserStatistics";
 import PersonPayment from "./PersonPayment";
+import Article from "./Article";
+import Author from "./Author";
 
 export {
+  Article,
+  Author,
   Cause,
   CreditCardPayment,
   CurrentNetwork,

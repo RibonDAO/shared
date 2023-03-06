@@ -22,6 +22,7 @@ import useSources from "./apiHooks/useSources";
 import useStories from "./apiHooks/useStories";
 import useUsers from "./apiHooks/useUsers";
 import useStatistics from "./apiHooks/useStatistics";
+import useArticles from "./apiHooks/useArticles";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
@@ -33,6 +34,7 @@ function initializeHooks({ initializeApiOptions }: InitializeHooksProps) {
 export {
   useApi,
   QueryClientComponent,
+  useArticles,
   useCanDonate,
   useCardGivingFees,
   useCauses,
