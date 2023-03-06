@@ -5,9 +5,10 @@ import usersApi from "services/api/usersApi";
 
 type Props = {
   userId?: number;
+  walletAddress?: string;
 };
 
-function useStatistics({ userId }: Props) {
+function useStatistics({ userId, walletAddress }: Props) {
   const {
     data: userStatistics,
     refetch,
@@ -16,13 +17,12 @@ function useStatistics({ userId }: Props) {
   } = useApi<UserStatistics>({
     key: "statistics",
     fetchMethod: () => {
-      if (!userId) return emptyRequest();
-      return usersApi.getUserStatistics(userId);
+      if (!userId && !walletAddress) return emptyRequest();
+      return usersApi.getUserStatistics(
+        userId ? userId : undefined,
+        walletAddress ? window.btoa(walletAddress.toLowerCase()) : undefined,
+      );
     },
-    options: {
-      enabled: !!userId,
-    },
-    criteria: [userId],
   });
 
   return {
