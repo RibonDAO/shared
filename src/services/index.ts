@@ -25,6 +25,7 @@ import sourcesApi from "./api/sourcesApi";
 import storiesApi from "./api/storiesApi";
 import usersApi from "./api/usersApi";
 import personPaymentsApi from "./api/personPaymentsApi";
+import articlesApi from "./api/articlesApi";
 
 export {
   api,
@@ -36,6 +37,7 @@ export {
   emptyRequest,
   client,
   poolsApi,
+  articlesApi,
   promoterDonationsApi,
   causesApi,
   creditCardPaymentApi,

@@ -25,9 +25,9 @@ api.interceptors.request.use((request) =>
 
 export type InitializeApiProps = {
   url: string;
-    headers: Record<any, any>;
-}
-export function initializeApi({url, headers}: InitializeApiProps) {
+  headers: Record<any, any>;
+};
+export function initializeApi({ url, headers }: InitializeApiProps) {
   api.interceptors.request.use((config) => {
     // eslint-disable-next-line
     config.baseURL = url;
@@ -35,7 +35,7 @@ export function initializeApi({url, headers}: InitializeApiProps) {
     config.headers = { ...headers, ...config.headers };
 
     return config;
-  })
+  });
 }
 
 api.interceptors.response.use(
@@ -50,6 +50,22 @@ export function apiGet(url: string, config?: AxiosRequestConfig) {
   if (config) return api.get(`${API_SCOPE}/${url}`, config);
 
   return api.get(`${API_SCOPE}/${url}`);
+}
+
+export function apiGetWithParams(
+  url: string,
+  params: any,
+  config?: AxiosRequestConfig,
+) {
+  if (config)
+    return api.get(`${API_SCOPE}/${url}`, {
+      ...config,
+      params,
+    });
+
+  return api.get(`${API_SCOPE}/${url}`, {
+    params,
+  });
 }
 
 export function apiPost(url: string, data: any, config?: AxiosRequestConfig) {
