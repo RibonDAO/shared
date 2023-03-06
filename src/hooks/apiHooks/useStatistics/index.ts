@@ -19,9 +19,13 @@ function useStatistics({ userId, walletAddress }: Props) {
     fetchMethod: () => {
       if (!userId && !walletAddress) return emptyRequest();
       return usersApi.getUserStatistics(
-        userId ? userId : undefined,
+        userId || undefined,
         walletAddress ? window.btoa(walletAddress.toLowerCase()) : undefined,
       );
+    },
+    criteria: [userId, walletAddress],
+    options: {
+      enabled: !!userId || !!walletAddress,
     },
   });
 
