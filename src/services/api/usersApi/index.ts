@@ -10,8 +10,15 @@ const usersApi = {
   postSearchUser: (email: string): Promise<AxiosResponse<User>> =>
     apiPost("users/search", { email }),
 
-  getUserStatistics: (id: number): Promise<AxiosResponse<User>> =>
-    apiGet(`users/${id}/statistics`),
+  getUserStatistics: (
+    id?: number,
+    walletAddress?: string,
+  ): Promise<AxiosResponse<User>> =>
+    apiGet(
+      `users/statistics/?${id ? `id=${id}` : ""}${
+        walletAddress ? `&walletAddress=${walletAddress}` : ""
+      }`,
+    ),
 
   postCanDonate: (
     integrationId: number | string,
