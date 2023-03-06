@@ -15,8 +15,8 @@ const usersApi = {
     walletAddress?: string,
   ): Promise<AxiosResponse<User>> =>
     apiGet(
-      `users/statistics/?${id ? `id=${id}` : ""}${
-        walletAddress ? `&walletAddress=${walletAddress}` : ""
+      `users/statistics/?${id ? `id=${id}&` : ""}${
+        walletAddress ? `walletAddress=${walletAddress}` : ""
       }`,
     ),
 
