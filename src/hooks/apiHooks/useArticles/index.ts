@@ -10,6 +10,8 @@ function useArticles() {
     const { data: allArticles } = await articlesApi.getArticlesList({
       page,
       perPage: 15,
+      sort: "published_at",
+      sortDir: "desc",
     });
 
     setArticles((oldArticles) => [...oldArticles, ...allArticles]);
