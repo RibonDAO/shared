@@ -9,6 +9,6 @@ export default interface Article {
   updatedAt: string;
   publishedAt: string;
   publishedAtInWords: string;
-  link: string;
+  link?: string;
   author: Author;
 }
