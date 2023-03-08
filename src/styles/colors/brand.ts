@@ -14,7 +14,7 @@ const brandColors = {
   },
   secondary: {
     25: "#FFF7F0",
-    50: "##FFF1E5",
+    50: "#FFF1E5",
     100: "#FFE7D6",
     200: "#FFCAA5",
     300: "#FFA86D",
