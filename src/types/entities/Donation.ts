@@ -8,4 +8,5 @@ export default interface Donation {
   nonProfit: NonProfit;
   user: User;
   value: string;
+  platform: string;
 }

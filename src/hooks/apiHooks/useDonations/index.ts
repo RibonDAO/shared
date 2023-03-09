@@ -20,6 +20,7 @@ function useDonations(userId: number | undefined) {
     integrationId: number,
     nonProfitId: number,
     email: string,
+    platform?: string,
     externalId?: string,
   ) {
     if (externalId) {
@@ -28,12 +29,13 @@ function useDonations(userId: number | undefined) {
         nonProfitId,
         email,
         externalId,
+        platform,
       );
 
       return;
     }
 
-    await donationsApi.postDonation(integrationId, nonProfitId, email);
+    await donationsApi.postDonation(integrationId, nonProfitId, email, platform);
   }
 
   return {
