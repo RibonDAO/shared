@@ -7,20 +7,23 @@ const donationsApi = {
     integrationId: number,
     nonProfitId: number,
     email: string,
+    platform?: string,
   ): Promise<AxiosResponse<Donation>> =>
-    apiPost("donations", { integrationId, nonProfitId, email }),
+    apiPost("donations", { integrationId, nonProfitId, email, platform }),
 
   postVoucherDonation: (
     integrationId: number,
     nonProfitId: number,
     email: string,
     externalId: string,
+    platform?: string,
   ): Promise<AxiosResponse<Donation>> =>
     apiPost("vouchers/donations", {
       integrationId,
       nonProfitId,
       email,
       externalId,
+      platform,
     }),
 };
 
