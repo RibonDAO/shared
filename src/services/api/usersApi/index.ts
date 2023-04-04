@@ -26,7 +26,7 @@ const usersApi = {
   ): Promise<AxiosResponse<CanDonate>> =>
     apiPost("users/can_donate", { integrationId }),
 
-  getCompletedTasks: (): Promise<AxiosResponse<CompletedTask>> =>
+  getCompletedTasks: (): Promise<AxiosResponse<CompletedTask[]>> =>
     apiGet(`users/completed_tasks`),
 
   postCompleteTask: (
