@@ -23,6 +23,7 @@ import useStories from "./apiHooks/useStories";
 import useUsers from "./apiHooks/useUsers";
 import useStatistics from "./apiHooks/useStatistics";
 import useArticles from "./apiHooks/useArticles";
+import useCompletedTasks from "./apiHooks/useCompletedTasks";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
@@ -56,4 +57,5 @@ export {
   QueryClientProvider,
   useQuery,
   UseQueryOptions,
+  useCompletedTasks,
 };
