@@ -44,4 +44,18 @@ describe("usersApi", () => {
       });
     });
   });
+
+  describe("#postCompleteTask", () => {
+    beforeEach(() => {
+      api.post = jest.fn();
+    });
+
+    it("expects to send a get request with the correct info: url, params and headers", () => {
+      usersApi.postCompleteTask("identifier");
+
+      expect(api.post).toHaveBeenCalledWith("/api/v1/users/complete_task", {
+        taskIdentifier: "identifier",
+      });
+    });
+  });
 });
