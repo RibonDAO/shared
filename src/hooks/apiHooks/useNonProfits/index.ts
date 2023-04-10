@@ -15,7 +15,7 @@ export function useNonProfits() {
   return { nonProfits, isLoading, refetch };
 }
 
-export function usFreeDonationNonProfits() {
+export function useFreeDonationNonProfits() {
   const {
     data: nonProfits,
     isLoading,
