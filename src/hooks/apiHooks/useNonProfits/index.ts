@@ -2,7 +2,7 @@ import { useApi } from "hooks/useApi";
 import nonProfitsApi from "services/api/nonProfitsApi";
 import NonProfit from "types/entities/NonProfit";
 
-function useNonProfits() {
+export function useNonProfits() {
   const {
     data: nonProfits,
     isLoading,
@@ -15,4 +15,15 @@ function useNonProfits() {
   return { nonProfits, isLoading, refetch };
 }
 
-export default useNonProfits;
+export function usFreeDonationNonProfits() {
+  const {
+    data: nonProfits,
+    isLoading,
+    refetch,
+  } = useApi<NonProfit[]>({
+    key: "nonProfits",
+    fetchMethod: nonProfitsApi.getFreeDonationNonProfits,
+  });
+
+  return { nonProfits, isLoading, refetch };
+}
