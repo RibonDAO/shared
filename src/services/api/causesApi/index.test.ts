@@ -14,6 +14,18 @@ describe("causesApi", () => {
     });
   });
 
+  describe("#getFreeDonationCauses", () => {
+    beforeEach(() => {
+      api.get = jest.fn();
+    });
+
+    it("expects to send a get request with the correct info: url, params and headers", () => {
+      causesApi.getFreeDonationCauses();
+
+      expect(api.get).toHaveBeenCalledWith("/api/v1/free_donation_causes/");
+    });
+  });
+
   describe("#getCause", () => {
     const causeId = 1;
     beforeEach(() => {
