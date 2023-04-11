@@ -22,8 +22,9 @@ const usersApi = {
 
   postCanDonate: (
     integrationId: number | string,
+    platform: string,
   ): Promise<AxiosResponse<CanDonate>> =>
-    apiPost("users/can_donate", { integrationId }),
+    apiPost("users/can_donate", { integrationId, user_agent: platform }),
 };
 
 export default usersApi;
