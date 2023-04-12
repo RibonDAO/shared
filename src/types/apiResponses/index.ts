@@ -6,6 +6,7 @@ import PoolBalance from "./PoolBalance";
 import PromoterCardGiving from "./PromoterCardGiving";
 import PromoterDonation from "./PromoterDonation";
 import IntegrationImpact from "./IntegrationImpact";
+import CompletedTask from "./CompletedTask";
 
 export {
   CanDonate,
@@ -16,4 +17,5 @@ export {
   PromoterCardGiving,
   PromoterDonation,
   IntegrationImpact,
+  CompletedTask,
 };

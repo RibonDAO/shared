@@ -1,6 +1,7 @@
 import { AxiosResponse } from "axios";
 import User from "types/entities/User";
 import CanDonate from "types/apiResponses/CanDonate";
+import CompletedTask from "types/apiResponses/CompletedTask";
 import { apiPost, apiGet } from "..";
 
 const usersApi = {
@@ -25,6 +26,14 @@ const usersApi = {
     platform: string,
   ): Promise<AxiosResponse<CanDonate>> =>
     apiPost("users/can_donate", { integrationId, user_agent: platform }),
+
+  getCompletedTasks: (): Promise<AxiosResponse<CompletedTask[]>> =>
+    apiGet("users/completed_tasks"),
+
+  postCompleteTask: (
+    taskIdentifier: number | string,
+  ): Promise<AxiosResponse<CompletedTask>> =>
+    apiPost("users/complete_task", { taskIdentifier }),
 };
 
 export default usersApi;
