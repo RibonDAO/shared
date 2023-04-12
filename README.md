@@ -64,6 +64,7 @@ cd dist
 yarn link
 ```
 Notice you need to link the dist folder, that is generated after the build process.
+**Observation: This does not work with react-native (see more in [here](https://stackoverflow.com/questions/44061155/react-native-npm-link-local-dependency-unable-to-resolve-module)). You can check the section React Native Problems below to see how to use it on the mobile app.**
 
 Then in the project you want to test the changes:
 ```console
@@ -92,11 +93,18 @@ you see a necessity, you can move it to the shared lib. This way you can test it
 - Hooks and services
 - Small libs (NOT IMPLEMENTED YET)
 
-
-
 ### React-native problems
 React-native doesn't recognize stylized typography (that one using the Gambarino font). So we need to use a different approach to load custom fonts on mobile frontends.
 It will be implemented until the end of 2022.
+
+React-native doesn't support symlinks, so we cannot use `yarn link` to build locally.
+To develop locally, you can use the command `yarn dev` on the ribon-shared project
+and create a .env with the relative path to the mobile app project. Example:
+```
+RIBON_NATIVE_PATH=../native-dapp
+```
+It has to have the RIBON_NATIVE_PATH variable and a relative path from the ribon-shared directory.
+It will copy the dist folder to the mobile app project and you can use the local version of the lib.
 
 
 
