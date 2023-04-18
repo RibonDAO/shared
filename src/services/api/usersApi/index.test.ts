@@ -41,7 +41,7 @@ describe("usersApi", () => {
 
       expect(api.post).toHaveBeenCalledWith("/api/v1/users/can_donate", {
         integrationId: 1,
-        user_agent: "app",
+        platform: "app",
       });
     });
   });
