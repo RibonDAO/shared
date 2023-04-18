@@ -37,10 +37,11 @@ describe("usersApi", () => {
     });
 
     it("expects to send a get request with the correct info: url, params and headers", () => {
-      usersApi.postCanDonate(1);
+      usersApi.postCanDonate(1, "app");
 
       expect(api.post).toHaveBeenCalledWith("/api/v1/users/can_donate", {
         integrationId: 1,
+        platform: "app",
       });
     });
   });

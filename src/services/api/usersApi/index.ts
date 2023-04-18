@@ -23,11 +23,12 @@ const usersApi = {
 
   postCanDonate: (
     integrationId: number | string,
+    platform: string,
   ): Promise<AxiosResponse<CanDonate>> =>
-    apiPost("users/can_donate", { integrationId }),
+    apiPost("users/can_donate", { integrationId, platform }),
 
   getCompletedTasks: (): Promise<AxiosResponse<CompletedTask[]>> =>
-    apiGet(`users/completed_tasks`),
+    apiGet("users/completed_tasks"),
 
   postCompleteTask: (
     taskIdentifier: number | string,
