@@ -24,8 +24,9 @@ const usersApi = {
   postCanDonate: (
     integrationId: number | string,
     platform: string,
+    voucherId?: string,
   ): Promise<AxiosResponse<CanDonate>> =>
-    apiPost("users/can_donate", { integrationId, platform }),
+    apiPost("users/can_donate", { integrationId, platform, voucherId }),
 
   getCompletedTasks: (): Promise<AxiosResponse<CompletedTask[]>> =>
     apiGet("users/completed_tasks"),

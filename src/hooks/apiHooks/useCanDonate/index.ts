@@ -3,7 +3,11 @@ import usersApi from "services/api/usersApi";
 import CanDonate from "types/apiResponses/CanDonate";
 import { emptyRequest } from "services/api";
 
-function useCanDonate(integrationId: number | string | null, platform: string) {
+function useCanDonate(
+  integrationId: number | string | null,
+  platform: string,
+  voucherId?: string,
+) {
   const {
     data: canDonate,
     isLoading,
@@ -11,14 +15,15 @@ function useCanDonate(integrationId: number | string | null, platform: string) {
   } = useApi<CanDonate>({
     key: "canDonate",
     fetchMethod: () => {
-      if (integrationId) return usersApi.postCanDonate(integrationId, platform);
+      if (integrationId)
+        return usersApi.postCanDonate(integrationId, platform, voucherId);
 
       return emptyRequest();
     },
     options: {
       enabled: !!integrationId,
     },
-    criteria: [integrationId],
+    criteria: [integrationId, voucherId],
   });
 
   function formattedCanDonate() {
