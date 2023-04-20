@@ -17,6 +17,7 @@ import donationImpactsApi from "./api/donationImpactsApi";
 import donationsApi from "./api/donationsApi";
 import givingFeesApi from "./api/givingFeesApi";
 import impactApi from "./api/impactApi";
+import legacyImpactApi from "./api/legacyImpactApi";
 import integrationsApi from "./api/integrationsApi";
 import nonProfitImpactApi from "./api/nonProfitImpactApi";
 import offersApi from "./api/offersApi";
@@ -46,6 +47,7 @@ export {
   donationsApi,
   givingFeesApi,
   impactApi,
+  legacyImpactApi,
   integrationsApi,
   nonProfitImpactApi,
   offersApi,
