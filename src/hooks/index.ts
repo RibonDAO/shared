@@ -12,6 +12,7 @@ import { useCauses, useFreeDonationCauses } from "./apiHooks/useCauses";
 import useCryptoTransaction from "./apiHooks/useCryptoTransaction";
 import useDonations from "./apiHooks/useDonations";
 import useImpact from "./apiHooks/useImpact";
+import useLegacyImpact from "./apiHooks/useLegacyImpact";
 import useIntegration from "./apiHooks/useIntegration";
 import useIntegrationImpact from "./apiHooks/useIntegrationImpact";
 import useNonProfitImpact from "./apiHooks/useNonProfitImpact";
@@ -43,6 +44,7 @@ export {
   useCryptoTransaction,
   useDonations,
   useImpact,
+  useLegacyImpact,
   useIntegration,
   useIntegrationImpact,
   useNonProfitImpact,

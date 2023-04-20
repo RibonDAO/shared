@@ -3,6 +3,8 @@ import CreditCardPayment from "./CreditCardPayment";
 import CurrentNetwork from "./CurrentNetwork";
 import Donation from "./Donation";
 import Impact from "./Impact";
+import LegacyUserImpact from "./LegacyUserImpact";
+import LegacyNonProfit from "types/entities/LegacyNonProfit";
 import Integration from "./Integration";
 import IntegrationTask from "./IntegrationTask";
 import NonProfit from "./NonProfit";
@@ -34,4 +36,6 @@ export {
   User,
   UserStatistics,
   PersonPayment,
+  LegacyUserImpact,
+  LegacyNonProfit,
 };
