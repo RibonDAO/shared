@@ -3,4 +3,5 @@ export default interface User {
   email: string;
   lastDonationAt?: string;
   lastDonatedCause?: number;
+  donateNative?: boolean;
 }
