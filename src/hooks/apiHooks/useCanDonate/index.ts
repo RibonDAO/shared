@@ -32,7 +32,18 @@ function useCanDonate(
     return canDonate.canDonate;
   }
 
-  return { canDonate: formattedCanDonate(), isLoading, refetch };
+  function formattedDonateApp() {
+    if (canDonate === undefined) return true;
+
+    return canDonate.donateApp;
+  }
+
+  return {
+    canDonate: formattedCanDonate(),
+    donateApp: formattedDonateApp(),
+    isLoading,
+    refetch,
+  };
 }
 
 export default useCanDonate;
