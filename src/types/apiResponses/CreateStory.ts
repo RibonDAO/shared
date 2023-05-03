@@ -1,4 +1,4 @@
-export interface CreateStory {
+export default interface CreateStory {
   id?: string | number;
   title: string;
   active?: boolean;

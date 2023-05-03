@@ -4,7 +4,7 @@ import CurrentNetwork from "./CurrentNetwork";
 import Donation from "./Donation";
 import Impact from "./Impact";
 import LegacyUserImpact from "./LegacyUserImpact";
-import LegacyNonProfit from "types/entities/LegacyNonProfit";
+import LegacyNonProfit from "./LegacyNonProfit";
 import Integration from "./Integration";
 import IntegrationTask from "./IntegrationTask";
 import NonProfit from "./NonProfit";
@@ -17,6 +17,14 @@ import UserStatistics from "./UserStatistics";
 import PersonPayment from "./PersonPayment";
 import Article from "./Article";
 import Author from "./Author";
+import BigDonor from "./BigDonor";
+import BigDonation from "./BigDonation";
+import Refund from "./Refund";
+import RibonConfig from "./RibonConfig";
+import Token from "./Token";
+import CryptoUser from "./CryptoUser";
+import Guest from "./Guest";
+import Customer from "./Customer";
 
 export {
   Article,
@@ -38,4 +46,12 @@ export {
   PersonPayment,
   LegacyUserImpact,
   LegacyNonProfit,
+  BigDonation,
+  BigDonor,
+  Refund,
+  RibonConfig,
+  Token,
+  CryptoUser,
+  Guest,
+  Customer,
 };

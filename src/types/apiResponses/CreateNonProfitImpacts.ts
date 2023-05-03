@@ -1,4 +1,4 @@
-export interface CreateNonProfitImpacts {
+export default interface CreateNonProfitImpacts {
   id?: number;
   endDate?: string;
   startDate?: string;
