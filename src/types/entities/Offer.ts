@@ -4,6 +4,8 @@ export default interface Offer {
   subscription: boolean;
   priceCents: number;
   price: string;
+  gateway: string;
+  externalId: string;
   priceValue: number;
   active: boolean;
   title?: string;

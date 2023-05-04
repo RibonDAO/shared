@@ -9,7 +9,7 @@ export default interface PersonPayment {
   offer: Offer;
   page: number;
   paidDate: string;
-  payment_method: string;
+  paymentMethod: string;
   person: {
     id: string;
     customer: {

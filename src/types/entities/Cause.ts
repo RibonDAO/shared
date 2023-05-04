@@ -1,4 +1,5 @@
 import Pool from "./Pool";
+import NonProfit from "./NonProfit";
 
 export default interface Cause {
   id: number;
@@ -7,5 +8,7 @@ export default interface Cause {
   coverImage?: string;
   logo?: string;
   active: boolean;
+  nonProfits?: NonProfit[];
   pools: Pool[];
+  defaultPool?: string;
 }

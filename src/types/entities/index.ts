@@ -8,6 +8,7 @@ import LegacyNonProfit from "./LegacyNonProfit";
 import Integration from "./Integration";
 import IntegrationTask from "./IntegrationTask";
 import NonProfit from "./NonProfit";
+import NonProfitImpact from "./NonProfitImpact";
 import Notification from "./Notification";
 import Offer from "./Offer";
 import Pool from "./Pool";
@@ -25,6 +26,7 @@ import Token from "./Token";
 import CryptoUser from "./CryptoUser";
 import Guest from "./Guest";
 import Customer from "./Customer";
+import IntegrationWallet from "./IntegrationWallet";
 
 export {
   Article,
@@ -37,6 +39,7 @@ export {
   Integration,
   IntegrationTask,
   NonProfit,
+  NonProfitImpact,
   Notification,
   Offer,
   Pool,
@@ -54,4 +57,5 @@ export {
   CryptoUser,
   Guest,
   Customer,
+  IntegrationWallet,
 };

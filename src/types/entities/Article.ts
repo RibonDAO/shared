@@ -11,4 +11,5 @@ export default interface Article {
   publishedAtInWords: string;
   link?: string;
   author: Author;
+  language?: string;
 }

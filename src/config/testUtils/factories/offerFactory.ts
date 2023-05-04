@@ -8,6 +8,8 @@ function offerFactory(params: Partial<Offer> = {}): Offer {
     positionOrder: 0,
     price: "$10.00",
     priceCents: 1000,
+    gateway: "stripe",
+    externalId: "price_1J5Y2nG2ZvKYlo2CJ5X2nG2Z",
     priceValue: 10.0,
     subscription: true,
     title: "",

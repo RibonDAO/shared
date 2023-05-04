@@ -12,6 +12,8 @@ function promoterCardGivingFactory(
       currency: "usd",
       id: 5,
       price: "$10.00",
+      gateway: "stripe",
+      externalId: "price_1J5Y2nG2ZvKYlo2CJ5X2nG2Z",
       priceCents: 1000,
       priceValue: 10,
       subscription: false,
