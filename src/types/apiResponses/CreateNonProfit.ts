@@ -3,7 +3,7 @@ import CreateNonProfitImpacts from "./CreateNonProfitImpacts";
 import CreateStory from "./CreateStory";
 
 export default interface CreateNonProfit {
-  id?: string;
+  id?: number;
   name: string;
   walletAddress: string;
   status: string;
