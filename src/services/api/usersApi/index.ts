@@ -2,6 +2,7 @@ import { AxiosResponse } from "axios";
 import User from "types/entities/User";
 import CanDonate from "types/apiResponses/CanDonate";
 import CompletedTask from "types/apiResponses/CompletedTask";
+import TasksStatistics from "types/apiResponses/TasksStatistics";
 import { apiPost, apiGet } from "..";
 
 const usersApi = {
@@ -35,6 +36,15 @@ const usersApi = {
     taskIdentifier: number | string,
   ): Promise<AxiosResponse<CompletedTask>> =>
     apiPost("users/complete_task", { taskIdentifier }),
+
+  getTasksStatistics: (): Promise<AxiosResponse<TasksStatistics>> =>
+    apiGet("users/tasks_statistics"),
+
+  postCompletedAllTasks: (): Promise<AxiosResponse<TasksStatistics>> =>
+    apiPost("users/completed_all_tasks", {}),
+
+  postUpdateStreak: (): Promise<AxiosResponse<TasksStatistics>> =>
+    apiPost("users/update_streak", {}),
 };
 
 export default usersApi;
