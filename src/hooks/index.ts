@@ -25,6 +25,7 @@ import useUsers from "./apiHooks/useUsers";
 import useStatistics from "./apiHooks/useStatistics";
 import useArticles from "./apiHooks/useArticles";
 import useCompletedTasks from "./apiHooks/useCompletedTasks";
+import useTasksStatistics from "./apiHooks/useTasksStatistics";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
@@ -62,4 +63,5 @@ export {
   useQuery,
   UseQueryOptions,
   useCompletedTasks,
+  useTasksStatistics,
 };
