@@ -8,4 +8,5 @@ export default interface Story {
   active?: boolean;
   image: string;
   nonProfit?: NonProfit;
+  imageDescription?: string;
 }

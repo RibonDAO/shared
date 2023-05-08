@@ -8,8 +8,13 @@ export default interface NonProfit {
   walletAddress: string;
   impactDescription: string;
   backgroundImage: string;
+  confirmationImage: string;
   coverImage: string;
   mainImage: string;
+  backgroundImageDescription: string;
+  confirmationImageDescription: string;
+  coverImageDescription: string;
+  mainImageDescription: string;
   logo: string;
   impactByTicket: number;
   createdAt?: string;

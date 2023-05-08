@@ -8,4 +8,6 @@ export default interface Cause {
   logo?: string;
   active: boolean;
   pools: Pool[];
+  coverImageDescription?: string;
+  mainImageDescription?: string;
 }
