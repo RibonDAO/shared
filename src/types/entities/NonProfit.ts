@@ -11,6 +11,10 @@ export default interface NonProfit {
   confirmationImage: string;
   coverImage: string;
   mainImage: string;
+  backgroundImageDescription: string;
+  confirmationImageDescription: string;
+  coverImageDescription: string;
+  mainImageDescription: string;
   logo: string;
   impactByTicket: number;
   createdAt?: string;
