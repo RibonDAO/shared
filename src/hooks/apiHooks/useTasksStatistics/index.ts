@@ -3,7 +3,11 @@ import usersApi from "services/api/usersApi";
 import TasksStatistics from "types/apiResponses/TasksStatistics";
 
 function useTasksStatistics() {
-  const { data: tasksStatistics } = useApi<TasksStatistics>({
+  const {
+    refetch,
+    isLoading,
+    data: tasksStatistics,
+  } = useApi<TasksStatistics>({
     key: "tasksStatistics",
     fetchMethod: () => usersApi.getTasksStatistics(),
   });
@@ -22,6 +26,8 @@ function useTasksStatistics() {
 
   return {
     tasksStatistics,
+    isLoadingTasksStatistics: isLoading,
+    refetchTasksStatistics: refetch,
     completeAllTasks,
     updateStreak,
   };
