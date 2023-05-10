@@ -13,10 +13,15 @@ function nonProfitFactory(params: Partial<NonProfit> = {}): NonProfit {
     impactDescription: "Impact description",
     impactByTicket: 1,
     backgroundImage: "",
+    confirmationImage: "",
     coverImage: "",
     mainImage: "",
     status: "active",
     causeId: 1,
+    backgroundImageDescription: "Background image description",
+    confirmationImageDescription: "Confirmation image description",
+    coverImageDescription: "Cover image description",
+    mainImageDescription: "Main image description",
     nonProfitImpacts: [
       {
         id: 1,

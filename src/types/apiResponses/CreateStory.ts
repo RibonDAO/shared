@@ -5,4 +5,5 @@ export default interface CreateStory {
   position?: number;
   description: string;
   image?: any;
+  imageDescription?: string;
 }

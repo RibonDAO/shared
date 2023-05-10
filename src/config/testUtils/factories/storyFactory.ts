@@ -6,6 +6,7 @@ function storyFactory(params: Partial<Story> = {}): Story {
     title: "Story title",
     description: "Story description",
     image: "image.jpeg",
+    imageDescription: "Image description",
   };
   return Object.assign(defaultValues, params) as Story;
 }

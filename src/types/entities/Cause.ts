@@ -11,4 +11,6 @@ export default interface Cause {
   nonProfits?: NonProfit[];
   pools: Pool[];
   defaultPool?: string;
+  coverImageDescription?: string;
+  mainImageDescription?: string;
 }
