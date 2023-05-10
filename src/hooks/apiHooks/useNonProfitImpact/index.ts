@@ -1,7 +1,7 @@
 import { useApi } from "hooks/useApi";
 import { Currencies } from "types/enums/Currencies";
 import nonProfitImpactApi from "services/api/nonProfitImpactApi";
-import NonProfitImpact from "types/apiResponses/NonProfitImpact";
+import NonProfitImpactResponse from "types/apiResponses/NonProfitImpactResponse";
 import { emptyRequest } from "services/api";
 
 function useNonProfitImpact(
@@ -13,7 +13,7 @@ function useNonProfitImpact(
     data: nonProfitImpact,
     isLoading,
     refetch,
-  } = useApi<NonProfitImpact>({
+  } = useApi<NonProfitImpactResponse>({
     key: `nonProfitImpact${nonProfitId}`,
     fetchMethod: () => {
       if (nonProfitId && value && currency)

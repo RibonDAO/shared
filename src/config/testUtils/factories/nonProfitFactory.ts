@@ -16,6 +16,8 @@ function nonProfitFactory(params: Partial<NonProfit> = {}): NonProfit {
     confirmationImage: "",
     coverImage: "",
     mainImage: "",
+    status: "active",
+    causeId: 1,
     backgroundImageDescription: "Background image description",
     confirmationImageDescription: "Confirmation image description",
     coverImageDescription: "Cover image description",

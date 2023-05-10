@@ -10,4 +10,5 @@ export default interface CurrentNetwork {
   blockExplorerUrls: string;
   defaultPoolAddress: string;
   subgraphUrl: string;
+  defaultIntegrationHolding: string;
 }
