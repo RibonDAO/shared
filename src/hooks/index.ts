@@ -26,6 +26,7 @@ import useStatistics from "./apiHooks/useStatistics";
 import useArticles from "./apiHooks/useArticles";
 import useCompletedTasks from "./apiHooks/useCompletedTasks";
 import useTasksStatistics from "./apiHooks/useTasksStatistics";
+import useLegacyContributions from "./apiHooks/useLegacyContributions";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
@@ -46,6 +47,7 @@ export {
   useDonations,
   useImpact,
   useLegacyImpact,
+  useLegacyContributions,
   useIntegration,
   useIntegrationImpact,
   useNonProfitImpact,

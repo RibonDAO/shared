@@ -27,6 +27,7 @@ import CryptoUser from "./CryptoUser";
 import Guest from "./Guest";
 import Customer from "./Customer";
 import IntegrationWallet from "./IntegrationWallet";
+import LegacyContribution from "./LegacyContribution";
 
 export {
   Article,
@@ -49,6 +50,7 @@ export {
   PersonPayment,
   LegacyUserImpact,
   LegacyNonProfit,
+  LegacyContribution,
   BigDonation,
   BigDonor,
   Refund,
