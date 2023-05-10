@@ -15,4 +15,16 @@ describe("legacyImpactApiApi", () => {
       expect(api.get).toHaveBeenCalledWith("/api/v1/users/1/legacy_impacts");
     });
   });
+
+  describe("#getContributions", () => {
+    beforeEach(() => {
+      api.get = jest.fn();
+    });
+
+    it("expects to send a get request with the correct info: url, params and headers", () => {
+      legacyImpactApi.getContributions(userId);
+
+      expect(api.get).toHaveBeenCalledWith("/api/v1/users/1/legacy_contributions");
+    });
+  });
 });
