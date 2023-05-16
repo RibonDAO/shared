@@ -3,4 +3,6 @@ export default interface CompletedTask {
   taskIdentifier: string;
   lastCompletedAt: string;
   timesCompleted: number;
+  done: boolean;
+  expiresAt: string;
 }
