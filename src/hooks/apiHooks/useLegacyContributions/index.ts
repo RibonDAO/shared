@@ -9,7 +9,7 @@ function useLegacyContributions(userId: number | undefined) {
     error,
     isLoading,
   } = useApi<LegacyContribution[]>({
-    key: "legacyImpacts",
+    key: "legacyContributions",
     fetchMethod: () => {
       const id = userId || null;
       return legacyUserImpactApi.getContributions(id);
