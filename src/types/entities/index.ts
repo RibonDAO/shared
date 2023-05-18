@@ -28,6 +28,7 @@ import Guest from "./Guest";
 import Customer from "./Customer";
 import IntegrationWallet from "./IntegrationWallet";
 import LegacyContribution from "./LegacyContribution";
+import Chain from "./Chain";
 
 export {
   Article,
@@ -60,4 +61,5 @@ export {
   Guest,
   Customer,
   IntegrationWallet,
+  Chain,
 };
