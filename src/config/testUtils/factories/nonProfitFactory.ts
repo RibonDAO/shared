@@ -20,7 +20,7 @@ function nonProfitFactory(params: Partial<NonProfit> = {}): NonProfit {
     causeId: 1,
     backgroundImageDescription: "Background image description",
     confirmationImageDescription: "Confirmation image description",
-    coverImageDescription: "Cover image description",
+    logoDescription: "Logo description",
     mainImageDescription: "Main image description",
     nonProfitImpacts: [
       {
