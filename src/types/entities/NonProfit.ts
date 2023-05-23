@@ -15,7 +15,7 @@ export default interface NonProfit {
   mainImage: string;
   backgroundImageDescription: string;
   confirmationImageDescription: string;
-  coverImageDescription: string;
+  logoDescription: string;
   mainImageDescription: string;
   logo: string;
   impactByTicket: number;
