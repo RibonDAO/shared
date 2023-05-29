@@ -24,10 +24,32 @@ function useUsers() {
     return user;
   }
 
+  const sendDeleteAccountEmail = async () => {
+    try {
+      await usersApi.postSendDeleteAccountEmail();
+
+      return true;
+    } catch (e) {
+      return false;
+    }
+  };
+
+  const deleteUser = async (token: string) => {
+    try {
+      await usersApi.deleteUser(token);
+
+      return true;
+    } catch (e) {
+      return false;
+    }
+  };
+
   return {
     createUser,
     findUser,
     findOrCreateUser,
+    sendDeleteAccountEmail,
+    deleteUser,
   };
 }
 

@@ -3,7 +3,7 @@ import User from "types/entities/User";
 import CanDonate from "types/apiResponses/CanDonate";
 import CompletedTask from "types/apiResponses/CompletedTask";
 import TasksStatistics from "types/apiResponses/TasksStatistics";
-import { apiPost, apiGet } from "..";
+import { apiPost, apiGet, apiDelete } from "..";
 
 const usersApi = {
   postCreateUser: (email: string, language: string): Promise<AxiosResponse<User>> =>
@@ -45,6 +45,13 @@ const usersApi = {
 
   postUpdateStreak: (): Promise<AxiosResponse<TasksStatistics>> =>
     apiPost("users/update_streak", {}),
+
+  postSendDeleteAccountEmail: (): Promise<AxiosResponse<{}>> =>
+    apiPost("users/send_delete_account_email", {}),
+
+  deleteUser: (
+    token: string,
+  ): Promise<AxiosResponse<{}>> => apiDelete(`users?token=${token}`, {}),
 };
 
 export default usersApi;

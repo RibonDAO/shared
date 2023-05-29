@@ -59,4 +59,31 @@ describe("usersApi", () => {
       });
     });
   });
+
+  describe("#postSendDeleteAccountEmail", () => {
+    beforeEach(() => {
+      api.post = jest.fn();
+    });
+
+    it("expects to send a get request", () => {
+      usersApi.postSendDeleteAccountEmail();
+
+      expect(api.post).toHaveBeenCalledWith(
+        "/api/v1/users/send_delete_account_email",
+        {},
+      );
+    });
+  });
+
+  describe("#deleteUser", () => {
+    beforeEach(() => {
+      api.delete = jest.fn();
+    });
+
+    it("expects to send a get request", () => {
+      usersApi.deleteUser("jwt_token");
+
+      expect(api.delete).toHaveBeenCalledWith("/api/v1/users?token=jwt_token", {});
+    });
+  });
 });
