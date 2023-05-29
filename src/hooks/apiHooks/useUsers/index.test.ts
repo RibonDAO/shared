@@ -94,4 +94,51 @@ describe("useUsers", () => {
       });
     });
   });
+
+  describe("#sendDeleteAccountEmail", () => {
+    beforeEach(() => {
+      usersApi.postSendDeleteAccountEmail = jest.fn(() => ({ data } as any));
+    });
+
+    it("calls the usersApi sendDeleteAccountEmail with correct params", () => {
+      hook.sendDeleteAccountEmail();
+
+      expect(usersApi.postSendDeleteAccountEmail).toHaveBeenCalled();
+    });
+
+    it("returns the data fetched from the api", async () => {
+      const findResultResult = await hook.sendDeleteAccountEmail();
+      expect(findResultResult).toEqual(true);
+    });
+  });
+
+  describe("#deleteUser", () => {
+    beforeEach(() => {
+      usersApi.deleteUser = jest.fn(() => ({ data } as any));
+    });
+
+    it("calls the usersApi deleteUser with correct params", () => {
+      hook.deleteUser("token");
+
+      expect(usersApi.deleteUser).toHaveBeenCalledWith("token");
+    });
+
+    it("returns the data fetched from the api", async () => {
+      const findResultResult = await hook.deleteUser("token");
+      expect(findResultResult).toEqual(true);
+    });
+
+    describe("when the api throws an error", () => {
+      beforeEach(() => {
+        usersApi.deleteUser = jest.fn(() => {
+          throw new Error();
+        });
+      });
+
+      it("returns false", async () => {
+        const findResultResult = await hook.deleteUser("token");
+        expect(findResultResult).toEqual(false);
+      });
+    });
+  });
 });
