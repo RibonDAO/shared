@@ -36,9 +36,9 @@ function useUsers() {
 
   const deleteUser = async (token: string) => {
     try {
-      await usersApi.deleteUser(token);
+      const response = await usersApi.deleteUser(token);
 
-      return true;
+      return response.status === 200;
     } catch (e) {
       return false;
     }
