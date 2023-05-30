@@ -114,7 +114,7 @@ describe("useUsers", () => {
 
   describe("#deleteUser", () => {
     beforeEach(() => {
-      usersApi.deleteUser = jest.fn(() => ({ data } as any));
+      usersApi.deleteUser = jest.fn(() => ({ data, status: 200 } as any));
     });
 
     it("calls the usersApi deleteUser with correct params", () => {
