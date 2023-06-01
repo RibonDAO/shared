@@ -1,14 +1,10 @@
 export default interface ContributionStats {
-  initialAmount: number;
-  formattedInitialAmount: string;
-  usedAmount: number;
-  formattedUsedAmount: string;
-  remainingAmount: number;
-  formattedRemainingAmount: string;
+  initialAmount: string;
+  usedAmount: string;
+  remainingAmount: string;
   totalTickets: number;
   avgDonationsPerPerson: number;
-  boostAmount: number;
-  formattedBoostAmount: string;
+  boostAmount: string;
   totalIncreasePercentage: number;
   totalAmountToCause: number;
   ribonFee: number;
