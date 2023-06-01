@@ -32,6 +32,7 @@ import Chain from "./Chain";
 import Contribution from "./Contribution";
 import ContributionBalance from "./ContributionBalance";
 import ContributionStats from "./ContributionStats";
+import Patron from "./Patron";
 
 export {
   Article,
@@ -68,4 +69,5 @@ export {
   Contribution,
   ContributionBalance,
   ContributionStats,
+  Patron,
 };
