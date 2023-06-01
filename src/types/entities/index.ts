@@ -29,6 +29,10 @@ import Customer from "./Customer";
 import IntegrationWallet from "./IntegrationWallet";
 import LegacyContribution from "./LegacyContribution";
 import Chain from "./Chain";
+import Contribution from "./Contribution";
+import ContributionBalance from "./ContributionBalance";
+import ContributionStats from "./ContributionStats";
+import Patron from "./Patron";
 
 export {
   Article,
@@ -62,4 +66,8 @@ export {
   Customer,
   IntegrationWallet,
   Chain,
+  Contribution,
+  ContributionBalance,
+  ContributionStats,
+  Patron,
 };
