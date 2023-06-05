@@ -3,6 +3,7 @@ import User from "types/entities/User";
 import CanDonate from "types/apiResponses/CanDonate";
 import CompletedTask from "types/apiResponses/CompletedTask";
 import TasksStatistics from "types/apiResponses/TasksStatistics";
+import FirstAccessToIntegration from "types/apiResponses/FirstAccessToIntegration";
 import { apiPost, apiGet, apiDelete } from "..";
 
 const usersApi = {
@@ -21,6 +22,11 @@ const usersApi = {
         walletAddress ? `wallet_address=${walletAddress}` : ""
       }`,
     ),
+
+  getFirstAccessToIntegration: (
+    integrationId: number | string | null,
+  ): Promise<AxiosResponse<FirstAccessToIntegration>> =>
+    apiGet(`users/first_access_to_integration/?integration_id=${integrationId}`),
 
   postCanDonate: (
     integrationId: number | string,
@@ -49,9 +55,8 @@ const usersApi = {
   postSendDeleteAccountEmail: (): Promise<AxiosResponse<{}>> =>
     apiPost("users/send_delete_account_email", {}),
 
-  deleteUser: (
-    token: string,
-  ): Promise<AxiosResponse<{}>> => apiDelete(`users?token=${token}`, {}),
+  deleteUser: (token: string): Promise<AxiosResponse<{}>> =>
+    apiDelete(`users?token=${token}`, {}),
 };
 
 export default usersApi;
