@@ -1,4 +1,5 @@
 import CanDonate from "./CanDonate";
+import FirstAccessToIntegration from "./FirstAccessToIntegration";
 import CardFees from "./CardFees";
 import DonationsCount from "./DonationsCount";
 import NonProfitImpactResponse from "./NonProfitImpactResponse";
@@ -19,6 +20,7 @@ import CreateNonProfit from "./CreateNonProfit";
 
 export {
   CanDonate,
+  FirstAccessToIntegration,
   CardFees,
   DonationsCount,
   NonProfitImpactResponse,
