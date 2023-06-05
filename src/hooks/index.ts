@@ -28,6 +28,7 @@ import useCompletedTasks from "./apiHooks/useCompletedTasks";
 import useTasksStatistics from "./apiHooks/useTasksStatistics";
 import useLegacyContributions from "./apiHooks/useLegacyContributions";
 import useChains from "./apiHooks/useChains";
+import useFirstAccessToIntegration from "./apiHooks/useFirstAccessIntegration";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
@@ -56,6 +57,7 @@ export {
   useFreeDonationNonProfits,
   useOffers,
   usePromoterCardGivings,
+  useFirstAccessToIntegration,
   useSources,
   useStories,
   useUsers,
