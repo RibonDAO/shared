@@ -1,6 +1,10 @@
 import Offer from "./Offer";
 import Cause from "./Cause";
 import NonProfit from "./NonProfit";
+import Customer from "./Customer";
+import BigDonor from "./BigDonor";
+import CryptoUser from "./CryptoUser";
+import Patron from "./Patron";
 
 export default interface PersonPayment {
   id: string;
@@ -24,4 +28,6 @@ export default interface PersonPayment {
   status: string;
   totalItems: number;
   totalPages: number;
+  payer: Customer | BigDonor | CryptoUser | Patron;
+  currency: "brl" | "usd";
 }
