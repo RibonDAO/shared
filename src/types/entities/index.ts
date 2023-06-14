@@ -33,6 +33,7 @@ import Contribution from "./Contribution";
 import ContributionBalance from "./ContributionBalance";
 import ContributionStats from "./ContributionStats";
 import Patron from "./Patron";
+import ContributionDirectImpact from "./ContributionDirectImpact";
 
 export {
   Article,
@@ -70,4 +71,5 @@ export {
   ContributionBalance,
   ContributionStats,
   Patron,
+  ContributionDirectImpact,
 };
