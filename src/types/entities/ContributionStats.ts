@@ -9,4 +9,6 @@ export default interface ContributionStats {
   totalIncreasePercentage: number;
   totalAmountToCause: number;
   ribonFee: number;
+  boostNewContributors: number;
+  boostNewPatrons: number;
 }
