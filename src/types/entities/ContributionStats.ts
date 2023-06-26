@@ -4,6 +4,8 @@ export default interface ContributionStats {
   usagePercentage: number;
   remainingAmount: string;
   totalTickets: number;
+  totalDonors: number;
+  totalContributors: number;
   avgDonationsPerPerson: number;
   boostAmount: string;
   totalIncreasePercentage: number;
