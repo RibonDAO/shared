@@ -9,7 +9,7 @@ export default interface ContributionStats {
   avgDonationsPerPerson: number;
   boostAmount: string;
   totalIncreasePercentage: number;
-  totalAmountToCause: number;
+  totalAmountToCause: string;
   ribonFee: number;
   boostNewContributors: number;
   boostNewPatrons: number;

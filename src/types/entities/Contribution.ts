@@ -1,6 +1,8 @@
 import PersonPayment from "./PersonPayment";
 import ContributionBalance from "./ContributionBalance";
 import ContributionStats from "./ContributionStats";
+import NonProfit from "./NonProfit";
+import Cause from "./Cause";
 
 export default interface Contribution {
   id: number;
@@ -13,4 +15,5 @@ export default interface Contribution {
   updatedAt: string;
   createdAt: string;
   stats: ContributionStats;
+  receiver?: NonProfit | Cause;
 }
