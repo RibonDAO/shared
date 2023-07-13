@@ -9,7 +9,7 @@ describe("cryptoTransacrionApi", () => {
     });
 
     it("expects to send a get request with the correct info: url, params and headers", () => {
-      cryptoTransactionApi.postTransaction("0xAAAA", "5.00", "0xBBBB", 1, 1);
+      cryptoTransactionApi.postTransaction("0xAAAA", "5.00", "0xBBBB", 1, 1, "web");
 
       expect(api.post).toHaveBeenCalledWith("/api/v1/payments/cryptocurrency", {
         transactionHash: "0xAAAA",
@@ -17,6 +17,7 @@ describe("cryptoTransacrionApi", () => {
         walletAddress: "0xBBBB",
         integrationId: 1,
         causeId: 1,
+        platform: "web",
       });
     });
   });
