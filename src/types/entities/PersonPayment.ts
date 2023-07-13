@@ -30,5 +30,5 @@ export default interface PersonPayment {
   totalPages: number;
   payer: Customer | BigDonor | CryptoUser | Patron;
   currency: "brl" | "usd";
-  platform: string;
+  platform: "app" | "web";
 }

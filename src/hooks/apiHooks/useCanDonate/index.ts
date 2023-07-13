@@ -5,7 +5,7 @@ import { emptyRequest } from "services/api";
 
 function useCanDonate(
   integrationId: number | string | null,
-  platform: string,
+  platform: "app" | "web",
   voucherId?: string,
 ) {
   const {
