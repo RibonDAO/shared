@@ -30,7 +30,7 @@ const usersApi = {
 
   postCanDonate: (
     integrationId: number | string,
-    platform: string,
+    platform: "app" | "web",
     voucherId?: string,
   ): Promise<AxiosResponse<CanDonate>> =>
     apiPost("users/can_donate", { integrationId, platform, voucherId }),

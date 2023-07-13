@@ -20,7 +20,7 @@ function useDonations(userId: number | undefined) {
     integrationId: number,
     nonProfitId: number,
     email: string,
-    platform?: string,
+    platform?: "app" | "web",
     externalId?: string,
   ) {
     if (externalId) {

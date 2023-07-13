@@ -7,7 +7,7 @@ const donationsApi = {
     integrationId: number,
     nonProfitId: number,
     email: string,
-    platform?: string,
+    platform?: "app" | "web",
   ): Promise<AxiosResponse<Donation>> =>
     apiPost("donations", { integrationId, nonProfitId, email, platform }),
 
@@ -16,7 +16,7 @@ const donationsApi = {
     nonProfitId: number,
     email: string,
     externalId: string,
-    platform?: string,
+    platform?: "app" | "web",
   ): Promise<AxiosResponse<Donation>> =>
     apiPost("vouchers/donations", {
       integrationId,
