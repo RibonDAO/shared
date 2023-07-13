@@ -8,7 +8,7 @@ function useCryptoTransaction() {
     walletAddress: string,
     integrationId: string | number,
     causeId: string | number,
-    platform: string,
+    platform: "app" | "web",
   ) {
     const { data: transaction } = await cryptoTransactionApi.postTransaction(
       transactionHash,
