@@ -3,14 +3,14 @@ import { Currencies } from "types/enums/Currencies";
 import CardFees from "types/apiResponses/CardFees";
 import givingFeesApi from "services/api/givingFeesApi";
 
-function useCardGivingFees(value: number, currency: Currencies) {
+function useCardGivingFees(value: number, currency: Currencies, gateway?: string) {
   const {
     data: cardGivingFees,
     isLoading,
     refetch,
   } = useApi<CardFees>({
     key: "cardGivingFees",
-    fetchMethod: () => givingFeesApi.postCardFees(value, currency),
+    fetchMethod: () => givingFeesApi.postCardFees(value, currency, gateway),
     options: {
       enabled: value > 0,
     },
