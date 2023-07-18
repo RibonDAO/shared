@@ -29,6 +29,7 @@ import useTasksStatistics from "./apiHooks/useTasksStatistics";
 import useLegacyContributions from "./apiHooks/useLegacyContributions";
 import useChains from "./apiHooks/useChains";
 import useFirstAccessToIntegration from "./apiHooks/useFirstAccessIntegration";
+import useContributions from "./apiHooks/useContributions";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
@@ -70,4 +71,5 @@ export {
   useCompletedTasks,
   useTasksStatistics,
   useChains,
+  useContributions,
 };
