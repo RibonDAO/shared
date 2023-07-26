@@ -3,9 +3,8 @@ import Cause from "types/entities/Cause";
 import { apiGet } from "..";
 
 const causesApi = {
-  getCauses: (): Promise<AxiosResponse<Cause[]>> => apiGet("causes/"),
-  getFreeDonationCauses: (): Promise<AxiosResponse<Cause[]>> =>
-    apiGet("free_donation_causes/"),
+  getCauses: (withPoolBalance: boolean): Promise<AxiosResponse<Cause[]>> =>
+    apiGet("causes", { params: { withPoolBalance } }),
   getCause: (id: number): Promise<AxiosResponse<Cause>> => apiGet(`causes/${id}`),
 };
 

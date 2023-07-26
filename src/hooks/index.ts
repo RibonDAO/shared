@@ -8,7 +8,7 @@ import QueryClientComponent, {
 } from "./useApi/queryClient";
 import useCanDonate from "./apiHooks/useCanDonate";
 import useCardGivingFees from "./apiHooks/useCardGivingFees";
-import { useCauses, useFreeDonationCauses } from "./apiHooks/useCauses";
+import { useCauses } from "./apiHooks/useCauses";
 import useCryptoTransaction from "./apiHooks/useCryptoTransaction";
 import useDonations from "./apiHooks/useDonations";
 import useImpact from "./apiHooks/useImpact";
@@ -45,7 +45,6 @@ export {
   useCanDonate,
   useCardGivingFees,
   useCauses,
-  useFreeDonationCauses,
   useCryptoTransaction,
   useDonations,
   useImpact,
