@@ -11,7 +11,9 @@ describe("causesApi", () => {
     it("expects to send a get request with the correct info: url, params and headers", () => {
       causesApi.getCauses(withPoolBalance);
 
-      expect(api.get).toHaveBeenCalledWith("/api/v1/causes/");
+      expect(api.get).toHaveBeenCalledWith("/api/v1/causes", {
+        params: { withPoolBalance: false },
+      });
     });
   });
 
