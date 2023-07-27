@@ -13,5 +13,5 @@ export default interface Cause {
   defaultPool?: string;
   coverImageDescription?: string;
   mainImageDescription?: string;
-  hasPoolBalance?: boolean;
+  poolBalance?: boolean;
 }
