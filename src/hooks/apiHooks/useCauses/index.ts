@@ -10,6 +10,11 @@ export function useCauses() {
   } = useApi<Cause[]>({
     key: "causes",
     fetchMethod: () => causesApi.getCauses(),
+    options: {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+    },
   });
 
   async function getCause(causeId: number) {
