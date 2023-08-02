@@ -34,6 +34,7 @@ import ContributionBalance from "./ContributionBalance";
 import ContributionStats from "./ContributionStats";
 import Patron from "./Patron";
 import ContributionDirectImpact from "./ContributionDirectImpact";
+import PixPayment from "./PixPayment";
 
 export {
   Article,
@@ -72,4 +73,5 @@ export {
   ContributionStats,
   Patron,
   ContributionDirectImpact,
+  PixPayment,
 };
