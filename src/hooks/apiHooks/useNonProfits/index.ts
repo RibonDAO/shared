@@ -10,6 +10,11 @@ export function useNonProfits() {
   } = useApi<NonProfit[]>({
     key: "nonProfits",
     fetchMethod: nonProfitsApi.getNonProfits,
+    options: {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+    },
   });
 
   return { nonProfits, isLoading, refetch };
@@ -23,6 +28,11 @@ export function useFreeDonationNonProfits() {
   } = useApi<NonProfit[]>({
     key: "nonProfits",
     fetchMethod: nonProfitsApi.getFreeDonationNonProfits,
+    options: {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+    },
   });
 
   return { nonProfits, isLoading, refetch };
