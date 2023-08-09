@@ -26,7 +26,7 @@ export function useFreeDonationNonProfits() {
     isLoading,
     refetch,
   } = useApi<NonProfit[]>({
-    key: "nonProfits",
+    key: "nonProfitsWithPoolBalance",
     fetchMethod: nonProfitsApi.getFreeDonationNonProfits,
     options: {
       refetchOnWindowFocus: false,
