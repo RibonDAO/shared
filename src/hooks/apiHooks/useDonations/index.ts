@@ -17,7 +17,7 @@ function useDonations(userId: number | undefined) {
   });
 
   async function donate(
-    integrationId: number,
+    integrationId: number | string,
     nonProfitId: number,
     email: string,
     platform?: "app" | "web",
