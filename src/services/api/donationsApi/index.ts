@@ -4,7 +4,7 @@ import { apiPost } from "..";
 
 const donationsApi = {
   postDonation: (
-    integrationId: number,
+    integrationId: number | string,
     nonProfitId: number,
     email: string,
     platform?: "app" | "web",
@@ -12,7 +12,7 @@ const donationsApi = {
     apiPost("donations", { integrationId, nonProfitId, email, platform }),
 
   postVoucherDonation: (
-    integrationId: number,
+    integrationId: number | string,
     nonProfitId: number,
     email: string,
     externalId: string,
