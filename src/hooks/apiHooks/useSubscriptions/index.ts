@@ -9,7 +9,7 @@ const useSubscription = () => {
       refetch,
       isLoading,
       data: subscriptions,
-    } = useApi<Subscription>({
+    } = useApi<Subscription[]>({
       key: "userSubscriptions",
       fetchMethod: () => {
         if (!userId) return emptyRequest();
