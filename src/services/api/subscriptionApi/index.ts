@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { Subscription } from "types/entities/Subscription";
 
-import { apiGet, apiDelete } from "..";
+import { apiGet, apiPut } from "..";
 
 const subscriptionApi = {
   getUserSubscription: (
@@ -9,10 +9,10 @@ const subscriptionApi = {
   ): Promise<AxiosResponse<Subscription[]>> =>
     apiGet(`payments/subscriptions_for_customer/${id}`),
 
-  deleteSubscription: (
+  cancelSubscription: (
     subscriptionId: string | number,
   ): Promise<AxiosResponse<any>> =>
-    apiDelete(`payments/cancel_subscription/${subscriptionId}`, {}),
+    apiPut(`payments/cancel_subscription/${subscriptionId}`, {}),
 };
 
 export default subscriptionApi;

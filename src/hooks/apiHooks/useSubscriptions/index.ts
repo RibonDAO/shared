@@ -20,7 +20,7 @@ const useSubscription = () => {
     return { subscriptions, refetch, isLoading };
   }
   async function cancelSubscription(subscriptionId: string | number) {
-    const { data } = await subscriptionApi.deleteSubscription(subscriptionId);
+    const { data } = await subscriptionApi.cancelSubscription(subscriptionId);
 
     return data;
   }
