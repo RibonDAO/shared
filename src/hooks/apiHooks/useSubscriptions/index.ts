@@ -1,6 +1,7 @@
 import { useApi } from "hooks/useApi";
 import { emptyRequest } from "services/api";
 import subscriptionApi from "services/api/subscriptionApi";
+import { Subscription } from "types/entities/Subscription";
 
 const useSubscription = () => {
   function userSubscriptions(id?: string | number) {
@@ -8,7 +9,7 @@ const useSubscription = () => {
       refetch,
       isLoading,
       data: subscriptions,
-    } = useApi<any>({
+    } = useApi<Subscription>({
       key: "userSubscriptions",
       fetchMethod: () => {
         if (!id) return emptyRequest();
