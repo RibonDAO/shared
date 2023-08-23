@@ -5,14 +5,12 @@ import { apiGet, apiPut } from "..";
 
 const subscriptionApi = {
   getUserSubscription: (
-    id: string | number,
+    userId: string | number,
   ): Promise<AxiosResponse<Subscription[]>> =>
-    apiGet(`payments/subscriptions_for_customer/${id}`),
+    apiGet(`payments/subscriptions_for_customer/${userId}`),
 
-  cancelSubscription: (
-    subscriptionId: string | number,
-  ): Promise<AxiosResponse<any>> =>
-    apiPut(`payments/cancel_subscription/${subscriptionId}`, {}),
+  cancelSubscription: (id: string | number): Promise<AxiosResponse<any>> =>
+    apiPut(`payments/cancel_subscription/${id}`, {}),
 };
 
 export default subscriptionApi;
