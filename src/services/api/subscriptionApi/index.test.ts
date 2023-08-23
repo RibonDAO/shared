@@ -6,7 +6,7 @@ describe("subscriptionApi", () => {
   describe("#getUserSubscription", () => {
     beforeEach(() => {
       api.get = jest.fn();
-      api.put = jest.fn();
+      api.post = jest.fn();
     });
     it("fetches user subscriptions", async () => {
       const userId = 123;
@@ -18,14 +18,13 @@ describe("subscriptionApi", () => {
     });
   });
 
-  describe("#cancelSubscription", () => {
-    it("cancel a subscription", async () => {
-      const subscriptionId = 456;
-      await subscriptionApi.cancelSubscription(subscriptionId);
+  describe("#postSendCancelSubscriptionEmail", () => {
+    it("send cancel subscription email", async () => {
+      const id = 456;
+      await subscriptionApi.postSendCancelSubscriptionEmail(id);
 
-      expect(api.put).toHaveBeenCalledWith(
-        `/api/v1/payments/cancel_subscription/${subscriptionId}`,
-        {},
+      expect(api.post).toHaveBeenCalledWith(
+        "/api/v1/payments/send_cancel_subscription_email", { id }
       );
     });
   });
