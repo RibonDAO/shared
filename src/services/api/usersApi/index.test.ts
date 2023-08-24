@@ -86,4 +86,16 @@ describe("usersApi", () => {
       expect(api.delete).toHaveBeenCalledWith("/api/v1/users?token=jwt_token", {});
     });
   });
+
+  describe("#getUserSubscription", () => {
+    beforeEach(() => {
+      api.get = jest.fn();
+    });
+    it("fetches user subscriptions", async () => {
+      const userId = 123;
+      usersApi.getUserSubscription(userId);
+
+      expect(api.get).toHaveBeenCalledWith(`/api/v1/users/${userId}/subscriptions`);
+    });
+  });
 });
