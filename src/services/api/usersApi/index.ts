@@ -7,8 +7,8 @@ import FirstAccessToIntegration from "types/apiResponses/FirstAccessToIntegratio
 import { apiPost, apiGet, apiDelete } from "..";
 
 const usersApi = {
-  postCreateUser: (email: string, language: string): Promise<AxiosResponse<User>> =>
-    apiPost("users", { email, language }),
+  postCreateUser: (email: string, language: string, utmCampaign?: string, utmMedium?: string, utmSource?: string ): Promise<AxiosResponse<User>> =>
+    apiPost("users", { email, language, utmCampaign, utmMedium, utmSource }),
 
   postSearchUser: (email: string): Promise<AxiosResponse<User>> =>
     apiPost("users/search", { email }),
