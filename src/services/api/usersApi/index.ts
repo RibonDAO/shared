@@ -4,10 +4,17 @@ import CanDonate from "types/apiResponses/CanDonate";
 import CompletedTask from "types/apiResponses/CompletedTask";
 import TasksStatistics from "types/apiResponses/TasksStatistics";
 import FirstAccessToIntegration from "types/apiResponses/FirstAccessToIntegration";
+import Subscription from "types/entities/Subscription";
 import { apiPost, apiGet, apiDelete } from "..";
 
 const usersApi = {
-  postCreateUser: (email: string, language: string, utmCampaign?: string, utmMedium?: string, utmSource?: string ): Promise<AxiosResponse<User>> =>
+  postCreateUser: (
+    email: string,
+    language: string,
+    utmCampaign?: string,
+    utmMedium?: string,
+    utmSource?: string,
+  ): Promise<AxiosResponse<User>> =>
     apiPost("users", { email, language, utmCampaign, utmMedium, utmSource }),
 
   postSearchUser: (email: string): Promise<AxiosResponse<User>> =>
@@ -22,6 +29,11 @@ const usersApi = {
         walletAddress ? `wallet_address=${walletAddress}` : ""
       }`,
     ),
+
+  getUserSubscription: (
+    userId: string | number,
+  ): Promise<AxiosResponse<Subscription[]>> =>
+    apiGet(`users/${userId}/subscriptions`),
 
   getFirstAccessToIntegration: (
     integrationId: number | string | null,

@@ -1,8 +1,12 @@
-import PersonPayment from "./PersonPayment";
+import Cause from "./Cause";
+import NonProfit from "./NonProfit";
+import Offer from "./Offer";
 
-export interface Subscription {
+export default interface Subscription {
   id: string | number;
   status: string;
   cancelDate: string;
-  personPayments: PersonPayment[];
+  createdAt: string;
+  offer: Offer;
+  receiver: NonProfit | Cause;
 }
