@@ -18,10 +18,10 @@ describe("subscriptionApi", () => {
     });
   });
 
-  describe("#sendCancelSubscriptionEmail", () => {
+  describe("#postSendCancelSubscriptionEmail", () => {
     it("send cancel subscription email", async () => {
       const id = 456;
-      await subscriptionApi.sendCancelSubscriptionEmail(id);
+      await subscriptionApi.postSendCancelSubscriptionEmail(id);
 
       expect(api.post).toHaveBeenCalledWith(
         "/api/v1/payments/send_cancel_subscription_email", { id }

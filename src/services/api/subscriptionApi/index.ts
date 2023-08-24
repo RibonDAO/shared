@@ -9,7 +9,7 @@ const subscriptionApi = {
   ): Promise<AxiosResponse<Subscription[]>> =>
     apiGet(`payments/subscriptions_for_customer/${userId}`),
 
-    sendCancelSubscriptionEmail: (
+    postSendCancelSubscriptionEmail: (
       id: string | number
       ): Promise<AxiosResponse<{}>> =>
     apiPost("payments/send_cancel_subscription_email", {id}),
