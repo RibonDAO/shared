@@ -8,7 +8,7 @@ const useSubscription = () => {
     const {
       refetch,
       isLoading,
-      data,
+      data: subscriptions,
     } = useApi<Subscription[]>({
       key: "userSubscriptions",
       fetchMethod: () => {
@@ -17,11 +17,11 @@ const useSubscription = () => {
       },
     });
 
-    return { data, refetch, isLoading };
+    return { subscriptions, refetch, isLoading };
   }
   async function sendCancelSubscriptionEmail(id: string | number) {
     const { data } = await subscriptionApi.sendCancelSubscriptionEmail(id);
-    console.log(data);
+
     return data;
   }
 
