@@ -20,15 +20,39 @@ const useSubscription = () => {
 
     return { subscriptions, refetch, isLoading };
   }
-  async function cancelSubscription(id: string | number) {
-    const { data } = await subscriptionApi.cancelSubscription(id);
+  async function sendCancelSubscriptionEmail(id: string | number) {
+    const { data } = await subscriptionApi.postSendCancelSubscriptionEmail(id);
 
     return data;
   }
 
+  async function cancelSubscription(id: string | number) {
+    const { data } = await subscriptionApi.putCancelSubscription(id);
+
+    return data;
+  }
+
+  function getSubscription(id?: string | number) {
+    const {
+      refetch,
+      isLoading,
+      data: subscription,
+    } = useApi<Subscription>({
+      key: "userSubscriptions",
+      fetchMethod: () => {
+        if (!id) return emptyRequest();
+        return subscriptionApi.getSubscription(id);
+      },
+    });
+
+    return { subscription, refetch, isLoading };
+  }
+
   return {
     userSubscriptions,
+    sendCancelSubscriptionEmail,
     cancelSubscription,
+    getSubscription,
   };
 };
 
