@@ -2,7 +2,7 @@ import { useApi } from "hooks/useApi";
 import { emptyRequest } from "services/api";
 import subscriptionApi from "services/api/subscriptionApi";
 import { usersApi } from "services/index";
-import { Subscription } from "types/entities/Subscription";
+import Subscription from "types/entities/Subscription";
 
 const useSubscription = () => {
   function userSubscriptions(userId?: string | number) {
