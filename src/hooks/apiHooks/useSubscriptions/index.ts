@@ -25,9 +25,16 @@ const useSubscription = () => {
     return data;
   }
 
+  async function cancelSubscription(id: string | number) {
+    const { data } = await subscriptionApi.putCancelSubscription(id);
+
+    return data;
+  }
+
   return {
     userSubscriptions,
     sendCancelSubscriptionEmail,
+    cancelSubscription,
   };
 };
 
