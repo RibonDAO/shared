@@ -1,6 +1,7 @@
 import { useApi } from "hooks/useApi";
 import { emptyRequest } from "services/api";
 import subscriptionApi from "services/api/subscriptionApi";
+import { usersApi } from "services/index";
 import { Subscription } from "types/entities/Subscription";
 
 const useSubscription = () => {
@@ -13,7 +14,7 @@ const useSubscription = () => {
       key: "userSubscriptions",
       fetchMethod: () => {
         if (!userId) return emptyRequest();
-        return subscriptionApi.getUserSubscription(userId);
+        return usersApi.getUserSubscription(userId);
       },
     });
 
