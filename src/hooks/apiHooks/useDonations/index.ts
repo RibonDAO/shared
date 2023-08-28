@@ -22,6 +22,9 @@ function useDonations(userId: number | undefined) {
     email: string,
     platform?: "app" | "web",
     externalId?: string,
+    utmSource?: string,
+    utmMedium?: string,
+    utmCampaign?: string,
   ) {
     if (externalId) {
       await donationsApi.postVoucherDonation(
@@ -30,12 +33,15 @@ function useDonations(userId: number | undefined) {
         email,
         externalId,
         platform,
+        utmSource,
+        utmMedium,
+        utmCampaign,
       );
 
       return;
     }
 
-    await donationsApi.postDonation(integrationId, nonProfitId, email, platform);
+    await donationsApi.postDonation(integrationId, nonProfitId, email, platform, utmSource, utmMedium, utmCampaign);
   }
 
   return {
