@@ -4,17 +4,18 @@ import api from "..";
 
 describe("subscriptionApi", () => {
   beforeEach(() => {
+    api.get = jest.fn();
     api.post = jest.fn();
     api.put = jest.fn();
   });
-  describe("#postSendCancelSubscriptionEmail", () => {
-    it("send cancel subscription email", async () => {
-      const id = 456;
-      await subscriptionApi.postSendCancelSubscriptionEmail(id);
 
-      expect(api.post).toHaveBeenCalledWith(
-        "/api/v1/payments/send_cancel_subscription_email",
-        { id },
+  describe("#getSubscription", () => {
+    it("get subscription", async () => {
+      const id = 123;
+      await subscriptionApi.getSubscription(id);
+
+      expect(api.get).toHaveBeenCalledWith(
+        `/api/v1/users/subscription/${id}`,
       );
     });
   });
@@ -25,7 +26,7 @@ describe("subscriptionApi", () => {
       await subscriptionApi.putCancelSubscription(id);
 
       expect(api.put).toHaveBeenCalledWith(
-        `/api/v1/payments/cancel_subscription/${id}`,
+        `/api/v1/subscriptions/cancel_subscription/${id}`,
         {},
       );
     });

@@ -21,7 +21,7 @@ const useSubscription = () => {
     return { subscriptions, refetch, isLoading };
   }
   async function sendCancelSubscriptionEmail(id: string | number) {
-    const { data } = await subscriptionApi.postSendCancelSubscriptionEmail(id);
+    const { data } = await usersApi.postSendCancelSubscriptionEmail(id);
 
     return data;
   }

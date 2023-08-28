@@ -69,6 +69,11 @@ const usersApi = {
 
   deleteUser: (token: string): Promise<AxiosResponse<{}>> =>
     apiDelete(`users?token=${token}`, {}),
+
+  postSendCancelSubscriptionEmail: (
+    subscriptionId: string | number,
+  ): Promise<AxiosResponse<{}>> =>
+    apiPost("users/send_cancel_subscription_email", { subscriptionId }),
 };
 
 export default usersApi;
