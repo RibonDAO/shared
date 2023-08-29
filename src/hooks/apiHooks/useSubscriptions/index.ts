@@ -28,9 +28,11 @@ const useSubscription = () => {
 
   const cancelSubscription = async (token: string) => {
     try {
-      const response = await subscriptionApi.putCancelSubscription(token);
+      const { data: subscription } = await subscriptionApi.putCancelSubscription(
+        token
+      );
 
-      return response.status === 200;
+      return subscription;
     } catch (e) {
       return false;
     }
