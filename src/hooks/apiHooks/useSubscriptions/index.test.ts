@@ -4,6 +4,7 @@ import  useSubscriptions  from '.';
 
 describe('useSubscriptions', () => {
   let hook: ReturnType<typeof useSubscriptions>;
+  const data = { subscription: { id: 12 }}
   
 
   beforeEach(() => {
@@ -13,7 +14,7 @@ describe('useSubscriptions', () => {
 
   describe('#cancelSubscription', () => {
     beforeEach(() => {
-      subscriptionApi.putCancelSubscription = jest.fn(() => ({ status: 200 } as any));
+      subscriptionApi.putCancelSubscription = jest.fn(() => ({ data } as any));
   });
 
     it('calls the subscriptionApi cancelSubscription with correct params', () => {
@@ -24,7 +25,8 @@ describe('useSubscriptions', () => {
 
     it('returns true if the request is successful', async () => {
       const cancelSubscriptionResult = await hook.cancelSubscription('jwt_token');
-      expect(cancelSubscriptionResult).toEqual(true);
+      
+      expect(cancelSubscriptionResult).toEqual(data);
     });
 
     describe('when api throws an error', () => {
