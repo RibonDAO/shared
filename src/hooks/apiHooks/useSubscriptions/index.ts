@@ -5,7 +5,7 @@ import { usersApi } from "services/index";
 import Subscription from "types/entities/Subscription";
 
 const useSubscription = () => {
-  function userSubscriptions(userId?: string | number) {
+  function userSubscriptions(userId: string | number) {
     const {
       refetch,
       isLoading,
