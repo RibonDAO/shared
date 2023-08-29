@@ -26,11 +26,15 @@ const useSubscription = () => {
     return data;
   }
 
-  async function cancelSubscription(id: string | number) {
-    const { data } = await subscriptionApi.putCancelSubscription(id);
+  const cancelSubscription = async (token: string) => {
+    try {
+      const response = await subscriptionApi.putCancelSubscription(token);
 
-    return data;
-  }
+      return response.status === 200;
+    } catch (e) {
+      return false;
+    }
+  };
 
   function getSubscription(id?: string | number) {
     const {
