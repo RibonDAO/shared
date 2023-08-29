@@ -22,11 +22,10 @@ describe("subscriptionApi", () => {
 
   describe("#putCancelSubscription", () => {
     it("cancel subscription", async () => {
-      const id = 789;
-      await subscriptionApi.putCancelSubscription(id);
+      await subscriptionApi.putCancelSubscription("jwt_token");
 
       expect(api.put).toHaveBeenCalledWith(
-        `/api/v1/subscriptions/cancel_subscription/${id}`,
+        `/api/v1/subscriptions/cancel_subscription?token=jwt_token`,
         {},
       );
     });
