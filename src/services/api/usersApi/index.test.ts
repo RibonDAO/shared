@@ -92,10 +92,9 @@ describe("usersApi", () => {
       api.get = jest.fn();
     });
     it("fetches user subscriptions", async () => {
-      const userId = 123;
-      usersApi.getUserSubscription(userId);
+      usersApi.getUserSubscription();
 
-      expect(api.get).toHaveBeenCalledWith(`/api/v1/users/${userId}/subscriptions`);
+      expect(api.get).toHaveBeenCalledWith("/api/v1/users/subscriptions");
     });
   });
 
@@ -109,7 +108,7 @@ describe("usersApi", () => {
       usersApi.postSendCancelSubscriptionEmail(subscriptionId);
 
       expect(api.post).toHaveBeenCalledWith(
-        `/api/v1/users/send_cancel_subscription_email`,
+        "/api/v1/users/send_cancel_subscription_email",
         { subscriptionId },
       );
     });

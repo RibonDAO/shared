@@ -5,17 +5,14 @@ import { usersApi } from "services/index";
 import Subscription from "types/entities/Subscription";
 
 const useSubscription = () => {
-  function userSubscriptions(userId: string | number) {
+  function userSubscriptions() {
     const {
       refetch,
       isLoading,
       data: subscriptions,
     } = useApi<Subscription[]>({
       key: "userSubscriptions",
-      fetchMethod: () => {
-        if (!userId) return emptyRequest();
-        return usersApi.getUserSubscription(userId);
-      },
+      fetchMethod: () => usersApi.getUserSubscription(),
     });
 
     return { subscriptions, refetch, isLoading };
@@ -29,7 +26,7 @@ const useSubscription = () => {
   const cancelSubscription = async (token: string) => {
     try {
       const { data: subscription } = await subscriptionApi.putCancelSubscription(
-        token
+        token,
       );
 
       return subscription;

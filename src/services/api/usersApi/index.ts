@@ -30,10 +30,8 @@ const usersApi = {
       }`,
     ),
 
-  getUserSubscription: (
-    userId: string | number,
-  ): Promise<AxiosResponse<Subscription[]>> =>
-    apiGet(`users/${userId}/subscriptions`),
+  getUserSubscription: (): Promise<AxiosResponse<Subscription[]>> =>
+    apiGet("users/subscriptions"),
 
   getFirstAccessToIntegration: (
     integrationId: number | string | null,
