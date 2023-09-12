@@ -7,6 +7,7 @@ export default interface Subscription {
   status: string;
   cancelDate: string;
   createdAt: string;
+  nextPaymentAttempt: string;
   offer: Offer;
   receiver: NonProfit | Cause;
 }
