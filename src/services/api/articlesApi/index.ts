@@ -24,6 +24,18 @@ const articlesApi = {
     }),
   getArticle: (id: any): Promise<AxiosResponse<Article>> =>
     apiGet(`news/articles/${id}`),
+  getUserArticlesList: ({
+    perPage = 10,
+    page = 1,
+    sort = "published_at",
+    sortDir = "desc",
+  }: ArticlesList): Promise<AxiosResponse<Article[]>> =>
+    apiGetWithParams("news/articles_since_user_creation", {
+      per: perPage,
+      page,
+      sort,
+      sort_dir: sortDir,
+    }),
 };
 
 export default articlesApi;
