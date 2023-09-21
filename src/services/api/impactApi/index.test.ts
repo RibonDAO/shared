@@ -36,7 +36,7 @@ describe("impactApiApi", () => {
     it("expects to send a get request with the correct info: url, params and headers", () => {
       impactApi.getAppDonationsCount(userId);
 
-      expect(api.get).toHaveBeenCalledWith("/api/v1/users/1/app/onations_count");
+      expect(api.get).toHaveBeenCalledWith("/api/v1/users/1/app/donations_count");
     });
   });
 });
