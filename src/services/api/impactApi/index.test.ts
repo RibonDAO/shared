@@ -27,4 +27,16 @@ describe("impactApiApi", () => {
       expect(api.get).toHaveBeenCalledWith("/api/v1/users/1/donations_count");
     });
   });
+
+  describe("#getAppDonationsCount", () => {
+    beforeEach(() => {
+      api.get = jest.fn();
+    });
+
+    it("expects to send a get request with the correct info: url, params and headers", () => {
+      impactApi.getAppDonationsCount(userId);
+
+      expect(api.get).toHaveBeenCalledWith("/api/v1/users/1/app/donations_count");
+    });
+  });
 });
