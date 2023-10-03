@@ -28,6 +28,7 @@ import usersApi from "./api/usersApi";
 import personPaymentsApi from "./api/personPaymentsApi";
 import articlesApi from "./api/articlesApi";
 import subscriptionApi from "./api/subscriptionApi";
+import userConfigApi from "./api/userConfigApi";
 
 export {
   api,
@@ -59,4 +60,5 @@ export {
   personPaymentsApi,
   initializeApi,
   subscriptionApi,
+  userConfigApi,
 };
