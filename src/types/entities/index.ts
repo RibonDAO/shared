@@ -35,6 +35,7 @@ import ContributionStats from "./ContributionStats";
 import Patron from "./Patron";
 import ContributionDirectImpact from "./ContributionDirectImpact";
 import PixPayment from "./PixPayment";
+import UserConfig from "./UserConfig";
 
 export {
   Article,
@@ -74,4 +75,5 @@ export {
   Patron,
   ContributionDirectImpact,
   PixPayment,
+  UserConfig
 };
