@@ -1,7 +1,7 @@
 import { UserConfig } from "types/entities";
 import userConfigApi from "services/api/userConfigApi";
 
-function userUserConfig() {
+function useUserConfig() {
   async function updateUserConfig(userId: number, data: UserConfig) {
     await userConfigApi.postUpdateUserConfig(userId, data);
   }
@@ -11,4 +11,4 @@ function userUserConfig() {
   };
 }
 
-export default userUserConfig;
+export default useUserConfig;
