@@ -1,5 +1,5 @@
 import Axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import { REFRESH_TOKEN_KEY, RIBON_API, TOKEN_KEY } from "utils/constants";
+import { REFRESH_TOKEN_KEY, RIBON_API, ACCES_TOKEN_KEY } from "utils/constants";
 import { getCookiesItem, setCookiesItem } from "lib/cookies";
 import camelCaseKeys from "camelcase-keys";
 import snakeCaseKeys from "snakecase-keys";
@@ -31,7 +31,7 @@ export function initializeApi({ url, headers }: InitializeApiProps) {
     // eslint-disable-next-line
     config.baseURL = url;
     const authHeaders = {
-      Authorization: `Bearer ${getCookiesItem(TOKEN_KEY)}`,
+      Authorization: `Bearer ${getCookiesItem(ACCES_TOKEN_KEY)}`,
     };
     // eslint-disable-next-line
     config.headers = { ...headers, ...authHeaders, ...config.headers };
@@ -49,7 +49,7 @@ async function requestNewToken() {
     const newToken = res.headers["access-token"];
     const newRefreshToken = res.headers["refresh-token"];
 
-    setCookiesItem(TOKEN_KEY, newToken);
+    setCookiesItem(ACCES_TOKEN_KEY, newToken);
     setCookiesItem(REFRESH_TOKEN_KEY, newRefreshToken);
 
     return newToken;
