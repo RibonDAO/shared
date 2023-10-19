@@ -7,6 +7,16 @@ import api, {
   emptyRequest,
   initializeApi,
 } from "./api";
+import authenticationApi, {
+  apiGet as authenticationApiGet,
+  apiGetWithParams as authenticationApiGetWithParams,
+  apiPost as authenticationApiPost,
+  apiPut as authenticationApiPut,
+  apiDelete as authenticationApiDelete,
+  emptyRequest as authenticationApiEmptyRequest,
+  API_SCOPE as AUTHENTICATION_API_SCOPE,
+  initializeApi as initializeAuthenticationApi,
+} from "./authenticationApi";
 import { client } from "./apiTheGraph";
 import poolsApi from "./apiTheGraph/poolsApi";
 import promoterDonationsApi from "./apiTheGraph/promoterDonationsApi";
@@ -29,6 +39,7 @@ import personPaymentsApi from "./api/personPaymentsApi";
 import articlesApi from "./api/articlesApi";
 import subscriptionApi from "./api/subscriptionApi";
 import userConfigApi from "./api/userConfigApi";
+import userAuthenticationApi from "./authenticationApi/userAuthenticationApi";
 
 export {
   api,
@@ -38,6 +49,15 @@ export {
   apiPost,
   apiGet,
   emptyRequest,
+  authenticationApi,
+  authenticationApiGet,
+  authenticationApiGetWithParams,
+  authenticationApiPost,
+  authenticationApiPut,
+  authenticationApiDelete,
+  authenticationApiEmptyRequest,
+  userAuthenticationApi,
+  AUTHENTICATION_API_SCOPE,
   client,
   poolsApi,
   articlesApi,
@@ -59,6 +79,7 @@ export {
   usersApi,
   personPaymentsApi,
   initializeApi,
+  initializeAuthenticationApi,
   subscriptionApi,
   userConfigApi,
 };
