@@ -14,5 +14,5 @@ export const THE_GRAPH_API =
   getLocalStorageItem(SUBGRAPH_URL) ||
   "https://api.thegraph.com/subgraphs/name/ribondao/ribonsubgraph";
 
-export const ACCES_TOKEN_KEY = "ACCESS_TOKEN_KEY";
+export const ACCESS_TOKEN_KEY = "ACCESS_TOKEN_KEY";
 export const REFRESH_TOKEN_KEY = "REFRESH_TOKEN_KEY";
