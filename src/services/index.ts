@@ -37,6 +37,7 @@ import storiesApi from "./api/storiesApi";
 import usersApi from "./api/usersApi";
 import personPaymentsApi from "./api/personPaymentsApi";
 import articlesApi from "./api/articlesApi";
+import impressionCardsApi from "./api/impressionCardsApi";
 import subscriptionApi from "./api/subscriptionApi";
 import userConfigApi from "./api/userConfigApi";
 import userAuthenticationApi from "./authenticationApi/userAuthenticationApi";
@@ -78,6 +79,7 @@ export {
   storiesApi,
   usersApi,
   personPaymentsApi,
+  impressionCardsApi,
   initializeApi,
   initializeAuthenticationApi,
   subscriptionApi,

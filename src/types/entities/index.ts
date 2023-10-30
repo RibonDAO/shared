@@ -34,6 +34,7 @@ import ContributionBalance from "./ContributionBalance";
 import ContributionStats from "./ContributionStats";
 import Patron from "./Patron";
 import ContributionDirectImpact from "./ContributionDirectImpact";
+import ImpressionCard from "./ImpressionCard";
 import PixPayment from "./PixPayment";
 import UserConfig from "./UserConfig";
 
@@ -74,6 +75,7 @@ export {
   ContributionStats,
   Patron,
   ContributionDirectImpact,
+  ImpressionCard,
   PixPayment,
   UserConfig
 };
