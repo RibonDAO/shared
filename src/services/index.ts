@@ -27,7 +27,7 @@ import storiesApi from "./api/storiesApi";
 import usersApi from "./api/usersApi";
 import personPaymentsApi from "./api/personPaymentsApi";
 import articlesApi from "./api/articlesApi";
-
+import impressionCardsApi from "./api/impressionCardsApi";
 export {
   api,
   apiDelete,
@@ -56,5 +56,6 @@ export {
   storiesApi,
   usersApi,
   personPaymentsApi,
+  impressionCardsApi,
   initializeApi,
 };
