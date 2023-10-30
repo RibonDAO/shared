@@ -3,7 +3,7 @@ import ImpressionCard from "types/entities/ImpressionCard";
 import { apiGet } from "..";
 
 const impressionCardsApi = {
-  getImpressionCard: (id: any): Promise<AxiosResponse<ImpressionCard>> =>
+  getImpressionCard: (id: number | string): Promise<AxiosResponse<ImpressionCard>> =>
     apiGet(`impression_cards/${id}`),
 };
 
