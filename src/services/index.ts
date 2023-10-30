@@ -42,7 +42,6 @@ import subscriptionApi from "./api/subscriptionApi";
 import userConfigApi from "./api/userConfigApi";
 import userAuthenticationApi from "./authenticationApi/userAuthenticationApi";
 
-
 export {
   api,
   apiDelete,
