@@ -1,7 +1,7 @@
 import CanDonate from "./CanDonate";
 import FirstAccessToIntegration from "./FirstAccessToIntegration";
 import CardFees from "./CardFees";
-import DonationsCount from "./DonationsCount";
+import { DonationsCount, AppDonationsCount } from "./DonationsCount";
 import NonProfitImpactResponse from "./NonProfitImpactResponse";
 import PoolBalance from "./PoolBalance";
 import PromoterCardGiving from "./PromoterCardGiving";
@@ -23,6 +23,7 @@ export {
   FirstAccessToIntegration,
   CardFees,
   DonationsCount,
+  AppDonationsCount,
   NonProfitImpactResponse,
   PoolBalance,
   PromoterCardGiving,

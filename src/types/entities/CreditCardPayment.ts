@@ -15,4 +15,7 @@ export default interface CreditCardPayment {
   };
   causeId?: number;
   nonProfitId?: number;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
 }

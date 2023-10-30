@@ -4,11 +4,18 @@ import CanDonate from "types/apiResponses/CanDonate";
 import CompletedTask from "types/apiResponses/CompletedTask";
 import TasksStatistics from "types/apiResponses/TasksStatistics";
 import FirstAccessToIntegration from "types/apiResponses/FirstAccessToIntegration";
+import Subscription from "types/entities/Subscription";
 import { apiPost, apiGet, apiDelete } from "..";
 
 const usersApi = {
-  postCreateUser: (email: string, language: string): Promise<AxiosResponse<User>> =>
-    apiPost("users", { email, language }),
+  postCreateUser: (
+    email: string,
+    language: string,
+    utmCampaign?: string,
+    utmMedium?: string,
+    utmSource?: string,
+  ): Promise<AxiosResponse<User>> =>
+    apiPost("users", { email, language, utmCampaign, utmMedium, utmSource }),
 
   postSearchUser: (email: string): Promise<AxiosResponse<User>> =>
     apiPost("users/search", { email }),
@@ -22,6 +29,9 @@ const usersApi = {
         walletAddress ? `wallet_address=${walletAddress}` : ""
       }`,
     ),
+
+  getUserSubscription: (): Promise<AxiosResponse<Subscription[]>> =>
+    apiGet("users/subscriptions"),
 
   getFirstAccessToIntegration: (
     integrationId: number | string | null,
@@ -57,6 +67,11 @@ const usersApi = {
 
   deleteUser: (token: string): Promise<AxiosResponse<{}>> =>
     apiDelete(`users?token=${token}`, {}),
+
+  postSendCancelSubscriptionEmail: (
+    subscriptionId: string | number,
+  ): Promise<AxiosResponse<{}>> =>
+    apiPost("users/send_cancel_subscription_email", { subscriptionId }),
 };
 
 export default usersApi;

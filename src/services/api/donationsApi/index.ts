@@ -4,19 +4,25 @@ import { apiPost } from "..";
 
 const donationsApi = {
   postDonation: (
-    integrationId: number,
+    integrationId: number | string,
     nonProfitId: number,
     email: string,
     platform?: "app" | "web",
+    utmSource?: string,
+    utmMedium?: string,
+    utmCampaign?: string
   ): Promise<AxiosResponse<Donation>> =>
-    apiPost("donations", { integrationId, nonProfitId, email, platform }),
+    apiPost("donations", { integrationId, nonProfitId, email, platform, utmSource, utmMedium, utmCampaign }),
 
   postVoucherDonation: (
-    integrationId: number,
+    integrationId: number | string,
     nonProfitId: number,
     email: string,
     externalId: string,
     platform?: "app" | "web",
+    utmCampaign?: string,
+    utmMedium?: string,
+    utmSource?: string
   ): Promise<AxiosResponse<Donation>> =>
     apiPost("vouchers/donations", {
       integrationId,
@@ -24,6 +30,9 @@ const donationsApi = {
       email,
       externalId,
       platform,
+      utmCampaign,
+      utmMedium,
+      utmSource
     }),
 };
 

@@ -10,6 +10,9 @@ const cryptoTransactionApi = {
     integrationId: string | number,
     causeId: string | number,
     platform: string,
+    utmCampaign?: string,
+    utmMedium?: string,
+    utmSource?: string,
   ): Promise<AxiosResponse<any>> =>
     apiPost("payments/cryptocurrency", {
       transactionHash,
@@ -18,6 +21,9 @@ const cryptoTransactionApi = {
       integrationId,
       causeId,
       platform,
+      utmCampaign,
+      utmMedium,
+      utmSource,
     }),
 
   putTransactionStatus: (

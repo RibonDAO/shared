@@ -4,6 +4,7 @@ import Article from "types/entities/Article";
 
 function useArticles() {
   const [articles, setArticles] = useState<Article[]>([]);
+  const [userArticles, setUserArticles] = useState<Article[]>([]);
   const [page, setPage] = useState(1);
 
   const getArticles = useCallback(async () => {
@@ -29,11 +30,26 @@ function useArticles() {
     return article;
   }
 
+  const getUserArticles = useCallback(async () => {
+    const { data: allUserArticles } = await articlesApi.getUserArticlesList({
+      page,
+      perPage: 15,
+      sort: "published_at",
+      sortDir: "desc",
+    });
+
+    setUserArticles((oldUserArticles) => [...oldUserArticles, ...allUserArticles]);
+
+    return allUserArticles;
+  }, [page]);
+
   return {
     articles,
+    userArticles,
     getArticles,
     incrementPage,
     getArticle,
+    getUserArticles
   };
 }
 

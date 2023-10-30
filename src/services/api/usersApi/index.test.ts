@@ -86,4 +86,31 @@ describe("usersApi", () => {
       expect(api.delete).toHaveBeenCalledWith("/api/v1/users?token=jwt_token", {});
     });
   });
+
+  describe("#getUserSubscription", () => {
+    beforeEach(() => {
+      api.get = jest.fn();
+    });
+    it("fetches user subscriptions", async () => {
+      usersApi.getUserSubscription();
+
+      expect(api.get).toHaveBeenCalledWith("/api/v1/users/subscriptions");
+    });
+  });
+
+  describe("#postSendCancelSubscriptionEmail", () => {
+    beforeEach(() => {
+      api.post = jest.fn();
+    });
+
+    it("sends cancel subscription email", async () => {
+      const subscriptionId = 123;
+      usersApi.postSendCancelSubscriptionEmail(subscriptionId);
+
+      expect(api.post).toHaveBeenCalledWith(
+        "/api/v1/users/send_cancel_subscription_email",
+        { subscriptionId },
+      );
+    });
+  });
 });

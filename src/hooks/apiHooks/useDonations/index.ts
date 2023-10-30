@@ -1,7 +1,10 @@
 import donationsApi from "services/api/donationsApi";
 import impactApi from "services/api/impactApi";
 import { useApi } from "hooks/useApi";
-import DonationsCount from "types/apiResponses/DonationsCount";
+import {
+  DonationsCount,
+  AppDonationsCount,
+} from "types/apiResponses/DonationsCount";
 
 function useDonations(userId: number | undefined) {
   const { data: donationsCountResponse } = useApi<DonationsCount>({
@@ -16,12 +19,27 @@ function useDonations(userId: number | undefined) {
     criteria: [userId],
   });
 
+  const { data: appDonationsCountResponse } = useApi<AppDonationsCount>({
+    key: "appDonationsCount",
+    fetchMethod: () => {
+      const id = userId || null;
+      return impactApi.getAppDonationsCount(id);
+    },
+    options: {
+      enabled: !!userId,
+    },
+    criteria: [userId],
+  });
+
   async function donate(
-    integrationId: number,
+    integrationId: number | string,
     nonProfitId: number,
     email: string,
     platform?: "app" | "web",
     externalId?: string,
+    utmSource?: string,
+    utmMedium?: string,
+    utmCampaign?: string,
   ) {
     if (externalId) {
       await donationsApi.postVoucherDonation(
@@ -30,17 +48,29 @@ function useDonations(userId: number | undefined) {
         email,
         externalId,
         platform,
+        utmSource,
+        utmMedium,
+        utmCampaign,
       );
 
       return;
     }
 
-    await donationsApi.postDonation(integrationId, nonProfitId, email, platform);
+    await donationsApi.postDonation(
+      integrationId,
+      nonProfitId,
+      email,
+      platform,
+      utmSource,
+      utmMedium,
+      utmCampaign,
+    );
   }
 
   return {
     donate,
     donationsCount: donationsCountResponse?.donationsCount,
+    appDonationsCount: appDonationsCountResponse?.appDonationsCount,
   };
 }
 

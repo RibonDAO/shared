@@ -1,6 +1,6 @@
 {
   "name": "@ribon.io/shared",
-  "version": "1.0.76",
+  "version": "1.1.4",
   "description": "Shared library for Ribon",
   "author": "ribon",
   "license": "Apache-2.0",
@@ -106,6 +106,7 @@
     "prop-types": "^15.7.2",
     "react-query": "^3.34.8",
     "snakecase-keys": "^5.4.4",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "universal-cookie": "^6.1.1"
   }
 }

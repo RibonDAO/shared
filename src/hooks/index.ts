@@ -30,6 +30,9 @@ import useLegacyContributions from "./apiHooks/useLegacyContributions";
 import useChains from "./apiHooks/useChains";
 import useFirstAccessToIntegration from "./apiHooks/useFirstAccessIntegration";
 import useImpressionCards from "./apiHooks/useImpressionCards";
+import useContributions from "./apiHooks/useContributions";
+import useSubscriptions from "./apiHooks/useSubscriptions";
+import useUserConfig from "./apiHooks/useUserConfig";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
@@ -72,4 +75,7 @@ export {
   useTasksStatistics,
   useChains,
   useImpressionCards,
+  useContributions,
+  useSubscriptions,
+  useUserConfig,
 };

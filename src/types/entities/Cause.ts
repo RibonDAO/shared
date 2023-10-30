@@ -7,10 +7,11 @@ export default interface Cause {
   mainImage?: string;
   coverImage?: string;
   logo?: string;
-  active: boolean;
+  status: string;
   nonProfits?: NonProfit[];
   pools: Pool[];
   defaultPool?: string;
   coverImageDescription?: string;
   mainImageDescription?: string;
+  withPoolBalance?: boolean;
 }
