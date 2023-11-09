@@ -33,6 +33,7 @@ import useImpressionCards from "./apiHooks/useImpressionCards";
 import useContributions from "./apiHooks/useContributions";
 import useSubscriptions from "./apiHooks/useSubscriptions";
 import useUserConfig from "./apiHooks/useUserConfig";
+import useUserDonations from "./userHooks/useUserDonations";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
@@ -78,4 +79,5 @@ export {
   useContributions,
   useSubscriptions,
   useUserConfig,
+  useUserDonations,
 };
