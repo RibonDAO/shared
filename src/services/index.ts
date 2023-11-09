@@ -41,6 +41,7 @@ import impressionCardsApi from "./api/impressionCardsApi";
 import subscriptionApi from "./api/subscriptionApi";
 import userConfigApi from "./api/userConfigApi";
 import userAuthenticationApi from "./user/userAuthenticationApi";
+import userDonationApi from "./user/userDonationApi";
 
 export {
   api,
@@ -57,7 +58,6 @@ export {
   authenticationApiPut,
   authenticationApiDelete,
   authenticationApiEmptyRequest,
-  userAuthenticationApi,
   AUTHENTICATION_API_SCOPE,
   client,
   poolsApi,
@@ -84,4 +84,6 @@ export {
   initializeAuthenticationApi,
   subscriptionApi,
   userConfigApi,
+  userAuthenticationApi,
+  userDonationApi,
 };
