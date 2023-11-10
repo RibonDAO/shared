@@ -1,4 +1,5 @@
 import { initializeApi, InitializeApiProps } from "services/api";
+import { initializeAuthenticationApi } from "services";
 import { useApi } from "./useApi";
 import QueryClientComponent, {
   QueryClient,
@@ -40,6 +41,7 @@ type InitializeHooksProps = {
 };
 function initializeHooks({ initializeApiOptions }: InitializeHooksProps) {
   initializeApi(initializeApiOptions);
+  initializeAuthenticationApi(initializeApiOptions);
 }
 
 export {
