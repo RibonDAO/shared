@@ -1,6 +1,6 @@
 import { userDonationApi } from "services/index";
 
-function useUserDonations() {
+function useUserV1Donations() {
   async function donate(
     integrationId: number | string,
     nonProfitId: number,
@@ -39,4 +39,4 @@ function useUserDonations() {
   };
 }
 
-export default useUserDonations;
+export default useUserV1Donations;
