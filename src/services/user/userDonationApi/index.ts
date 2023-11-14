@@ -1,4 +1,5 @@
 import { AxiosResponse } from "axios";
+import { CanDonate } from "types/apiResponses";
 import { Donation } from "types/entities";
 import { apiPost } from "..";
 
@@ -38,6 +39,13 @@ const userDonationApi = {
       utmMedium,
       utmSource,
     }),
+
+  postCanDonate: (
+    integrationId: number | string,
+    platform: "app" | "web",
+    voucherId?: string,
+  ): Promise<AxiosResponse<CanDonate>> =>
+    apiPost("can_donate", { integrationId, platform, voucherId }),
 };
 
 export default userDonationApi;

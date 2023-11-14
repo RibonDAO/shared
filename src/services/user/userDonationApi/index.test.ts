@@ -1,14 +1,14 @@
-import usersApi from ".";
+import userDonationApi from ".";
 import api from "..";
 
-describe("usersApi", () => {
+describe("userDonationApi", () => {
   describe("#postDonation", () => {
     beforeEach(() => {
       api.post = jest.fn();
     });
 
     it("expects to send a get request with the correct info: url, params and headers", () => {
-      usersApi.postDonation(1, 1, "app");
+      userDonationApi.postDonation(1, 1, "app");
 
       expect(api.post).toHaveBeenCalledWith("/users/v1/donations", {
         integrationId: 1,
@@ -27,7 +27,7 @@ describe("usersApi", () => {
     });
 
     it("expects to send a get request with the correct info: url, params and headers", () => {
-      usersApi.postVoucherDonation(1, 1, "12329", "app");
+      userDonationApi.postVoucherDonation(1, 1, "12329", "app");
 
       expect(api.post).toHaveBeenCalledWith("/users/v1/vouchers/donations", {
         integrationId: 1,
@@ -37,6 +37,21 @@ describe("usersApi", () => {
         utmCampaign: undefined,
         utmMedium: undefined,
         utmSource: undefined,
+      });
+    });
+  });
+
+  describe("#postCanDonate", () => {
+    beforeEach(() => {
+      api.post = jest.fn();
+    });
+
+    it("expects to send a get request with the correct info: url, params and headers", () => {
+      userDonationApi.postCanDonate(1, "app");
+
+      expect(api.post).toHaveBeenCalledWith("/users/v1/can_donate", {
+        integrationId: 1,
+        platform: "app",
       });
     });
   });

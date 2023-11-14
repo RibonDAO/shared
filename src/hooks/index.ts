@@ -1,4 +1,5 @@
 import { initializeApi, InitializeApiProps } from "services/api";
+import { initializeAuthenticationApi } from "services";
 import { useApi } from "./useApi";
 import QueryClientComponent, {
   QueryClient,
@@ -33,12 +34,15 @@ import useImpressionCards from "./apiHooks/useImpressionCards";
 import useContributions from "./apiHooks/useContributions";
 import useSubscriptions from "./apiHooks/useSubscriptions";
 import useUserConfig from "./apiHooks/useUserConfig";
+import useUserV1Donations from "./userHooks/useUserV1Donations";
+import useUserV1Config from "./userHooks/useUserV1Config";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
 };
 function initializeHooks({ initializeApiOptions }: InitializeHooksProps) {
   initializeApi(initializeApiOptions);
+  initializeAuthenticationApi(initializeApiOptions);
 }
 
 export {
@@ -78,4 +82,6 @@ export {
   useContributions,
   useSubscriptions,
   useUserConfig,
+  useUserV1Donations,
+  useUserV1Config,
 };
