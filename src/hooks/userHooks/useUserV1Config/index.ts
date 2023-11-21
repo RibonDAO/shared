@@ -6,18 +6,8 @@ function useUserV1Config() {
     await userConfigApi.postUpdateUserConfig(data);
   }
 
-  async function sendDeleteAccountEmail() {
-    await userConfigApi.postSendDeleteAccountEmail();
-  }
-
-  async function deleteUser(token: string) {
-    await userConfigApi.deleteUser(token);
-  }
-
   return {
     updateUserConfig,
-    sendDeleteAccountEmail,
-    deleteUser,
   };
 }
 
