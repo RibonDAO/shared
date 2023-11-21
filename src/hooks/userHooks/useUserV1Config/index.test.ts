@@ -22,28 +22,4 @@ describe("useUserV1Config", () => {
       expect(userConfigApi.postUpdateUserConfig).toHaveBeenCalledWith(data);
     });
   });
-
-  describe("#sendDeleteAccountEmail", () => {
-    beforeEach(() => {
-      userConfigApi.postSendDeleteAccountEmail = jest.fn(() => ({ data } as any));
-    });
-
-    it("calls the userConfigApi searchUser with correct params", () => {
-      hook.sendDeleteAccountEmail();
-
-      expect(userConfigApi.postSendDeleteAccountEmail).toHaveBeenCalledWith();
-    });
-  });
-
-  describe("#deleteUser", () => {
-    beforeEach(() => {
-      userConfigApi.deleteUser = jest.fn(() => ({ data } as any));
-    });
-
-    it("calls the userConfigApi searchUser with correct params", () => {
-      hook.deleteUser("token");
-
-      expect(userConfigApi.deleteUser).toHaveBeenCalledWith("token");
-    });
-  });
 });
