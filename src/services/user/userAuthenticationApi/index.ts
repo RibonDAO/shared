@@ -11,8 +11,11 @@ const userAuthenticationApi = {
     id: string,
   ): Promise<AxiosResponse<any>> =>
     apiPost("auth/authorize_from_auth_token", { authToken, id }),
-  postSendAuthenticationEmail: (email: string): Promise<AxiosResponse<any>> =>
-    apiPost("auth/send_authentication_email", { email }),
+  postSendAuthenticationEmail: (
+    email?: string,
+    accountId?: string,
+  ): Promise<AxiosResponse<any>> =>
+    apiPost("auth/send_authentication_email", { email, accountId }),
 };
 
 export default userAuthenticationApi;
