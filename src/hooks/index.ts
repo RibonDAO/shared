@@ -36,6 +36,7 @@ import useSubscriptions from "./apiHooks/useSubscriptions";
 import useUserConfig from "./apiHooks/useUserConfig";
 import useUserV1Donations from "./userHooks/useUserV1Donations";
 import useUserV1Config from "./userHooks/useUserV1Config";
+import useUserProfile from "./apiHooks/useUserProfile";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
@@ -84,4 +85,5 @@ export {
   useUserConfig,
   useUserV1Donations,
   useUserV1Config,
+  useUserProfile,
 };
