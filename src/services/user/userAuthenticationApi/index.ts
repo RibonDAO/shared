@@ -14,8 +14,9 @@ const userAuthenticationApi = {
   postSendAuthenticationEmail: (
     email?: string,
     accountId?: string,
+    integrationId?: string | number,
   ): Promise<AxiosResponse<any>> =>
-    apiPost("auth/send_authentication_email", { email, accountId }),
+    apiPost("auth/send_authentication_email", { email, accountId, integrationId }),
 };
 
 export default userAuthenticationApi;
