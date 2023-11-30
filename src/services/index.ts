@@ -40,6 +40,7 @@ import articlesApi from "./api/articlesApi";
 import impressionCardsApi from "./api/impressionCardsApi";
 import subscriptionApi from "./api/subscriptionApi";
 import userConfigApi from "./api/userConfigApi";
+import userAccountApi from "./user/userAccountApi";
 import userAuthenticationApi from "./user/userAuthenticationApi";
 import userDonationApi from "./user/userDonationApi";
 
@@ -84,6 +85,7 @@ export {
   initializeAuthenticationApi,
   subscriptionApi,
   userConfigApi,
+  userAccountApi,
   userAuthenticationApi,
   userDonationApi,
 };
