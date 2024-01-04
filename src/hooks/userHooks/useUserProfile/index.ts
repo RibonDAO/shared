@@ -11,6 +11,7 @@ function useUserProfile() {
     } = useApi<UserProfile>({
       key: "UserProfile",
       fetchMethod: () => userProfileApi.getUserProfile(),
+      options: { retry: 3 },
     });
 
     return { profile, refetch, isLoading };
