@@ -6,6 +6,7 @@ export function setCookiesItem(key: string, value: string): void {
   cookies.set(key, value, {
     secure: true,
     sameSite: "strict",
+    path: "/",
   });
 }
 
