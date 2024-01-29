@@ -37,6 +37,8 @@ import useUserConfig from "./apiHooks/useUserConfig";
 import useUserV1Donations from "./userHooks/useUserV1Donations";
 import useUserV1Config from "./userHooks/useUserV1Config";
 import useUserProfile from "./userHooks/useUserProfile";
+import useUserTickets from "./userHooks/useUserTickets";
+import useTickets from "./apiHooks/useTickets";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
@@ -86,4 +88,6 @@ export {
   useUserV1Donations,
   useUserV1Config,
   useUserProfile,
+  useUserTickets,
+  useTickets,
 };
