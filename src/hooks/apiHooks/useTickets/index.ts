@@ -4,8 +4,13 @@ function useTickets() {
   async function canCollectByIntegration(
     integrationId: string | number,
     email: string,
+    platform: string,
   ) {
-    const { data } = await ticketsApi.canCollectByIntegration(integrationId, email);
+    const { data } = await ticketsApi.canCollectByIntegration(
+      integrationId,
+      email,
+      platform,
+    );
 
     return data;
   }
@@ -13,8 +18,13 @@ function useTickets() {
   async function collectByIntegration(
     integrationId: string | number,
     email: string,
+    platform: string,
   ) {
-    const { data } = await ticketsApi.collectByIntegration(integrationId, email);
+    const { data } = await ticketsApi.collectByIntegration(
+      integrationId,
+      email,
+      platform,
+    );
 
     return data;
   }
