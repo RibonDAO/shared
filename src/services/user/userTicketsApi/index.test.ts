@@ -21,10 +21,9 @@ describe("userTicketsApi", () => {
     });
 
     it("expects to send a get request with the correct info: url, params and headers", () => {
-      userTicketsApi.postTicketsDonation(1, 1, 2, "app");
+      userTicketsApi.postTicketsDonation(1, 2, "app");
 
       expect(api.post).toHaveBeenCalledWith("/users/v1/tickets/donate", {
-        integrationId: 1,
         nonProfitId: 1,
         quantity: 2,
         platform: "app",

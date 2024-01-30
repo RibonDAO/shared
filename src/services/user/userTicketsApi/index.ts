@@ -7,7 +7,6 @@ const userTicketsApi = {
     apiGet("tickets/available"),
 
   postTicketsDonation: (
-    integrationId: number | string,
     nonProfitId: number,
     quantity: number,
     platform?: "app" | "web",
@@ -16,7 +15,6 @@ const userTicketsApi = {
     utmCampaign?: string,
   ): Promise<AxiosResponse<Donation>> =>
     apiPost("tickets/donate", {
-      integrationId,
       nonProfitId,
       quantity,
       platform,

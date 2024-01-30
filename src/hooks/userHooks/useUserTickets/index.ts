@@ -13,7 +13,6 @@ function useUserTickets() {
   }
 
   async function donate(
-    integrationId: number | string,
     nonProfitId: number,
     quantity: number,
     platform?: "app" | "web",
@@ -22,7 +21,6 @@ function useUserTickets() {
     utmCampaign?: string,
   ) {
     await userTicketsApi.postTicketsDonation(
-      integrationId,
       nonProfitId,
       quantity,
       platform,
