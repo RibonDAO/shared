@@ -38,6 +38,25 @@ export function initializeApi({ url, headers }: InitializeApiProps) {
 
     return config;
   });
+
+  api.interceptors.response.use(
+    (response) => ({
+      ...response,
+      data: camelCaseKeys(response.data, { deep: true }),
+    }),
+    async (error) => {
+      const originalRequest = error.config;
+      // eslint-disable-next-line no-underscore-dangle
+      if (error.response.status === 403 && !originalRequest._retry) {
+        // eslint-disable-next-line no-underscore-dangle
+        originalRequest._retry = true;
+        const newToken = await requestNewToken();
+        originalRequest.headers.Authorization = `Bearer ${newToken}`;
+        return api(originalRequest);
+      }
+      return Promise.reject(error);
+    },
+  );
 }
 
 async function requestNewToken() {
@@ -57,25 +76,6 @@ async function requestNewToken() {
     return null;
   }
 }
-
-api.interceptors.response.use(
-  (response) => ({
-    ...response,
-    data: camelCaseKeys(response.data, { deep: true }),
-  }),
-  async (error) => {
-    const originalRequest = error.config;
-    // eslint-disable-next-line no-underscore-dangle
-    if (error.response.status === 403 && !originalRequest._retry) {
-      // eslint-disable-next-line no-underscore-dangle
-      originalRequest._retry = true;
-      const newToken = await requestNewToken();
-      originalRequest.headers.Authorization = `Bearer ${newToken}`;
-      return api(originalRequest);
-    }
-    return Promise.reject(error);
-  },
-);
 
 export function apiGet(url: string, config?: AxiosRequestConfig) {
   if (config) return api.get(`${API_SCOPE}/${url}`, config);
