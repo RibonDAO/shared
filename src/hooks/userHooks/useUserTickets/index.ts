@@ -12,7 +12,28 @@ function useUserTickets() {
     return { tickets: data?.tickets, refetch, isLoading };
   }
 
+  async function donate(
+    integrationId: number | string,
+    nonProfitId: number,
+    quantity: number,
+    platform?: "app" | "web",
+    utmSource?: string,
+    utmMedium?: string,
+    utmCampaign?: string,
+  ) {
+    await userTicketsApi.postTicketsDonation(
+      integrationId,
+      nonProfitId,
+      quantity,
+      platform,
+      utmSource,
+      utmMedium,
+      utmCampaign,
+    );
+  }
+
   return {
+    donate,
     ticketsAvailable,
   };
 }
