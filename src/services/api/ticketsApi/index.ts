@@ -20,6 +20,25 @@ const ticketsApi = {
     platform: string,
   ): Promise<AxiosResponse<any>> =>
     apiPost("tickets/collect_by_integration", { integrationId, email, platform }),
+
+  collectAndDonateByIntegration: (
+    integrationId: string | number,
+    nonProfitId: number,
+    email: string,
+    platform: string,
+    utmSource?: string,
+    utmMedium?: string,
+    utmCampaign?: string,
+  ): Promise<AxiosResponse<any>> =>
+    apiPost("tickets/collect_and_donate_by_integration", {
+      integrationId,
+      nonProfitId,
+      email,
+      platform,
+      utmSource,
+      utmMedium,
+      utmCampaign,
+    }),
 };
 
 export default ticketsApi;
