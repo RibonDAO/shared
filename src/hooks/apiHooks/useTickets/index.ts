@@ -32,8 +32,8 @@ function useTickets() {
   async function collectAndDonateByIntegration(
     integrationId: string | number,
     nonProfitId: number,
-    email: string,
     platform: string,
+    email?: string,
     utmSource?: string,
     utmMedium?: string,
     utmCampaign?: string,
@@ -41,8 +41,8 @@ function useTickets() {
     const { data } = await ticketsApi.collectAndDonateByIntegration(
       integrationId,
       nonProfitId,
-      email,
       platform,
+      email,
       utmSource,
       utmMedium,
       utmCampaign,

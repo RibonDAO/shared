@@ -24,8 +24,8 @@ const ticketsApi = {
   collectAndDonateByIntegration: (
     integrationId: string | number,
     nonProfitId: number,
-    email: string,
     platform: string,
+    email?: string,
     utmSource?: string,
     utmMedium?: string,
     utmCampaign?: string,
@@ -33,8 +33,8 @@ const ticketsApi = {
     apiPost("tickets/collect_and_donate_by_integration", {
       integrationId,
       nonProfitId,
-      email,
       platform,
+      email,
       utmSource,
       utmMedium,
       utmCampaign,

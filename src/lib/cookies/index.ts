@@ -18,5 +18,6 @@ export function removeCookiesItem(key: string) {
   cookies.remove(key, {
     secure: true,
     sameSite: "strict",
+    path: "/",
   });
 }
