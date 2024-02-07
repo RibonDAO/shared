@@ -1,8 +1,11 @@
 import { AxiosResponse } from "axios";
 
-import { apiPost } from "..";
+import { apiGet, apiPost } from "..";
 
 const ticketsApi = {
+  getTicketsAvailable: (): Promise<AxiosResponse<any>> =>
+    apiGet("tickets/available"),
+
   canCollectByIntegration: (
     integrationId: string | number,
     email: string,
