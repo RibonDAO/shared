@@ -14,10 +14,10 @@ const ticketsApi = {
 
   collectByIntegration: (
     integrationId: string | number,
-    email: string,
     platform: string,
+    email?: string,
   ): Promise<AxiosResponse<any>> =>
-    apiPost("tickets/collect_by_integration", { integrationId, email, platform }),
+    apiPost("tickets/collect_by_integration", { integrationId, platform, email }),
 
   collectAndDonateByIntegration: (
     integrationId: string | number,
@@ -46,14 +46,14 @@ const ticketsApi = {
   collectByExternalIds: (
     externalIds: string[],
     integrationId: string | number,
-    email: string,
     platform: string,
+    email?: string,
   ): Promise<AxiosResponse<any>> =>
     apiPost("tickets/collect_by_external_ids", {
       externalIds,
       integrationId,
-      email,
       platform,
+      email,
     }),
 
   collectAndDonateByExternalIds: (

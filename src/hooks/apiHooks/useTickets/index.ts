@@ -55,14 +55,14 @@ function useTickets() {
   async function collectByExternalIds(
     externalIds: string[],
     integrationId: string | number,
-    email: string,
     platform: string,
+    email?: string,
   ) {
     const { data } = await ticketsApi.collectByExternalIds(
       externalIds,
       integrationId,
-      email,
       platform,
+      email,
     );
 
     return data;
