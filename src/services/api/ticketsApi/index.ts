@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 
-import { apiPost } from "..";
+import { apiGet, apiPost } from "..";
 
 const ticketsApi = {
   canCollectByIntegration: (
@@ -39,6 +39,9 @@ const ticketsApi = {
       utmMedium,
       utmCampaign,
     }),
+
+  getTicketsAvailable: (): Promise<AxiosResponse<any>> =>
+    apiGet("tickets/available"),
 };
 
 export default ticketsApi;

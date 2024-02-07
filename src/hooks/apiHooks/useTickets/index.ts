@@ -1,4 +1,6 @@
+import { useApi } from "hooks/useApi";
 import ticketsApi from "services/api/ticketsApi";
+import { UserTickets } from "types/entities/UserTickets";
 
 function useTickets() {
   async function canCollectByIntegration(
@@ -51,10 +53,20 @@ function useTickets() {
     return data;
   }
 
+  function ticketsAvailable() {
+    const { refetch, isLoading, data } = useApi<UserTickets>({
+      key: "UserTickets",
+      fetchMethod: () => ticketsApi.getTicketsAvailable(),
+    });
+
+    return { tickets: data?.tickets, refetch, isLoading };
+  }
+
   return {
     canCollectByIntegration,
     collectByIntegration,
     collectAndDonateByIntegration,
+    ticketsAvailable,
   };
 }
 export default useTickets;
