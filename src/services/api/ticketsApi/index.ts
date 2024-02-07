@@ -6,12 +6,10 @@ const ticketsApi = {
   canCollectByIntegration: (
     integrationId: string | number,
     email: string,
-    platform: string,
   ): Promise<AxiosResponse<any>> =>
     apiPost("tickets/can_collect_by_integration", {
       integrationId,
       email,
-      platform,
     }),
 
   collectByIntegration: (
@@ -34,6 +32,45 @@ const ticketsApi = {
       integrationId,
       nonProfitId,
       platform,
+      email,
+      utmSource,
+      utmMedium,
+      utmCampaign,
+    }),
+
+  canCollectByExternalIds: (externalIds: string[]): Promise<AxiosResponse<any>> =>
+    apiPost("tickets/can_collect_by_external_ids", {
+      externalIds,
+    }),
+
+  collectByExternalIds: (
+    externalIds: string[],
+    integrationId: string | number,
+    email: string,
+    platform: string,
+  ): Promise<AxiosResponse<any>> =>
+    apiPost("tickets/collect_by_external_ids", {
+      externalIds,
+      integrationId,
+      email,
+      platform,
+    }),
+
+  collectAndDonateByExternalIds: (
+    integrationId: string | number,
+    nonProfitId: number,
+    platform: string,
+    externalIds: string[],
+    email?: string,
+    utmSource?: string,
+    utmMedium?: string,
+    utmCampaign?: string,
+  ): Promise<AxiosResponse<any>> =>
+    apiPost("tickets/collect_and_donate_by_external_ids", {
+      integrationId,
+      nonProfitId,
+      platform,
+      externalIds,
       email,
       utmSource,
       utmMedium,
