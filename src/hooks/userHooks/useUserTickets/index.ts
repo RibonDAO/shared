@@ -20,7 +20,7 @@ function useUserTickets() {
     utmMedium?: string,
     utmCampaign?: string,
   ) {
-    await userTicketsApi.postTicketsDonation(
+    return await userTicketsApi.postTicketsDonation(
       nonProfitId,
       quantity,
       platform,
