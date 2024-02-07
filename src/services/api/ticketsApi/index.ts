@@ -3,23 +3,24 @@ import { AxiosResponse } from "axios";
 import { apiGet, apiPost } from "..";
 
 const ticketsApi = {
+  getTicketsAvailable: (): Promise<AxiosResponse<any>> =>
+    apiGet("tickets/available"),
+
   canCollectByIntegration: (
     integrationId: string | number,
     email: string,
-    platform: string,
   ): Promise<AxiosResponse<any>> =>
     apiPost("tickets/can_collect_by_integration", {
       integrationId,
       email,
-      platform,
     }),
 
   collectByIntegration: (
     integrationId: string | number,
-    email: string,
     platform: string,
+    email?: string,
   ): Promise<AxiosResponse<any>> =>
-    apiPost("tickets/collect_by_integration", { integrationId, email, platform }),
+    apiPost("tickets/collect_by_integration", { integrationId, platform, email }),
 
   collectAndDonateByIntegration: (
     integrationId: string | number,
@@ -40,8 +41,44 @@ const ticketsApi = {
       utmCampaign,
     }),
 
-  getTicketsAvailable: (): Promise<AxiosResponse<any>> =>
-    apiGet("tickets/available"),
+  canCollectByExternalIds: (externalIds: string[]): Promise<AxiosResponse<any>> =>
+    apiPost("tickets/can_collect_by_external_ids", {
+      externalIds,
+    }),
+
+  collectByExternalIds: (
+    externalIds: string[],
+    integrationId: string | number,
+    platform: string,
+    email?: string,
+  ): Promise<AxiosResponse<any>> =>
+    apiPost("tickets/collect_by_external_ids", {
+      externalIds,
+      integrationId,
+      platform,
+      email,
+    }),
+
+  collectAndDonateByExternalIds: (
+    integrationId: string | number,
+    nonProfitId: number,
+    platform: string,
+    externalIds: string[],
+    email?: string,
+    utmSource?: string,
+    utmMedium?: string,
+    utmCampaign?: string,
+  ): Promise<AxiosResponse<any>> =>
+    apiPost("tickets/collect_and_donate_by_external_ids", {
+      integrationId,
+      nonProfitId,
+      platform,
+      externalIds,
+      email,
+      utmSource,
+      utmMedium,
+      utmCampaign,
+    }),
 };
 
 export default ticketsApi;
