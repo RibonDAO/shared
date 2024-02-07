@@ -4,13 +4,8 @@ function useTickets() {
   async function canCollectByIntegration(
     integrationId: string | number,
     email: string,
-    platform: string,
   ) {
-    const { data } = await ticketsApi.canCollectByIntegration(
-      integrationId,
-      email,
-      platform,
-    );
+    const { data } = await ticketsApi.canCollectByIntegration(integrationId, email);
 
     return data;
   }
@@ -51,10 +46,59 @@ function useTickets() {
     return data;
   }
 
+  async function canCollectByExternalIds(externalIds: string[]) {
+    const { data } = await ticketsApi.canCollectByExternalIds(externalIds);
+
+    return data;
+  }
+
+  async function collectByExternalIds(
+    externalIds: string[],
+    integrationId: string | number,
+    platform: string,
+    email?: string,
+  ) {
+    const { data } = await ticketsApi.collectByExternalIds(
+      externalIds,
+      integrationId,
+      platform,
+      email,
+    );
+
+    return data;
+  }
+
+  async function collectAndDonateByExternalIds(
+    integrationId: string | number,
+    nonProfitId: number,
+    platform: string,
+    externalIds: string[],
+    email?: string,
+    utmSource?: string,
+    utmMedium?: string,
+    utmCampaign?: string,
+  ) {
+    const { data } = await ticketsApi.collectAndDonateByExternalIds(
+      integrationId,
+      nonProfitId,
+      platform,
+      externalIds,
+      email,
+      utmSource,
+      utmMedium,
+      utmCampaign,
+    );
+
+    return data;
+  }
+
   return {
     canCollectByIntegration,
     collectByIntegration,
     collectAndDonateByIntegration,
+    canCollectByExternalIds,
+    collectByExternalIds,
+    collectAndDonateByExternalIds,
   };
 }
 export default useTickets;
