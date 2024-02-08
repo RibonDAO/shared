@@ -7,7 +7,7 @@ import { useApi } from "../../useApi";
 function useOffers(
   currency: Currencies,
   subscription = false,
-  category: Categories,
+  category = Categories.DIRECT_CONTRIBUTION,
 ) {
   const {
     data: offers,
