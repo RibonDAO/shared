@@ -1,6 +1,9 @@
+import { Categories } from "types/enums/Categories";
+
 export default interface Offer {
   id: number;
   currency: "usd" | "brl";
+  category: Categories;
   subscription: boolean;
   priceCents: number;
   price: string;
