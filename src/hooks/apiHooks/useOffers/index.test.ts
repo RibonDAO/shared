@@ -2,6 +2,7 @@ import { renderHook } from "config/testUtils/renders";
 import offerFactory from "config/testUtils/factories/offerFactory";
 import { waitForPromises } from "config/testUtils";
 import { Currencies } from "types/enums/Currencies";
+import { Categories } from "types/enums/Categories";
 import offersApi from "services/api/offersApi";
 import useOffers from ".";
 
@@ -12,7 +13,7 @@ describe("useOffers", () => {
   beforeEach(async () => {
     offersApi.getOffers = jest.fn(() => ({ data } as any));
     const { hook: renderHookResult } = renderHook(() =>
-      useOffers(Currencies.BRL, false),
+      useOffers(Currencies.BRL, false, Categories.DIRECT_CONTRIBUTION),
     );
     await waitForPromises();
     hook = renderHookResult.result.current;
