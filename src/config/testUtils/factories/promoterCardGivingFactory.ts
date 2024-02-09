@@ -1,4 +1,5 @@
 import PromoterCardGiving from "types/apiResponses/PromoterCardGiving";
+import { Categories } from "types/enums";
 
 function promoterCardGivingFactory(
   params: Partial<PromoterCardGiving> = {},
@@ -10,6 +11,7 @@ function promoterCardGivingFactory(
       active: true,
       createdAt: "2022-06-28 16:38:29 UTC",
       currency: "usd",
+      category: Categories.DIRECT_CONTRIBUTION,
       id: 5,
       price: "$10.00",
       gateway: "stripe",
