@@ -5,7 +5,7 @@ import CompletedTask from "types/apiResponses/CompletedTask";
 import TasksStatistics from "types/apiResponses/TasksStatistics";
 import FirstAccessToIntegration from "types/apiResponses/FirstAccessToIntegration";
 import Subscription from "types/entities/Subscription";
-import HasDonatedToday from "types/apiResponses/HasDonatedToday";
+import DonatedToday from "types/apiResponses/DonatedToday";
 import { apiPost, apiGet, apiDelete } from "..";
 
 const usersApi = {
@@ -73,8 +73,8 @@ const usersApi = {
     subscriptionId: string | number,
   ): Promise<AxiosResponse<{}>> =>
     apiPost("users/send_cancel_subscription_email", { subscriptionId }),
-  getHasDonatedToday: (): Promise<AxiosResponse<HasDonatedToday>> =>
-    apiGet("users/has_donated_today"),
+  getDonatedToday: (): Promise<AxiosResponse<DonatedToday>> =>
+    apiGet("users/donated_today"),
 };
 
 export default usersApi;

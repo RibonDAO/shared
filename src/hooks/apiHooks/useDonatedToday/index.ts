@@ -2,21 +2,21 @@ import { useApi } from "hooks/useApi";
 import usersApi from "services/api/usersApi";
 import CanDonate from "types/apiResponses/CanDonate";
 
-function useHasDonatedToday() {
+function useDonatedToday() {
   const {
-    data: hasDonatedToday,
+    data: donatedToday,
     isLoading,
     refetch,
   } = useApi<CanDonate>({
     key: "canDonate",
-    fetchMethod: () => usersApi.getHasDonatedToday(),
+    fetchMethod: () => usersApi.getDonatedToday(),
   });
 
   return {
-    hasDonatedToday,
+    donatedToday,
     isLoading,
     refetch,
   };
 }
 
-export default useHasDonatedToday;
+export default useDonatedToday;
