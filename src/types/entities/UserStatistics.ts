@@ -7,5 +7,4 @@ export default interface UserStatistics {
   totalNonProfits: number;
   totalCauses: number;
   lastDonatedNonProfit?: number;
-  lastDonationAt?: string;
 }
