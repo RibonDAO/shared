@@ -23,13 +23,13 @@ function useTickets() {
 
   async function collectByIntegration(
     integrationId: string | number,
-    email: string,
     platform: string,
+    email: string,
   ) {
     const { data } = await ticketsApi.collectByIntegration(
       integrationId,
-      email,
       platform,
+      email,
     );
 
     return data;
