@@ -1,4 +1,5 @@
 import { Categories } from "types/enums/Categories";
+import Plan from "./Plan";
 
 export default interface Offer {
   id: number;
@@ -15,4 +16,5 @@ export default interface Offer {
   positionOrder: number;
   createdAt?: string;
   updatedAt?: string;
+  plan?: Plan;
 }
