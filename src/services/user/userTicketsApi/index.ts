@@ -6,6 +6,9 @@ const userTicketsApi = {
   getTicketsAvailable: (): Promise<AxiosResponse<any>> =>
     apiGet("tickets/available"),
 
+  getTicketsToCollect: (): Promise<AxiosResponse<any>> =>
+    apiGet("tickets/to_collect"),
+
   postTicketsDonation: (
     nonProfitId: number,
     quantity: number,
