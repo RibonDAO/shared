@@ -1,5 +1,6 @@
 import { useApi } from "hooks/useApi";
 import userSubscriptionApi from "services/user/userSubscriptionApi";
+import IsMember from "types/apiResponses/IsMember";
 
 function useUserSubscription() {
   function userIsMember() {
@@ -7,7 +8,7 @@ function useUserSubscription() {
       refetch,
       isLoading,
       data: isMember,
-    } = useApi<any>({
+    } = useApi<IsMember>({
       key: "UserIsMember",
       fetchMethod: () => userSubscriptionApi.getIsMember(),
     });
