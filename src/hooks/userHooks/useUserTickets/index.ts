@@ -44,10 +44,17 @@ function useUserTickets() {
     );
   }
 
+  async function collectByClub(platform: string, category: string) {
+    const { data } = await userTicketsApi.collectByClub(platform, category);
+
+    return data;
+  }
+
   return {
     donate,
     ticketsAvailable,
     ticketsToCollect,
+    collectByClub,
   };
 }
 

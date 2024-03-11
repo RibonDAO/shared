@@ -79,9 +79,6 @@ const ticketsApi = {
       utmMedium,
       utmCampaign,
     }),
-
-  collectByClub: (platform: string, category: string): Promise<AxiosResponse<any>> =>
-    apiPost("tickets/collect_by_club", { platform, category }),
 };
 
 export default ticketsApi;

@@ -103,12 +103,6 @@ function useTickets() {
     return data;
   }
 
-  async function collectByClub(platform: string, category: string) {
-    const { data } = await ticketsApi.collectByClub(platform, category);
-
-    return data;
-  }
-
   return {
     ticketsAvailable,
     canCollectByIntegration,
@@ -117,7 +111,6 @@ function useTickets() {
     canCollectByExternalIds,
     collectByExternalIds,
     collectAndDonateByExternalIds,
-    collectByClub,
   };
 }
 export default useTickets;
