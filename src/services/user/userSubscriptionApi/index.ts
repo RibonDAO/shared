@@ -1,5 +1,4 @@
 import { AxiosResponse } from "axios";
-
 import { apiGet } from "..";
 import IsMember from "types/apiResponses/IsMember";
 
