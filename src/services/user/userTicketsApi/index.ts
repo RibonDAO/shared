@@ -1,13 +1,13 @@
 import { AxiosResponse } from "axios";
 import { Donation } from "types/entities";
-import { apiGet, apiPost } from "..";
+import { apiGet, apiGetWithParams, apiPost } from "..";
 
 const userTicketsApi = {
   getTicketsAvailable: (): Promise<AxiosResponse<any>> =>
     apiGet("tickets/available"),
 
-  getTicketsToCollect: (): Promise<AxiosResponse<any>> =>
-    apiGet("tickets/to_collect"),
+  getTicketsToCollect: (source: string): Promise<AxiosResponse<any>> =>
+    apiGetWithParams("tickets/to_collect", { source }),
 
   postTicketsDonation: (
     nonProfitId: number,

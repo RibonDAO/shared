@@ -13,14 +13,14 @@ function useUserTickets() {
     return { tickets: data?.tickets, refetch, isLoading };
   }
 
-  function ticketsToCollect() {
+  function getTicketsToCollect(source: string) {
     const { refetch, isLoading, data } = useApi<TicketsToCollect>({
       key: "UserTicketsToCollect",
-      fetchMethod: () => userTicketsApi.getTicketsToCollect(),
+      fetchMethod: () => userTicketsApi.getTicketsToCollect(source),
     });
 
     return {
-      data,
+      toCollect: data,
       refetch,
       isLoading,
     };
@@ -53,8 +53,8 @@ function useUserTickets() {
   return {
     donate,
     ticketsAvailable,
-    ticketsToCollect,
     collectByClub,
+    getTicketsToCollect,
   };
 }
 
