@@ -30,4 +30,15 @@ describe("subscriptionApi", () => {
       );
     });
   });
+
+  describe("#getIsMember", () => {
+    it("get is member", async () => {
+      await subscriptionApi.getIsMember();
+
+      expect(api.get).toHaveBeenCalledWith(
+        `/api/v1/users/is_member`
+      );
+    });
+  });
+
 });
