@@ -53,16 +53,12 @@ const useSubscription = () => {
   }
 
   function userIsMember() {
-    const {
-      refetch,
-      isLoading,
-      data: isMember,
-    } = useApi<IsMember>({
+    const { refetch, isLoading, data } = useApi<IsMember>({
       key: "UserIsMember",
       fetchMethod: () => subscriptionApi.getIsMember(),
     });
 
-    return { isMember, refetch, isLoading };
+    return { isMember: data?.isMember || false, refetch, isLoading };
   }
 
   return {
@@ -70,7 +66,7 @@ const useSubscription = () => {
     sendCancelSubscriptionEmail,
     cancelSubscription,
     getSubscription,
-    userIsMember
+    userIsMember,
   };
 };
 
