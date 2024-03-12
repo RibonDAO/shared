@@ -7,14 +7,6 @@ describe("userTicketsApi", () => {
     api.get = jest.fn();
   });
 
-  describe("#getTicketsAvailable", () => {
-    it("get user Tickets", async () => {
-      await userTicketsApi.getTicketsAvailable();
-
-      expect(api.get).toHaveBeenCalled();
-    });
-  });
-
   describe("#postTicketsDonation", () => {
     beforeEach(() => {
       api.post = jest.fn();

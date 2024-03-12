@@ -1,18 +1,8 @@
 import { useApi } from "hooks/useApi";
 import userTicketsApi from "services/user/userTicketsApi";
 import TicketsToCollect from "types/entities/TicketsToCollect";
-import { UserTickets } from "types/entities/UserTickets";
 
 function useUserTickets() {
-  function ticketsAvailable() {
-    const { refetch, isLoading, data } = useApi<UserTickets>({
-      key: "UserTickets",
-      fetchMethod: () => userTicketsApi.getTicketsAvailable(),
-    });
-
-    return { tickets: data?.tickets, refetch, isLoading };
-  }
-
   function getTicketsToCollect(source: string) {
     const { refetch, isLoading, data } = useApi<TicketsToCollect>({
       key: "UserTicketsToCollect",
@@ -52,7 +42,6 @@ function useUserTickets() {
 
   return {
     donate,
-    ticketsAvailable,
     collectByClub,
     getTicketsToCollect,
   };
