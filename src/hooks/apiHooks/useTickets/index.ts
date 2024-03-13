@@ -1,5 +1,6 @@
 import { useApi } from "hooks/useApi";
 import ticketsApi from "services/api/ticketsApi";
+import TicketsToCollect from "types/entities/TicketsToCollect";
 import { UserTickets } from "types/entities/UserTickets";
 
 function useTickets() {
@@ -103,6 +104,19 @@ function useTickets() {
     return data;
   }
 
+  function getTicketsToCollect(source: string) {
+    const { refetch, isLoading, data } = useApi<TicketsToCollect>({
+      key: "UserTicketsToCollect",
+      fetchMethod: () => ticketsApi.getTicketsToCollect(source),
+    });
+
+    return {
+      toCollect: data,
+      refetch,
+      isLoading,
+    };
+  }
+
   return {
     ticketsAvailable,
     canCollectByIntegration,
@@ -111,6 +125,7 @@ function useTickets() {
     canCollectByExternalIds,
     collectByExternalIds,
     collectAndDonateByExternalIds,
+    getTicketsToCollect,
   };
 }
 export default useTickets;
