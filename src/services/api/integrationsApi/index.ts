@@ -1,11 +1,14 @@
 import { AxiosResponse } from "axios";
 import Integration from "types/entities/Integration";
 import IntegrationImpact from "types/apiResponses/IntegrationImpact";
-import { apiGet } from "..";
+import { apiGet, apiPost, apiPut } from "..";
 
 const integrationsApi = {
   getIntegration: (id: number | string): Promise<AxiosResponse<Integration>> =>
     apiGet(`integrations/${id}`),
+
+  createIntegration: (data: any): Promise<AxiosResponse<Integration>> =>
+    apiPost("integrations", data),
 
   getIntegrationImpact: (
     id: number | string,
@@ -18,6 +21,10 @@ const integrationsApi = {
         end_date: endDate,
       },
     }),
+  updateIntegration: (
+    id: any,
+    data: Integration,
+  ): Promise<AxiosResponse<Integration>> => apiPut(`integrations/${id}`, data),
 };
 
 export default integrationsApi;

@@ -21,6 +21,23 @@ describe("integrationsApi", () => {
     });
   });
 
+  describe("#createIntegration", () => {
+    const data = {
+      name: "Integration 1",
+      status: "active",
+    };
+
+    beforeEach(() => {
+      api.post = jest.fn();
+    });
+
+    it("expects to send a post request with the correct info: url and params", () => {
+      integrationsApi.createIntegration(data);
+
+      expect(api.post).toHaveBeenCalledWith("/api/v1/integrations", data);
+    });
+  });
+
   describe("#getIntegrationImpact", () => {
     beforeEach(() => {
       api.get = jest.fn();
