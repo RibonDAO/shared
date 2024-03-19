@@ -38,6 +38,7 @@ import ImpressionCard from "./ImpressionCard";
 import PixPayment from "./PixPayment";
 import UserConfig from "./UserConfig";
 import Plan from "./Plan";
+import Subscription from "./Subscription";
 
 export {
   Article,
@@ -80,4 +81,5 @@ export {
   ImpressionCard,
   PixPayment,
   UserConfig,
+  Subscription,
 };
