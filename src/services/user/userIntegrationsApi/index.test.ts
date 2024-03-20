@@ -1,14 +1,14 @@
-import integrationsApi from ".";
+import userIntegrationsApi from ".";
 import api from "..";
 
-describe("integrationsApi", () => {
+describe("userIntegrationsApi", () => {
   describe("#getIntegration", () => {
     beforeEach(() => {
       api.get = jest.fn();
     });
 
     it("expects to send a get request with the correct info: url and headers", () => {
-      integrationsApi.getIntegration();
+      userIntegrationsApi.getIntegration();
       expect(api.get).toHaveBeenCalledWith("/users/v1/integration");
     });
   });
@@ -24,7 +24,7 @@ describe("integrationsApi", () => {
     });
 
     it("expects to send a post request with the correct info: url and params", () => {
-      integrationsApi.createIntegration(data);
+      userIntegrationsApi.createIntegration(data);
 
       expect(api.post).toHaveBeenCalledWith("/users/v1/integration", data);
     });
