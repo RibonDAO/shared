@@ -6,6 +6,7 @@ import { apiGet } from "..";
 const integrationsApi = {
   getIntegration: (id: number | string): Promise<AxiosResponse<Integration>> =>
     apiGet(`integrations/${id}`),
+
   getIntegrationImpact: (
     id: number | string,
     startDate: string,
