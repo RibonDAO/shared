@@ -42,6 +42,9 @@ import useTickets from "./apiHooks/useTickets";
 import useDonatedToday from "./apiHooks/useDonatedToday";
 import useReports from "./apiHooks/useReports";
 
+import { useUploadFile } from "./userHooks/useUploadFile";
+import useUserIntegration from "./userHooks/useUserIntegration";
+
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
 };
@@ -94,4 +97,6 @@ export {
   useTickets,
   useDonatedToday,
   useReports,
+  useUploadFile,
+  useUserIntegration,
 };

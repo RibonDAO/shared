@@ -18,4 +18,5 @@ export default interface Integration {
   ticketAvailabilityInMinutes: number | null;
   integrationTaskAttributes?: IntegrationTask | null;
   mobilityAttributes?: string[];
+  metadata?: Record<string, any>;
 }
