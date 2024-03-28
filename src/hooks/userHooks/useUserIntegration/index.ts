@@ -15,18 +15,18 @@ function useUserIntegration() {
     let integration;
 
     if (file) {
-      upload.create((error: Error, blob: any) => {
+      upload.create(async (error: Error, blob: any) => {
         if (error) {
           throw error;
         } else {
-          integration = userIntegrationsApi.createIntegration({
+          integration = await userIntegrationsApi.createIntegration({
             ...data,
             logo: blob.signed_id,
           });
         }
       });
     } else {
-      integration = userIntegrationsApi.createIntegration(data);
+      integration = await userIntegrationsApi.createIntegration(data);
     }
     return integration;
   }
