@@ -2,7 +2,7 @@ import IntegrationTask from "./IntegrationTask";
 import IntegrationWallet from "./IntegrationWallet";
 
 export default interface Integration {
-  id: number;
+  id?: number;
   name: string;
   walletAddress?: string;
   url?: string;
