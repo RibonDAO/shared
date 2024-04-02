@@ -43,6 +43,7 @@ import userConfigApi from "./api/userConfigApi";
 import userAccountApi from "./user/userAccountApi";
 import userAuthenticationApi from "./user/userAuthenticationApi";
 import userDonationApi from "./user/userDonationApi";
+import userIntegrationsApi from "./user/userIntegrationsApi";
 
 export {
   api,
@@ -88,4 +89,5 @@ export {
   userAccountApi,
   userAuthenticationApi,
   userDonationApi,
+  userIntegrationsApi,
 };
