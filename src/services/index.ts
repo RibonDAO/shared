@@ -89,5 +89,5 @@ export {
   userAccountApi,
   userAuthenticationApi,
   userDonationApi,
-  userIntegrationsApi
+  userIntegrationsApi,
 };
