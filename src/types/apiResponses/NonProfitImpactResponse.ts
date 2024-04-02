@@ -3,4 +3,5 @@ export default interface NonProfitImpactResponse {
   roundedImpact: number;
   formattedImpact: string[];
   measurementUnit: string;
+  minimumNumberOfTickets?: number;
 }
