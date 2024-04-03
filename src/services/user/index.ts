@@ -26,6 +26,25 @@ export type InitializeApiProps = {
   url: string;
   headers: Record<any, any>;
 };
+
+async function requestNewToken() {
+  try {
+    const refreshToken = getCookiesItem(REFRESH_TOKEN_KEY);
+    if (!refreshToken) return null;
+
+    const res = await userAuthenticationApi.postRefreshToken(refreshToken);
+    const newToken = res.headers["access-token"];
+    const newRefreshToken = res.headers["refresh-token"];
+
+    setCookiesItem(ACCESS_TOKEN_KEY, newToken);
+    setCookiesItem(REFRESH_TOKEN_KEY, newRefreshToken);
+
+    return newToken;
+  } catch (err) {
+    return null;
+  }
+}
+
 export function initializeApi({ url, headers }: InitializeApiProps) {
   api.interceptors.request.use((config) => {
     // eslint-disable-next-line
@@ -57,24 +76,6 @@ export function initializeApi({ url, headers }: InitializeApiProps) {
       return Promise.reject(error);
     },
   );
-}
-
-async function requestNewToken() {
-  try {
-    const refreshToken = getCookiesItem(REFRESH_TOKEN_KEY);
-    if (!refreshToken) return null;
-
-    const res = await userAuthenticationApi.postRefreshToken(refreshToken);
-    const newToken = res.headers["access-token"];
-    const newRefreshToken = res.headers["refresh-token"];
-
-    setCookiesItem(ACCESS_TOKEN_KEY, newToken);
-    setCookiesItem(REFRESH_TOKEN_KEY, newRefreshToken);
-
-    return newToken;
-  } catch (err) {
-    return null;
-  }
 }
 
 export function apiGet(url: string, config?: AxiosRequestConfig) {
