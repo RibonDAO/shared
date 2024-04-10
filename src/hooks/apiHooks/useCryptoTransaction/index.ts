@@ -9,6 +9,7 @@ function useCryptoTransaction() {
     integrationId: string | number,
     causeId: string | number,
     platform: "app" | "web",
+    nonProfitId?: string | number
   ) {
     const { data: transaction } = await cryptoTransactionApi.postTransaction(
       transactionHash,
@@ -17,6 +18,7 @@ function useCryptoTransaction() {
       integrationId,
       causeId,
       platform,
+      nonProfitId
     );
 
     return transaction;

@@ -12,6 +12,7 @@ describe("useCryptoTransaction", () => {
   const testIntegrationId = 1;
   const testCauseId = 1;
   const testPlatform = "web";
+  const testNonProfitId = 1;
 
   const transactionData = [
     testHash,
@@ -20,6 +21,7 @@ describe("useCryptoTransaction", () => {
     testIntegrationId,
     testCauseId,
     testPlatform,
+    testNonProfitId
   ];
 
   beforeEach(() => {
@@ -42,6 +44,7 @@ describe("useCryptoTransaction", () => {
         testIntegrationId,
         testCauseId,
         testPlatform,
+        testNonProfitId
       );
 
       expect(cryptoTransactionApi.postTransaction).toHaveBeenCalledWith(
