@@ -1,21 +1,21 @@
 import { useApi } from "hooks/useApi";
-import ribonConfigsApi from "services/api/ribonConfigApi";
+import ribonConfigApi from "services/api/ribonConfigApi";
 import { RibonConfig } from "types/entities";
 
 function useRibonConfig() {
   const {
-    data: ribonConfigs,
+    data: ribonConfig,
     isLoading,
     refetch,
     error,
   } = useApi<RibonConfig>({
     key: "ribonConfig",
-    fetchMethod: () => ribonConfigsApi.getRibonConfig(),
+    fetchMethod: () => ribonConfigApi.getRibonConfig(),
     options: {},
     criteria: [],
   });
 
-  return { ribonConfigs, isLoading, refetch, error };
+  return { ribonConfig, isLoading, refetch, error };
 }
 
 export default useRibonConfig;

@@ -1,8 +1,8 @@
 import api from "..";
 import ribonConfigApi from ".";
 
-describe("ribonConfigsApi", () => {
-  describe("#getRibonConfigs", () => {
+describe("ribonConfigApi", () => {
+  describe("#getRibonConfig", () => {
     beforeEach(() => {
       api.get = jest.fn();
     });
