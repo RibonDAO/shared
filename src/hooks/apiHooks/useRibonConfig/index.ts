@@ -1,5 +1,5 @@
 import { useApi } from "hooks/useApi";
-import ribonConfigsApi from "services/api/ribonConfigsApi";
+import ribonConfigsApi from "services/api/ribonConfigApi";
 import { RibonConfig } from "types/entities";
 
 function useRibonConfig() {
@@ -10,7 +10,7 @@ function useRibonConfig() {
     error,
   } = useApi<RibonConfig>({
     key: "ribonConfig",
-    fetchMethod: () => ribonConfigsApi.getRibonConfigs(),
+    fetchMethod: () => ribonConfigsApi.getRibonConfig(),
     options: {},
     criteria: [],
   });
