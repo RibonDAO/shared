@@ -10,7 +10,7 @@ describe("ribonConfigsApi", () => {
     it("expects to send a get request with the correct info: url, params and headers", () => {
       ribonConfigsApi.getRibonConfigs();
 
-      expect(api.get).toHaveBeenCalledWith("/api/v1/ribonConfigs");
+      expect(api.get).toHaveBeenCalledWith("/api/v1/configs/settings");
     });
   });
 });
