@@ -117,6 +117,30 @@ function useTickets() {
     };
   }
 
+  async function canCollectByCoupon(
+    couponId: string | number,
+    platform: string,
+    email: string,
+  ) {
+    const { data } = await ticketsApi.canCollectByCouponId(
+      email,
+      platform,
+      couponId,
+    );
+
+    return data;
+  }
+
+  async function collectByCoupon(
+    couponId: string | number,
+    platform: string,
+    email: string,
+  ) {
+    const { data } = await ticketsApi.collectByCouponId(email, platform, couponId);
+
+    return data;
+  }
+
   return {
     ticketsAvailable,
     canCollectByIntegration,
@@ -126,6 +150,8 @@ function useTickets() {
     collectByExternalIds,
     collectAndDonateByExternalIds,
     getTicketsToCollect,
+    canCollectByCoupon,
+    collectByCoupon,
   };
 }
 export default useTickets;
