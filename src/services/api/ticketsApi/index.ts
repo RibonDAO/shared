@@ -82,6 +82,28 @@ const ticketsApi = {
       utmMedium,
       utmCampaign,
     }),
+
+  canCollectByCouponId: (
+    email: string,
+    platform: string,
+    couponId: string | number,
+  ): Promise<AxiosResponse<any>> =>
+    apiPost("tickets/can_collect_by_coupon_id", {
+      email,
+      platform,
+      couponId,
+    }),
+
+  collectByCouponId: (
+    email: string,
+    platform: string,
+    couponId: string | number,
+  ): Promise<AxiosResponse<any>> =>
+    apiPost("tickets/collect_by_coupon_id", {
+      email,
+      platform,
+      couponId,
+    }),
 };
 
 export default ticketsApi;
