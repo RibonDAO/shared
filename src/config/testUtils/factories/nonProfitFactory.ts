@@ -11,6 +11,7 @@ function nonProfitFactory(params: Partial<NonProfit> = {}): NonProfit {
     updatedAt: "2022-02-15 18:15:23 UTC",
     walletAddress: "0x0000000000000000000000000000000000000000",
     impactDescription: "Impact description",
+    impactTitle: "Impact title",
     impactByTicket: 1,
     backgroundImage: "",
     confirmationImage: "",
@@ -20,6 +21,7 @@ function nonProfitFactory(params: Partial<NonProfit> = {}): NonProfit {
     causeId: 1,
     backgroundImageDescription: "Background image description",
     confirmationImageDescription: "Confirmation image description",
+    coverImageDescription: "Cover image description",
     logoDescription: "Logo description",
     mainImageDescription: "Main image description",
     nonProfitImpacts: [
