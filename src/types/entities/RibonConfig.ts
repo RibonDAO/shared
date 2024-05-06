@@ -1,6 +1,7 @@
 export default interface RibonConfig {
   id: string;
   defaultTicketValue: string;
-  updatedAt: string;
   ribonClubFeePercentage?: number;
+  minimumVersionRequired: string;
+  updatedAt: string;
 }
