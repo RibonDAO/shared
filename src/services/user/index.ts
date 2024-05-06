@@ -66,7 +66,7 @@ export function initializeApi({ url, headers }: InitializeApiProps) {
 
     async (error) => {
       const originalRequest = error.config;
-
+      console.log("errorshared", error.response?.status, originalRequest)
       // eslint-disable-next-line no-underscore-dangle
       if (error.response?.status === 403 && !originalRequest._retry) {
         // eslint-disable-next-line no-underscore-dangle

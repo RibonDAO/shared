@@ -9,9 +9,11 @@ export default interface NonProfit {
   name: string;
   walletAddress: string;
   impactDescription: string;
+  impactTitle: string;
   backgroundImage: string;
   confirmationImage: string;
   coverImage: string;
+  coverImageDescription: string;
   mainImage: string;
   backgroundImageDescription: string;
   confirmationImageDescription: string;
