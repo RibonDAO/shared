@@ -1,15 +1,15 @@
 import { renderHook } from "config/testUtils/renders";
 import { waitForPromises } from "config/testUtils";
 import { userDonationApi } from "services/index";
-import useDonationStreak from ".";
+import useUserDonationStreak from ".";
 
-describe("useDonationStreak", () => {
-  let hook: ReturnType<typeof useDonationStreak>;
+describe("useUserDonationStreak", () => {
+  let hook: ReturnType<typeof useUserDonationStreak>;
   const data = { streak: 1 };
 
   beforeEach(async () => {
     userDonationApi.getStreak = jest.fn(() => ({ data } as any));
-    const { hook: renderHookResult } = renderHook(() => useDonationStreak());
+    const { hook: renderHookResult } = renderHook(() => useUserDonationStreak());
     await waitForPromises();
     hook = renderHookResult.result.current;
   });

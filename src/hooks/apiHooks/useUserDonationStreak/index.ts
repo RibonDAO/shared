@@ -1,9 +1,9 @@
 import { useApi } from "hooks/useApi";
 import { userDonationApi } from "services/index";
-import { DonationStreak } from "types/apiResponses/DonationStreak";
+import { UserDonationStreak } from "types/apiResponses/UserDonationStreak";
 
-function useDonationStreak() {
-  const { data, isLoading, refetch } = useApi<DonationStreak>({
+function useUserDonationStreak() {
+  const { data, isLoading, refetch } = useApi<UserDonationStreak>({
     key: "DonationStreak",
     fetchMethod: () => userDonationApi.getStreak(),
   });
@@ -15,4 +15,4 @@ function useDonationStreak() {
   };
 }
 
-export default useDonationStreak;
+export default useUserDonationStreak;
