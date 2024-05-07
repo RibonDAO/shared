@@ -8,8 +8,10 @@ describe("userIntegrationsApi", () => {
     });
 
     it("expects to send a get request with the correct info: url and headers", () => {
-      userIntegrationsApi.getIntegration();
-      expect(api.get).toHaveBeenCalledWith("/users/v1/integration");
+      userIntegrationsApi.getIntegration("referral");
+      expect(api.get).toHaveBeenCalledWith("/users/v1/integration", {
+        params: { branch: "referral" },
+      });
     });
   });
 

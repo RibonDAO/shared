@@ -1,10 +1,10 @@
 import { AxiosResponse } from "axios";
 import Integration from "types/entities/Integration";
-import { apiGet, apiPost } from "..";
+import { apiGetWithParams, apiPost } from "..";
 
 const userIntegrationsApi = {
-  getIntegration: (data: any): Promise<AxiosResponse<Integration>> =>
-    apiGet("integration", data),
+  getIntegration: (branch: string): Promise<AxiosResponse<Integration>> =>
+    apiGetWithParams("integration", { branch }),
 
   createIntegration: (data: any): Promise<AxiosResponse<Integration>> =>
     apiPost("integration", data),
