@@ -75,6 +75,8 @@ const usersApi = {
     apiPost("users/send_cancel_subscription_email", { subscriptionId }),
   getDonatedToday: (): Promise<AxiosResponse<DonatedToday>> =>
     apiGet("users/donated_today"),
+  getDonationStreak: (): Promise<AxiosResponse<any>> =>
+    apiGet("users/donation_streak"),
 };
 
 export default usersApi;

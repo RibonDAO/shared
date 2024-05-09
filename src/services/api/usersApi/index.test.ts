@@ -113,4 +113,15 @@ describe("usersApi", () => {
       );
     });
   });
+  describe("#getDonationStreak", () => {
+    beforeEach(() => {
+      api.get = jest.fn();
+    });
+
+    it("expects to send a get request with the correct info: url, params and headers", () => {
+      usersApi.getDonationStreak();
+
+      expect(api.get).toHaveBeenCalledWith("/api/v1/users/donation_streak");
+    });
+  });
 });

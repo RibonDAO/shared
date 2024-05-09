@@ -46,7 +46,7 @@ describe("userDonationApi", () => {
       api.post = jest.fn();
     });
 
-    it("expects to send a get request with the correct info: url, params and headers", () => {
+    it("expects to send a post request with the correct info: url, params and headers", () => {
       userDonationApi.postCanDonate(1, "app");
 
       expect(api.post).toHaveBeenCalledWith("/users/v1/can_donate", {
