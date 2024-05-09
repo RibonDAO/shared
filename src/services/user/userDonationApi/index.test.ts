@@ -55,16 +55,4 @@ describe("userDonationApi", () => {
       });
     });
   });
-
-  describe("#getStreak", () => {
-    beforeEach(() => {
-      api.get = jest.fn();
-    });
-
-    it("expects to send a get request with the correct info: url, params and headers", () => {
-      userDonationApi.getStreak();
-
-      expect(api.get).toHaveBeenCalledWith("/users/v1/streak");
-    });
-  });
 });

@@ -1,11 +1,11 @@
 import { useApi } from "hooks/useApi";
-import { userDonationApi } from "services/index";
+import { usersApi } from "services/index";
 import { UserDonationStreak } from "types/apiResponses/UserDonationStreak";
 
 function useUserDonationStreak() {
   const { data, isLoading, refetch } = useApi<UserDonationStreak>({
     key: "DonationStreak",
-    fetchMethod: () => userDonationApi.getStreak(),
+    fetchMethod: () => usersApi.getDonationStreak(),
   });
 
   return {

@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { CanDonate } from "types/apiResponses";
 import { Donation } from "types/entities";
-import { apiGet, apiPost } from "..";
+import { apiPost } from "..";
 
 const userDonationApi = {
   postDonation: (
@@ -46,8 +46,6 @@ const userDonationApi = {
     voucherId?: string,
   ): Promise<AxiosResponse<CanDonate>> =>
     apiPost("can_donate", { integrationId, platform, voucherId }),
-
-  getStreak: (): Promise<AxiosResponse<any>> => apiGet("streak"),
 };
 
 export default userDonationApi;
