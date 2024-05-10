@@ -39,11 +39,15 @@ import PixPayment from "./PixPayment";
 import UserConfig from "./UserConfig";
 import Plan from "./Plan";
 import Subscription from "./Subscription";
+import Coupon from "./Coupon";
+import CouponMessage from "./CouponMessage";
 
 export {
   Article,
   Author,
   Cause,
+  Coupon,
+  CouponMessage,
   CreditCardPayment,
   CurrentNetwork,
   Donation,
