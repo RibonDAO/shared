@@ -1,5 +1,5 @@
 export default interface CouponMessage {
-  id: number;
+  id: string;
   rewardText?: string;
   couponId: string;
   createdAt: Date;
