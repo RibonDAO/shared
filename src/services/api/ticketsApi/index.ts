@@ -1,6 +1,12 @@
 import { AxiosResponse } from "axios";
+import { Coupon } from "types/entities";
 
 import { apiGet, apiGetWithParams, apiPost } from "..";
+
+type HandleCanCollectData = {
+  canCollect: boolean,
+  coupon?: Coupon
+}
 
 const ticketsApi = {
   getTicketsAvailable: (): Promise<AxiosResponse<any>> =>
@@ -87,7 +93,7 @@ const ticketsApi = {
     email: string,
     platform: string,
     couponId: string | number,
-  ): Promise<AxiosResponse<any>> =>
+  ): Promise<AxiosResponse<HandleCanCollectData>> =>
     apiPost("tickets/can_collect_by_coupon_id", {
       email,
       platform,
