@@ -116,18 +116,18 @@ function useTickets() {
       isLoading,
     };
   }
-
+  
   async function canCollectByCoupon(
     couponId: string | number,
     platform: string,
     email: string,
   ) {
-    const { data } = await ticketsApi.canCollectByCouponId(
+    const data = ticketsApi.canCollectByCouponId(
       email,
       platform,
       couponId,
     );
-
+    
     return data;
   }
 
