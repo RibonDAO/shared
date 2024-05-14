@@ -23,6 +23,8 @@ function nonProfitFactory(params: Partial<NonProfit> = {}): NonProfit {
     confirmationImageDescription: "Confirmation image description",
     coverImageDescription: "Cover image description",
     logoDescription: "Logo description",
+    icon: "",
+    iconDescription: "Icon description",
     mainImageDescription: "Main image description",
     nonProfitImpacts: [
       {

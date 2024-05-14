@@ -20,6 +20,8 @@ export default interface NonProfit {
   logoDescription: string;
   mainImageDescription: string;
   logo: string;
+  icon: string;
+  iconDescription: string;
   impactByTicket: number;
   createdAt?: string;
   updatedAt?: string;
