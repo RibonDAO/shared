@@ -8,7 +8,7 @@ import { waitFor } from "@testing-library/react";
 
 let hook: ReturnType<typeof useTickets>;
 let ticketsAvailableHook: any;
-const data = { tickets: 10, integration_tickets: 10 };
+const data = { tickets: 10, integrationTickets: 10 };
 
 describe("useTickets", () => {
   beforeEach(async() => {
@@ -27,7 +27,7 @@ describe("useTickets", () => {
     });
     it("calls the getTicketsAvailable with correct params", async() => {
       await waitFor(() => expect(ticketsAvailableHook.tickets).toEqual(10));
-      await waitFor(() => expect(ticketsAvailableHook.integration_tickets).toEqual(10));
+      await waitFor(() => expect(ticketsAvailableHook.integrationTickets).toEqual(10));
     });
   });
 });
