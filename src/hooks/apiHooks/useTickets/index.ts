@@ -10,7 +10,7 @@ function useTickets() {
       fetchMethod: () => ticketsApi.getTicketsAvailable(),
     });
 
-    return { tickets: data?.tickets, refetch, isLoading };
+    return { tickets: data?.tickets, integration_tickets: data?.integration_tickets, refetch, isLoading };
   }
 
   async function canCollectByIntegration(
