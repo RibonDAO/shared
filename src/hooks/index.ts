@@ -43,6 +43,7 @@ import useDonatedToday from "./apiHooks/useDonatedToday";
 import useReports from "./apiHooks/useReports";
 import useRibonConfig from "./apiHooks/useRibonConfig";
 import useUserDonationStreak from "./apiHooks/useUserDonationStreak";
+import { useTags } from "./apiHooks/useTags";
 
 type InitializeHooksProps = {
   initializeApiOptions: InitializeApiProps;
@@ -98,4 +99,5 @@ export {
   useReports,
   useRibonConfig,
   useUserDonationStreak,
+  useTags,
 };

@@ -1,0 +1,21 @@
+import { useApi } from "hooks/useApi";
+import tagsApi from "services/api/tagsApi";
+import Tag from "types/apiResponses/Tag";
+
+export function useTags() {
+  const {
+    data: tags,
+    isLoading,
+    refetch,
+  } = useApi<Tag[]>({
+    key: "tags",
+    fetchMethod: tagsApi.getTags,
+    options: {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+    },
+  });
+
+  return { tags: tags || [], isLoading, refetch };
+}
