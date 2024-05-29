@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios";
-import Tag from "types/apiResponses/Tag";
+import Tag from "types/entities/Tag";
 import { apiGet } from "..";
 
 const tagsApi = {

@@ -41,6 +41,7 @@ import Plan from "./Plan";
 import Subscription from "./Subscription";
 import Coupon from "./Coupon";
 import CouponMessage from "./CouponMessage";
+import Tag from "./Tag";
 
 export {
   Article,
@@ -86,4 +87,5 @@ export {
   PixPayment,
   UserConfig,
   Subscription,
+  Tag,
 };
