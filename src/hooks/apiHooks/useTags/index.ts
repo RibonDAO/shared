@@ -17,6 +17,5 @@ export function useTags() {
     },
   });
 
-  console.log(tags);
   return { tags: tags || [], isLoading, refetch };
 }
