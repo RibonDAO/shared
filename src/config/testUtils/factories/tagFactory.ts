@@ -1,4 +1,4 @@
-import Tag from "types/apiResponses/Tag";
+import Tag from "types/entities/Tag";
 import nonProfitFactory from "./nonProfitFactory";
 
 function tagFactory(params: Partial<Tag> = {}): Tag {

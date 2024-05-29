@@ -1,6 +1,6 @@
 import { useApi } from "hooks/useApi";
 import tagsApi from "services/api/tagsApi";
-import Tag from "types/apiResponses/Tag";
+import Tag from "types/entities/Tag";
 
 export function useTags() {
   const {
@@ -17,5 +17,6 @@ export function useTags() {
     },
   });
 
+  console.log(tags);
   return { tags: tags || [], isLoading, refetch };
 }
