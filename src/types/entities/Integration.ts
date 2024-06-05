@@ -19,4 +19,9 @@ export default interface Integration {
   integrationTaskAttributes?: IntegrationTask | null;
   mobilityAttributes?: string[];
   metadata?: Record<string, any>;
+  bannerTitle?: string;
+  bannerDescription?: string;
+  onboardingTitle?: string;
+  onboardingDescription?: string;
+  onboardingImage?: any;
 }
