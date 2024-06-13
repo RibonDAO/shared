@@ -43,6 +43,7 @@ import useDonatedToday from "./apiHooks/useDonatedToday";
 import useReports from "./apiHooks/useReports";
 import useRibonConfig from "./apiHooks/useRibonConfig";
 import useUserDonationStreak from "./apiHooks/useUserDonationStreak";
+import useWarmGlowMessages from "./apiHooks/useWarmGlowMessages";
 import { useTags } from "./apiHooks/useTags";
 
 type InitializeHooksProps = {
@@ -100,4 +101,5 @@ export {
   useRibonConfig,
   useUserDonationStreak,
   useTags,
+  useWarmGlowMessages,
 };
