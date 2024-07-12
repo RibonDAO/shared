@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios";
-import IsMember from "types/apiResponses/IsMember";
+import IsClubMember from "types/apiResponses/IsClubMember";
 
 import { apiGet, apiPut } from "..";
 
@@ -10,7 +10,8 @@ const subscriptionApi = {
   putCancelSubscription: (token: string): Promise<AxiosResponse<any>> =>
     apiPut(`subscriptions/cancel_subscription?token=${token}`, {}),
 
-  getIsMember: (): Promise<AxiosResponse<IsMember>> => apiGet("users/is_member"),
+  getIsClubMember: (): Promise<AxiosResponse<IsClubMember>> =>
+    apiGet("users/is_club_member"),
 };
 
 export default subscriptionApi;

@@ -14,9 +14,7 @@ describe("subscriptionApi", () => {
       const id = 123;
       await subscriptionApi.getSubscription(id);
 
-      expect(api.get).toHaveBeenCalledWith(
-        `/api/v1/users/subscription/${id}`,
-      );
+      expect(api.get).toHaveBeenCalledWith(`/api/v1/users/subscription/${id}`);
     });
   });
 
@@ -25,20 +23,17 @@ describe("subscriptionApi", () => {
       await subscriptionApi.putCancelSubscription("jwt_token");
 
       expect(api.put).toHaveBeenCalledWith(
-        `/api/v1/subscriptions/cancel_subscription?token=jwt_token`,
+        "/api/v1/subscriptions/cancel_subscription?token=jwt_token",
         {},
       );
     });
   });
 
-  describe("#getIsMember", () => {
-    it("get is member", async () => {
-      await subscriptionApi.getIsMember();
+  describe("#getIsClubMember", () => {
+    it("get is club member", async () => {
+      await subscriptionApi.getIsClubMember();
 
-      expect(api.get).toHaveBeenCalledWith(
-        `/api/v1/users/is_member`
-      );
+      expect(api.get).toHaveBeenCalledWith("/api/v1/users/is_club_member");
     });
   });
-
 });

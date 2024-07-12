@@ -2,7 +2,7 @@ import { useApi } from "hooks/useApi";
 import { emptyRequest } from "services/api";
 import subscriptionApi from "services/api/subscriptionApi";
 import { usersApi } from "services/index";
-import IsMember from "types/apiResponses/IsMember";
+import IsClubMember from "types/apiResponses/IsClubMember";
 import Subscription from "types/entities/Subscription";
 
 const useSubscription = () => {
@@ -52,13 +52,13 @@ const useSubscription = () => {
     return { subscription, refetch, isLoading };
   }
 
-  function userIsMember() {
-    const { refetch, isLoading, data } = useApi<IsMember>({
-      key: "UserIsMember",
-      fetchMethod: () => subscriptionApi.getIsMember(),
+  function userIsClubMember() {
+    const { refetch, isLoading, data } = useApi<IsClubMember>({
+      key: "UserIsClubMember",
+      fetchMethod: () => subscriptionApi.getIsClubMember(),
     });
 
-    return { isMember: data?.isMember || false, refetch, isLoading };
+    return { isClubMember: data?.isClubMember || false, refetch, isLoading };
   }
 
   return {
@@ -66,7 +66,7 @@ const useSubscription = () => {
     sendCancelSubscriptionEmail,
     cancelSubscription,
     getSubscription,
-    userIsMember,
+    userIsClubMember,
   };
 };
 
