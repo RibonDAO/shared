@@ -65,4 +65,36 @@ describe("usersApi", () => {
       );
     });
   });
+
+  describe("#postSendOtpEmail", () => {
+    beforeEach(() => {
+      api.post = jest.fn();
+    });
+
+    it("expects to send a get request with the correct info: url, params and headers", () => {
+      usersApi.postSendOtpEmail("user@gmail.com");
+
+      expect(api.post).toHaveBeenCalledWith("/users/v1/auth/send_otp_email", {
+        email: "user@gmail.com",
+      });
+    });
+  });
+
+  describe("#postAuthorizeFromOtpCode", () => {
+    beforeEach(() => {
+      api.post = jest.fn();
+    });
+
+    it("expects to send a get request with the correct info: url, params and headers", () => {
+      usersApi.postAuthorizeFromOtpCode("012345", "1");
+
+      expect(api.post).toHaveBeenCalledWith(
+        "/users/v1/auth/authorize_from_otp_code",
+        {
+          otpCode: "012345",
+          id: "1",
+        },
+      );
+    });
+  });
 });
