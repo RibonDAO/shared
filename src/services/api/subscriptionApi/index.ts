@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import IsClubMember from "types/apiResponses/IsClubMember";
-
+import IsMember from "types/apiResponses/IsMember";
 import { apiGet, apiPut } from "..";
 
 const subscriptionApi = {
@@ -12,6 +12,8 @@ const subscriptionApi = {
 
   getIsClubMember: (): Promise<AxiosResponse<IsClubMember>> =>
     apiGet("users/is_club_member"),
+
+  getIsMember: (): Promise<AxiosResponse<IsMember>> => apiGet("users/is_member"),
 };
 
 export default subscriptionApi;
