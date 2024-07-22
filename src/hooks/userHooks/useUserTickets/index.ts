@@ -25,8 +25,15 @@ function useUserTickets() {
     return data;
   }
 
+  async function collectByBusiness(platform: string, category: string) {
+    const { data } = await userTicketsApi.collectByBusiness(platform, category);
+
+    return data;
+  }
+
   return {
     donate,
+    collectByBusiness,
     collectByClub,
   };
 }
