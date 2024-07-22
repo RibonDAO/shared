@@ -22,8 +22,6 @@ const userTicketsApi = {
 
   collectByClub: (platform: string, category: string): Promise<AxiosResponse<any>> =>
     apiPost("tickets/collect_by_club", { platform, category }),
-  collectByBusiness: (platform: string, category: string): Promise<AxiosResponse<any>> =>
-    apiPost("tickets/collect_by_business", { platform, category }),
 };
 
 export default userTicketsApi;
