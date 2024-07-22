@@ -3,6 +3,7 @@ import { emptyRequest } from "services/api";
 import subscriptionApi from "services/api/subscriptionApi";
 import { usersApi } from "services/index";
 import IsClubMember from "types/apiResponses/IsClubMember";
+import IsMember from "types/apiResponses/IsMember";
 import Subscription from "types/entities/Subscription";
 
 const useSubscription = () => {
@@ -61,12 +62,22 @@ const useSubscription = () => {
     return { isClubMember: data?.isClubMember || false, refetch, isLoading };
   }
 
+  function userIsMember() {
+    const { refetch, isLoading, data } = useApi<IsMember>({
+      key: "UserIsMember",
+      fetchMethod: () => subscriptionApi.getIsMember(),
+    });
+
+    return { isMember: data?.isMember || false, refetch, isLoading };
+  }
+
   return {
     userSubscriptions,
     sendCancelSubscriptionEmail,
     cancelSubscription,
     getSubscription,
     userIsClubMember,
+    userIsMember,
   };
 };
 
