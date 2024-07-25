@@ -33,7 +33,6 @@ export function initializeApi({ url, headers }: InitializeApiProps) {
     config.baseURL = url;
     // eslint-disable-next-line
     config.headers = { ...headers, ...config.headers };
-
     return config;
   });
 }

@@ -51,6 +51,17 @@ const brandColors = {
     800: "#754B00",
     900: "#613E00",
   },
+  quinary: {
+    25: "#F6FBFE",
+    50: "#E8F4FC",
+    100: "#C7E6F9",
+    200: "#9AD0F9",
+    300: "#7BC6FF",
+    500: "#5396C9",
+    600: "#3E7AA8",
+    800: "#235174",
+    900: "#06365B",
+  },
 };
 
 export default brandColors;
