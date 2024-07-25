@@ -4,4 +4,5 @@ export enum Categories {
   DIRECT_CONTRIBUTION = "direct_contribution",
   // eslint-disable-next-line no-unused-vars
   CLUB = "club",
+  BUSINESS = "business",
 }
