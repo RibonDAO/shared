@@ -5,6 +5,7 @@ import {
   DonationsCount,
   AppDonationsCount,
 } from "types/apiResponses/DonationsCount";
+import { TotalDonationsToday } from "types/apiResponses/TotalDonationsToday";
 
 function useDonations(userId: number | undefined) {
   const { data: donationsCountResponse } = useApi<DonationsCount>({
@@ -30,6 +31,14 @@ function useDonations(userId: number | undefined) {
     },
     criteria: [userId],
   });
+
+
+  const { data: totalDonationsTodayResponse } = useApi<TotalDonationsToday>({
+    key: "totalDonationsToday",
+    fetchMethod: () => {
+      return donationsApi.getTodaysDonationsCount()
+    }
+  })
 
   async function donate(
     integrationId: number | string,
@@ -71,6 +80,7 @@ function useDonations(userId: number | undefined) {
     donate,
     donationsCount: donationsCountResponse?.donationsCount,
     appDonationsCount: appDonationsCountResponse?.appDonationsCount,
+    totalDonationsToday: totalDonationsTodayResponse?.todayDonations
   };
 }
 

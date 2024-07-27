@@ -1,9 +1,10 @@
 import { AxiosResponse } from "axios";
 import Donation from "types/entities/Donation";
 import { apiGet, apiPost } from "..";
+import { TotalDonationsToday } from "types/apiResponses/TotalDonationsToday";
 
 const donationsApi = {
-  getTodaysDonationsCount: () => apiGet("count_today_donations"),
+  getTodaysDonationsCount: (): Promise<AxiosResponse<TotalDonationsToday>> => apiGet("count_today_donations"),
   postDonation: (
     integrationId: number | string,
     nonProfitId: number,
