@@ -36,7 +36,7 @@ function useDonations(userId: number | undefined) {
   const { data: totalDonationsTodayResponse } = useApi<TotalDonationsToday>({
     key: "totalDonationsToday",
     fetchMethod: () => {
-      return donationsApi.getTodaysDonationsCount()
+      return donationsApi.getTotalDonationsTodayCount()
     }
   })
 
@@ -80,7 +80,7 @@ function useDonations(userId: number | undefined) {
     donate,
     donationsCount: donationsCountResponse?.donationsCount,
     appDonationsCount: appDonationsCountResponse?.appDonationsCount,
-    totalDonationsToday: totalDonationsTodayResponse?.todayDonations
+    totalDonationsToday: totalDonationsTodayResponse?.totalDonationsTodayCount
   };
 }
 
