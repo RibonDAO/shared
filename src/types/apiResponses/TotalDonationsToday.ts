@@ -1,3 +1,3 @@
 export interface TotalDonationsToday {
-    totalDonationsTodayCount: number
+    totalDonationsToday: number
 }

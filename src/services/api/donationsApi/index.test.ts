@@ -6,6 +6,7 @@ describe("donationsApi", () => {
     beforeEach(() => {
       // If it's a different method just change it to: post, put, delete, etc.
       api.post = jest.fn();
+      api.get = jest.fn();
     });
 
     it("expects to send a get request with the correct info: url, params and headers", () => {
@@ -16,6 +17,12 @@ describe("donationsApi", () => {
         nonProfitId: 1,
         email: "user@test.com",
       });
+    });
+
+    it("expects to send a get request to ", () => {
+      donationsApi.getTotalDonationsToday();
+
+      expect(api.get).toHaveBeenCalledWith("/api/v1/total_donations_today");
     });
   });
 });
