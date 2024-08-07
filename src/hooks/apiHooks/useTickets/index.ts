@@ -10,7 +10,12 @@ function useTickets() {
       fetchMethod: () => ticketsApi.getTicketsAvailable(),
     });
 
-    return { tickets: data?.tickets, integrationTickets: data?.integrationTickets, refetch, isLoading };
+    return {
+      tickets: data?.tickets,
+      integrationTickets: data?.integrationTickets,
+      refetch,
+      isLoading,
+    };
   }
 
   async function canCollectByIntegration(
@@ -106,7 +111,7 @@ function useTickets() {
 
   function getTicketsToCollect(source: string) {
     const { refetch, isLoading, data } = useApi<TicketsToCollect>({
-      key: "UserTicketsToCollect",
+      key: `userTicketsToCollect${source}`,
       fetchMethod: () => ticketsApi.getTicketsToCollect(source),
     });
 
@@ -116,18 +121,14 @@ function useTickets() {
       isLoading,
     };
   }
-  
+
   async function canCollectByCoupon(
     couponId: string | number,
     platform: string,
     email: string,
   ) {
-    const data = ticketsApi.canCollectByCouponId(
-      email,
-      platform,
-      couponId,
-    );
-    
+    const data = ticketsApi.canCollectByCouponId(email, platform, couponId);
+
     return data;
   }
 
